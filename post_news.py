@@ -65,6 +65,7 @@ def main():
     latest_news = get_latest_news()
     for entry in latest_news:
         post_to_discord(entry)
+        print(entry)
 
 if __name__ == "__main__":
     main()
