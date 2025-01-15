@@ -49,8 +49,10 @@ for genre, data in config["genres"].items():
     webhook_url = data["webhook_url"]
     rss_feeds = data["rss_feeds"]
     
-    # 特定のカテゴリの投稿済みリンクを取得（存在しない場合は空のリスト）
-    posted_links = set(all_posted_links.get(genre, []))  # このカテゴリのリンクだけをチェック
+    # 特定のカテゴリの投稿済みリンクを取得（存在しない場合は空のリストを作成）
+    if genre not in all_posted_links:
+        all_posted_links[genre] = []  # 新しいカテゴリの場合は空リストを初期化
+    posted_links = set(all_posted_links[genre])  # セットに変換して重複確認を効率化
     all_entries = []
 
     for rss_url in rss_feeds:
