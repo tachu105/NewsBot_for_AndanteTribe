@@ -41,10 +41,11 @@ jobs:
           fi
 
       - name: Notify Discord on failure
-        if: failure()  # このステップはジョブが失敗した場合にのみ実行
+        if: always()  # 常に実行するよう変更
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"content": "**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。"}' \
           $POST_ERROR_NOTIFICATION
+
