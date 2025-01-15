@@ -43,8 +43,8 @@ jobs:
       - name: Notify Discord on failure
         if: failure()  # このステップはジョブが失敗した場合にのみ実行
         env:
-          DISCORD_ERROR_WEBHOOK_URL: ${{ secrets.DISCORD_ERROR_WEBHOOK_URL }}
+          POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"content": "**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。"}' \
-          $DISCORD_ERROR_WEBHOOK_URL
+          $POST_ERROR_NOTIFICATION
