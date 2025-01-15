@@ -1,0 +1,17 @@
+{
+  "genres": {
+    "gaming": {
+      "webhook_url": "https://discord.com/api/webhooks/xxxxxxxx/xxxxxxxx",
+      "rss_feeds": [
+        "https://www.4gamer.net/rss/news_topics.xml",
+        "https://www.nhk.or.jp/rss/news/cat0.xml"
+      ]
+    },
+    "technology": {
+      "webhook_url": "https://discord.com/api/webhooks/yyyyyyyy/yyyyyyyy",
+      "rss_feeds": [
+        "https://www.txhd.co.jp/rss.xml"
+      ]
+    }
+  }
+}
