@@ -12,12 +12,12 @@
       "rss_feeds": [
         "https://www.txhd.co.jp/rss.xml"
       ]
-    }
+    },
     "test": {
       "webhook_url": "https://discord.com/api/webhooks/1329095892967362622/b8O1hZHDeXjsdJdICHMiqgwzeCbSL6iC9_kAC_qqZoUAHlcRpXGjLpINE73BzfDq1qmB",
       "rss_feeds": [
         "https://www.txhd.co.jp/rss.xml"
       ]
-    }
+    },
   }
 }
