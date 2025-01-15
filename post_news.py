@@ -45,6 +45,13 @@ with open("config.json", "r") as f:
 # 全カテゴリの投稿済みリンクをロード
 all_posted_links = load_posted_links()
 
+# config.json に存在しないカテゴリを削除
+valid_categories = set(config["genres"].keys())
+all_posted_links = {genre: links for genre, links in all_posted_links.items() if genre in valid_categories}
+
+# 更新された posted_links.json を保存
+save_posted_links(all_posted_links)
+
 for genre, data in config["genres"].items():
     webhook_url = data["webhook_url"]
     rss_feeds = data["rss_feeds"]
