@@ -13,18 +13,32 @@ def clean_html(raw_html):
     return clean_text
 
 def get_image_from_article(url):
-    """リンク先の記事から画像を取得する"""
+    """リンク先の記事から画像URLを取得する"""
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.content, "html.parser")
-        # 最初に見つかった <img> タグの src を取得
-        image = soup.find("img")
-        if image and "src" in image.attrs:
-            return image["src"]
+        
+        # og:image メタタグを優先して取得
+        og_image = soup.find("meta", property="og:image")
+        if og_image and og_image["content"]:
+            return og_image["content"]
+        
+        # <img> タグの data-src または srcset 属性を優先して取得
+        image = soup.find("img", {"class": "lazy-loaded"})
+        if image:
+            if "data-src" in image.attrs:
+                return image["data-src"]
+            elif "srcset" in image.attrs:
+                return image["srcset"].split()[0]  # srcset の最初のURLを取得
+            elif "src" in image.attrs:
+                return image["src"]
+    
     except Exception as e:
         print(f"Error fetching image: {e}")
-    return "https://www.google.com/s2/favicons?sz=128&domain=news.google.com"  # 代替画像
+    
+    # 代替画像を返す
+    return "https://www.google.com/s2/favicons?sz=128&domain=news.google.com"
 
 def get_latest_news():
     feed = feedparser.parse(RSS_URL)
