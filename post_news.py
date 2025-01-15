@@ -61,6 +61,7 @@ def process_feed():
     """RSSフィードを処理してスクレイピング許可を確認し、Discordに投稿"""
     feed = feedparser.parse(RSS_URL)
     for entry in feed.entries[:5]:  # 最新5件を取得
+        print(entry)
         title = entry.title
         link = entry.link
         parsed_link = urlparse(link)
