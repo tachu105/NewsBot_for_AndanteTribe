@@ -2,9 +2,10 @@ import feedparser
 import requests
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 POSTED_LINKS_FILE = "posted_links.json"
+EXPIRATION_MINUTES = 5  # デバッグ用に5分以上前のリンクを削除
 
 def load_posted_links():
     """過去に投稿済みのリンクをファイルから読み込む"""
@@ -38,6 +39,16 @@ def get_entry_date(entry):
             return date
     return None
 
+def clean_old_links(all_posted_links):
+    """5分以上前のリンクを削除する（デバッグ用）"""
+    now = datetime.now()
+    cutoff_time = now - timedelta(minutes=EXPIRATION_MINUTES)
+    for genre, links in all_posted_links.items():
+        # 各リンクのタイムスタンプを確認し、古いものを除外
+        all_posted_links[genre] = [
+            link for link in links if datetime.strptime(link["timestamp"], "%Y-%m-%d %H:%M:%S") > cutoff_time
+        ]
+
 # 設定ファイルを読み込む
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -49,6 +60,9 @@ all_posted_links = load_posted_links()
 valid_categories = set(config["genres"].keys())
 all_posted_links = {genre: links for genre, links in all_posted_links.items() if genre in valid_categories}
 
+# 古いリンクを削除
+clean_old_links(all_posted_links)
+
 # 更新された posted_links.json を保存
 save_posted_links(all_posted_links)
 
@@ -59,7 +73,7 @@ for genre, data in config["genres"].items():
     # 特定のカテゴリの投稿済みリンクを取得（存在しない場合は空のリストを作成）
     if genre not in all_posted_links:
         all_posted_links[genre] = []  # 新しいカテゴリの場合は空リストを初期化
-    posted_links = set(all_posted_links[genre])  # セットに変換して重複確認を効率化
+    posted_links = {link["link"] for link in all_posted_links[genre]}  # セットに変換して重複確認を効率化
     all_entries = []
 
     for rss_url in rss_feeds:
@@ -78,18 +92,20 @@ for genre, data in config["genres"].items():
     latest_entries = sorted(all_entries, key=lambda x: x["published"], reverse=True)[:10]
 
     content = f"**最新ニュース（{genre.capitalize()}）**\n\n"
-    new_links = set()  # 新しく投稿したリンクを保持
+    new_links = []  # 新しく投稿したリンクを保持
     for entry in latest_entries:
         content += f"<{entry['link']}>\n"
-        new_links.add(entry["link"])  # 新しいリンクを追加
+        new_links.append({
+            "link": entry["link"],
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        })  # 新しいリンクとタイムスタンプを追加
 
     if webhook_url and new_links:
         response = requests.post(webhook_url, json={"content": content})
         if response.status_code == 204:
             print(f"ニュースをDiscordに投稿しました: {genre}")
             # 投稿が成功した場合のみ、投稿済みリンクを保存
-            posted_links.update(new_links)
-            all_posted_links[genre] = list(posted_links)  # 辞書に更新内容を反映
+            all_posted_links[genre].extend(new_links)  # 辞書に更新内容を反映
             save_posted_links(all_posted_links)
         else:
             print(f"投稿に失敗しました: {response.status_code}")
