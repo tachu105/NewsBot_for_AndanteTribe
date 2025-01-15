@@ -109,9 +109,7 @@ for genre, data in config["genres"].items():
         if not header_added:
             # 日本時間の現在時刻を取得してフォーマット
             now = datetime.now(JST)
-            current_time = now.strftime("%m月%d日(")
-            current_time += days_of_week[now.weekday()]  # 曜日を追加
-            current_time += now.strftime(") %H時")
+            current_time = f"{now.month}月{now.day}日({days_of_week[now.weekday()]}) {now.hour}時"
             content += f"**{current_time} 最新ニュース（{genre.capitalize()}）**\n\n"
             header_added = True
 
