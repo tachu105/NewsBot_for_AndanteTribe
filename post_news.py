@@ -41,6 +41,7 @@ def get_entry_date(entry):
 
 # 過去に投稿済みのリンクをロード
 posted_links = load_posted_links()
+print(posted_links)
 
 # 設定ファイルを読み込む
 with open("config.json", "r") as f:
