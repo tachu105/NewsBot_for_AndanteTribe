@@ -17,6 +17,13 @@ jobs:
         with:
           name: posted-links
           path: .
+        continue-on-error: true  # アーティファクトが存在しなくてもエラーを無視する
+
+      - name: Ensure posted_links.json exists
+        run: |
+          if [ ! -f posted_links.json ]; then
+            echo "[]" > posted_links.json
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v4
