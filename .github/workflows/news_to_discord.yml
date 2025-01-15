@@ -3,7 +3,7 @@ name: Post Google News to Discord
 on:
   schedule:
     - cron: "0 * * * *"  # 毎時0分に実行（cron形式で設定）
-
+  workflow_dispatch:
 jobs:
   post_news:
     runs-on: ubuntu-latest
