@@ -47,5 +47,7 @@ jobs:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
           curl -X POST -H "Content-Type: application/json" \
-          -d '{"content": "**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。"}' \
+          -d "{
+                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\n\n**ジョブ番号**: #${GITHUB_RUN_NUMBER}\"
+              }" \
           $POST_ERROR_NOTIFICATION
