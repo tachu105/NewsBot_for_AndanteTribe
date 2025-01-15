@@ -17,7 +17,7 @@ content = "**最新ニュース（4Gamer）**\n\n"
 for item in latest_news:
     title = item.title
     link = item.link
-    content += f"["_"]({link})\n"
+    content += f"[_]({link})\n"
 
 # Discordに投稿
 if DISCORD_WEBHOOK_URL:
