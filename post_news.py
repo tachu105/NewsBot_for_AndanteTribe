@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta, timezone
 
 POSTED_LINKS_FILE = "posted_links.json"
-EXPIRATION_MINUTES = 5  # デバッグ用に5分以上前のリンクを削除
+EXPIRATION_DAYS = 3  # 3日以上前のリンクを削除
 JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
 MAX_ENTRIES = 10  # 投稿する記事の上限
 CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
@@ -43,9 +43,9 @@ def get_entry_date(entry):
     return None
 
 def clean_old_links(all_posted_links):
-    """5分以上前のリンクを削除する（デバッグ用）"""
+    """3日以上前のリンクを削除する"""
     now = datetime.now(JST)
-    cutoff_time = now - timedelta(minutes=EXPIRATION_MINUTES)
+    cutoff_time = now - timedelta(days=EXPIRATION_DAYS)
     for genre, links in all_posted_links.items():
         # 各リンクのタイムスタンプを確認し、古いものを除外
         all_posted_links[genre] = [
@@ -94,10 +94,19 @@ for genre, data in config["genres"].items():
     # 日時順にソートして最新 N 件を取得
     latest_entries = sorted(all_entries, key=lambda x: x["published"], reverse=True)[:MAX_ENTRIES]
 
+    # ヘッダーを付けるかどうかを制御するフラグ
+    header_added = False
+
     # 5件ずつに分割して投稿
     for i in range(0, len(latest_entries), CHUNK_SIZE):
         chunk = latest_entries[i:i + CHUNK_SIZE]
-        content = f"**最新ニュース（{genre.capitalize()}）**\n\n"
+        
+        # ヘッダーは最初の投稿にのみ付ける
+        content = ""
+        if not header_added:
+            content += f"**最新ニュース（{genre.capitalize()}）**\n\n"
+            header_added = True
+
         new_links = []  # 新しく投稿したリンクを保持
         for entry in chunk:
             content += f"<{entry['link']}>\n"
@@ -115,5 +124,8 @@ for genre, data in config["genres"].items():
                 save_posted_links(all_posted_links)
             else:
                 print(f"投稿に失敗しました: {response.status_code}")
+                # 最初の投稿が失敗した場合はヘッダーを次に付ける
+                if i == 0:
+                    header_added = False
         else:
             print(f"Webhook URLが設定されていないか、新しい記事がありません: {genre}")
