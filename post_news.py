@@ -1,4 +1,4 @@
-import feedparser
+mport feedparser
 import requests
 import yaml
 import os
