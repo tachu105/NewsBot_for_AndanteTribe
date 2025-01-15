@@ -2,10 +2,11 @@ import feedparser
 import requests
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 POSTED_LINKS_FILE = "posted_links.json"
 EXPIRATION_MINUTES = 5  # デバッグ用に5分以上前のリンクを削除
+JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
 
 def load_posted_links():
     """過去に投稿済みのリンクをファイルから読み込む"""
@@ -41,12 +42,12 @@ def get_entry_date(entry):
 
 def clean_old_links(all_posted_links):
     """5分以上前のリンクを削除する（デバッグ用）"""
-    now = datetime.now()
+    now = datetime.now(JST)
     cutoff_time = now - timedelta(minutes=EXPIRATION_MINUTES)
     for genre, links in all_posted_links.items():
         # 各リンクのタイムスタンプを確認し、古いものを除外
         all_posted_links[genre] = [
-            link for link in links if datetime.strptime(link["timestamp"], "%Y-%m-%d %H:%M:%S") > cutoff_time
+            link for link in links if datetime.strptime(link["timestamp"], "%Y-%m-%d %H:%M:%S").replace(tzinfo=JST) > cutoff_time
         ]
 
 # 設定ファイルを読み込む
@@ -97,7 +98,7 @@ for genre, data in config["genres"].items():
         content += f"<{entry['link']}>\n"
         new_links.append({
             "link": entry["link"],
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
         })  # 新しいリンクとタイムスタンプを追加
 
     if webhook_url and new_links:
