@@ -3,7 +3,6 @@ import requests
 import json
 import os
 from datetime import datetime
-import time
 
 POSTED_LINKS_FILE = "posted_links.json"
 
@@ -11,13 +10,13 @@ def load_posted_links():
     """過去に投稿済みのリンクをファイルから読み込む"""
     if os.path.exists(POSTED_LINKS_FILE):
         with open(POSTED_LINKS_FILE, "r") as f:
-            return set(json.load(f))
-    return set()
+            return json.load(f)
+    return {}  # ファイルが存在しない場合は空の辞書を返す
 
-def save_posted_links(posted_links):
-    """投稿済みのリンクをファイルに保存する"""
+def save_posted_links(all_posted_links):
+    """投稿済みのリンクをファイルに保存する（カテゴリごとに分けて1ファイルに保存）"""
     with open(POSTED_LINKS_FILE, "w") as f:
-        json.dump(list(posted_links), f)
+        json.dump(all_posted_links, f, indent=4)  # indent=4 で整形して保存
 
 def parse_date(entry, field):
     """指定されたフィールドの日付をパースする"""
@@ -39,18 +38,19 @@ def get_entry_date(entry):
             return date
     return None
 
-# 過去に投稿済みのリンクをロード
-posted_links = load_posted_links()
-print(posted_links)
-
 # 設定ファイルを読み込む
 with open("config.json", "r") as f:
     config = json.load(f)
+
+# 全カテゴリの投稿済みリンクをロード
+all_posted_links = load_posted_links()
 
 for genre, data in config["genres"].items():
     webhook_url = data["webhook_url"]
     rss_feeds = data["rss_feeds"]
     
+    # 特定のカテゴリの投稿済みリンクを取得（存在しない場合は空のリスト）
+    posted_links = set(all_posted_links.get(genre, []))
     all_entries = []
 
     for rss_url in rss_feeds:
@@ -80,7 +80,8 @@ for genre, data in config["genres"].items():
             print(f"ニュースをDiscordに投稿しました: {genre}")
             # 投稿が成功した場合のみ、投稿済みリンクを保存
             posted_links.update(new_links)
-            save_posted_links(posted_links)
+            all_posted_links[genre] = list(posted_links)  # 辞書に更新内容を反映
+            save_posted_links(all_posted_links)
         else:
             print(f"投稿に失敗しました: {response.status_code}")
     else:
