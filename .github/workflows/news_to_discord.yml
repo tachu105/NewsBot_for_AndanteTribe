@@ -26,8 +26,6 @@ jobs:
         run: pip install feedparser requests pyyaml
 
       - name: Run Python script
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python post_news.py
 
       - name: Commit and push updated posted_links.yaml
