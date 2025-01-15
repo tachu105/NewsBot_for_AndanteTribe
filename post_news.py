@@ -14,10 +14,20 @@ def get_latest_news():
 def post_to_discord(entry):
     title = entry.title
     link = entry.link
-    message = f"**{title}**\n{link}"
+    description = entry.summary if hasattr(entry, 'summary') else "詳しくはリンク先をご覧ください。"
     
+    # 埋め込みメッセージのペイロード
     payload = {
-        "content": message
+        "embeds": [
+            {
+                "title": title,
+                "url": link,
+                "description": description,
+                "thumbnail": {
+                    "url": "https://www.google.com/s2/favicons?sz=64&domain=news.google.com"  # Googleニュースのアイコン
+                }
+            }
+        ]
     }
     
     response = requests.post(WEBHOOK_URL, json=payload)
