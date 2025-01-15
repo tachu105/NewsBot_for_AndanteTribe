@@ -1,4 +1,4 @@
-name: Post Google News to Discord
+name: Post RSS to Discord
 
 on:
   schedule:
@@ -12,15 +12,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Restore posted links
+        uses: actions/download-artifact@v3
+        with:
+          name: posted-links
+          path: .
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install requests feedparser beautifulsoup4
+        run: pip install feedparser requests
 
       - name: Run Python script
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python post_news.py
+
+      - name: Save posted links
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: posted-links
+          path: posted_links.json
