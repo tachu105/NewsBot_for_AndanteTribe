@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta, timezone
 
 POSTED_LINKS_FILE = "posted_links.json"
-EXPIRATION_MINUTES = 5  # デバッグ用に5分以上前のリンクを削除
+EXPIRATION_DAYS = 3  # 3日以上前のリンクを削除
 JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
 
 def load_posted_links():
@@ -43,7 +43,7 @@ def get_entry_date(entry):
 def clean_old_links(all_posted_links):
     """5分以上前のリンクを削除する（デバッグ用）"""
     now = datetime.now(JST)
-    cutoff_time = now - timedelta(minutes=EXPIRATION_MINUTES)
+    cutoff_time = now - timedelta(days=EXPIRATION_DAYS)
     for genre, links in all_posted_links.items():
         # 各リンクのタイムスタンプを確認し、古いものを除外
         all_posted_links[genre] = [
