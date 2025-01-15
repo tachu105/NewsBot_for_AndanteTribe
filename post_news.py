@@ -10,14 +10,10 @@ DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 
 # RSSフィードをパース
 feed = feedparser.parse(RSS_URL)
-latest_news = feed.entries[:5]  # 最新5件を取得
+latest_news = feed.entries[:2]  # 最新2件を取得
 
-# 埋め込みリンク形式でメッセージを作成
-content = "**最新ニュース（4Gamer）**\n\n"
-for item in latest_news:
-    title = item.title
-    link = item.link
-    content += f"[{title}]({link})\n"
+# 空白にリンクを埋め込む形式でメッセージを作成
+content = "\n".join([f"<{item.link}>" for item in latest_news])
 
 # Discordに投稿
 if DISCORD_WEBHOOK_URL:
