@@ -109,7 +109,7 @@ for genre, data in config["genres"].items():
 
         new_links = []  # 新しく投稿したリンクを保持
         for entry in chunk:
-            content += f"[]({entry['link']}) "
+            content += f"[_]({entry['link']}) "
             new_links.append({
                 "link": entry["link"],
                 "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
