@@ -42,7 +42,7 @@ for genre, data in config["genres"].items():
 
     content = f"**最新ニュース（{genre.capitalize()}）**\n\n"
     for entry in latest_entries:
-        content += f"[_]({link}) "
+        content += f"[_]({entry['link']}) "
 
     if webhook_url:
         response = requests.post(webhook_url, json={"content": content})
