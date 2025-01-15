@@ -2,8 +2,9 @@ name: Post Google News to Discord
 
 on:
   schedule:
-    - cron: "0 * * * *"  # 毎時0分に実行（cron形式で設定）
-  workflow_dispatch:
+    - cron: "0 * * * *"  # 毎時0分に実行
+  workflow_dispatch:  # 手動実行を有効にする
+
 jobs:
   post_news:
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install requests feedparser
+        run: pip install requests feedparser beautifulsoup4
 
       - name: Run Python script
         env:
