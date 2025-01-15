@@ -13,7 +13,7 @@ feed = feedparser.parse(RSS_URL)
 latest_news = feed.entries[:2]  # 最新2件を取得
 
 # 空白にリンクを埋め込む形式でメッセージを作成
-content = "\n".join([f"[]({item.link})" for item in latest_news])
+content = "\n".join([f"[" "]({item.link})" for item in latest_news])
 
 # Discordに投稿
 if DISCORD_WEBHOOK_URL:
