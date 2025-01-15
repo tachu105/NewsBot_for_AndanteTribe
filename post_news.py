@@ -50,13 +50,13 @@ for genre, data in config["genres"].items():
     rss_feeds = data["rss_feeds"]
     
     # 特定のカテゴリの投稿済みリンクを取得（存在しない場合は空のリスト）
-    posted_links = set(all_posted_links.get(genre, []))
+    posted_links = set(all_posted_links.get(genre, []))  # このカテゴリのリンクだけをチェック
     all_entries = []
 
     for rss_url in rss_feeds:
         feed = feedparser.parse(rss_url)
         for entry in feed.entries:
-            if entry.link not in posted_links:
+            if entry.link not in posted_links:  # このカテゴリのリンクだけで重複確認
                 entry_date = get_entry_date(entry)
                 if entry_date:
                     all_entries.append({
