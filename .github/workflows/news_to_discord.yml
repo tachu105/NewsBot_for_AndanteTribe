@@ -1,8 +1,6 @@
 name: Post RSS to Discord
 
 on:
-  schedule:
-    - cron: "0 * * * *"  # 毎時0分に実行
   workflow_dispatch:  # 手動実行を有効にする
 
 permissions:
