@@ -1,3 +1,4 @@
+import re
 import feedparser
 import requests
 import os
@@ -5,6 +6,12 @@ import os
 # GoogleニュースRSSフィードURL（日本語）
 RSS_URL = "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja"
 WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
+
+def clean_html(raw_html):
+    """HTMLタグを除去する関数"""
+    cleanr = re.compile('<.*?>')
+    clean_text = re.sub(cleanr, '', raw_html)
+    return clean_text
 
 def get_latest_news():
     feed = feedparser.parse(RSS_URL)
@@ -14,9 +21,8 @@ def get_latest_news():
 def post_to_discord(entry):
     title = entry.title
     link = entry.link
-    description = entry.summary if hasattr(entry, 'summary') else "詳しくはリンク先をご覧ください。"
+    description = clean_html(entry.summary) if hasattr(entry, 'summary') else "詳しくはリンク先をご覧ください。"
     
-    # 埋め込みメッセージのペイロード
     payload = {
         "embeds": [
             {
@@ -24,7 +30,7 @@ def post_to_discord(entry):
                 "url": link,
                 "description": description,
                 "thumbnail": {
-                    "url": "https://www.google.com/s2/favicons?sz=64&domain=news.google.com"  # Googleニュースのアイコン
+                    "url": "https://www.google.com/s2/favicons?sz=64&domain=news.google.com"
                 }
             }
         ]
