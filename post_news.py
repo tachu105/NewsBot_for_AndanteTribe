@@ -5,8 +5,10 @@ import os
 from datetime import datetime, timedelta, timezone
 
 POSTED_LINKS_FILE = "posted_links.json"
-EXPIRATION_DAYS = 3  # 3日以上前のリンクを削除
+EXPIRATION_MINUTES = 5  # デバッグ用に5分以上前のリンクを削除
 JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
+MAX_ENTRIES = 10  # 投稿する記事の上限
+CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
 
 def load_posted_links():
     """過去に投稿済みのリンクをファイルから読み込む"""
@@ -43,7 +45,7 @@ def get_entry_date(entry):
 def clean_old_links(all_posted_links):
     """5分以上前のリンクを削除する（デバッグ用）"""
     now = datetime.now(JST)
-    cutoff_time = now - timedelta(days=EXPIRATION_DAYS)
+    cutoff_time = now - timedelta(minutes=EXPIRATION_MINUTES)
     for genre, links in all_posted_links.items():
         # 各リンクのタイムスタンプを確認し、古いものを除外
         all_posted_links[genre] = [
@@ -89,26 +91,29 @@ for genre, data in config["genres"].items():
                         "published": entry_date
                     })
 
-    # 日時順にソートして最新10件を取得
-    latest_entries = sorted(all_entries, key=lambda x: x["published"], reverse=True)[:10]
+    # 日時順にソートして最新 N 件を取得
+    latest_entries = sorted(all_entries, key=lambda x: x["published"], reverse=True)[:MAX_ENTRIES]
 
-    content = f"**最新ニュース（{genre.capitalize()}）**\n\n"
-    new_links = []  # 新しく投稿したリンクを保持
-    for entry in latest_entries:
-        content += f"<{entry['link']}>\n"
-        new_links.append({
-            "link": entry["link"],
-            "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
-        })  # 新しいリンクとタイムスタンプを追加
+    # 5件ずつに分割して投稿
+    for i in range(0, len(latest_entries), CHUNK_SIZE):
+        chunk = latest_entries[i:i + CHUNK_SIZE]
+        content = f"**最新ニュース（{genre.capitalize()}）**\n\n"
+        new_links = []  # 新しく投稿したリンクを保持
+        for entry in chunk:
+            content += f"<{entry['link']}>\n"
+            new_links.append({
+                "link": entry["link"],
+                "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
+            })  # 新しいリンクとタイムスタンプを追加
 
-    if webhook_url and new_links:
-        response = requests.post(webhook_url, json={"content": content})
-        if response.status_code == 204:
-            print(f"ニュースをDiscordに投稿しました: {genre}")
-            # 投稿が成功した場合のみ、投稿済みリンクを保存
-            all_posted_links[genre].extend(new_links)  # 辞書に更新内容を反映
-            save_posted_links(all_posted_links)
+        if webhook_url and new_links:
+            response = requests.post(webhook_url, json={"content": content})
+            if response.status_code == 204:
+                print(f"ニュースをDiscordに投稿しました: {genre}（{i + 1}件目以降）")
+                # 投稿が成功した場合のみ、投稿済みリンクを保存
+                all_posted_links[genre].extend(new_links)  # 辞書に更新内容を反映
+                save_posted_links(all_posted_links)
+            else:
+                print(f"投稿に失敗しました: {response.status_code}")
         else:
-            print(f"投稿に失敗しました: {response.status_code}")
-    else:
-        print(f"Webhook URLが設定されていないか、新しい記事がありません: {genre}")
+            print(f"Webhook URLが設定されていないか、新しい記事がありません: {genre}")
