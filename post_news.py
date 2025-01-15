@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 from time import sleep
 
 # GoogleニュースRSSフィードURL（日本語）
-RSS_URL = "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja"
+RSS_URL = "https://www.google.co.jp/alerts/feeds/11500782125501094599/1622788681073332472"
 
 # Discord Webhook URL (環境変数から取得することを推奨)
 WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL"
