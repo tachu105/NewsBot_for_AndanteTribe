@@ -12,12 +12,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Restore posted links
+      - name: Check if artifact exists
+        id: check_artifact
+        run: |
+          if curl -s --head --fail --location "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" | grep '"name":"posted-links"'; then
+            echo "artifact_exists=true" >> $GITHUB_ENV
+          else
+            echo "artifact_exists=false" >> $GITHUB_ENV
+          fi
+
+      - name: Restore posted links if artifact exists
+        if: env.artifact_exists == 'true'
         uses: actions/download-artifact@v3
         with:
           name: posted-links
           path: .
-        continue-on-error: true  # アーティファクトが存在しなくてもエラーを無視する
 
       - name: Ensure posted_links.json exists
         run: |
