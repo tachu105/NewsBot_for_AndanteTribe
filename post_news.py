@@ -5,9 +5,7 @@ import os
 from datetime import datetime, timedelta, timezone
 
 POSTED_LINKS_FILE = "posted_links.json"
-EXPIRATION_DAYS = 3  # 3日以上前のリンクを削除
 JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
-MAX_ENTRIES = 10  # 投稿する記事の上限
 CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
 
 def load_posted_links():
@@ -42,10 +40,10 @@ def get_entry_date(entry):
             return date
     return None
 
-def clean_old_links(all_posted_links):
-    """3日以上前のリンクを削除する"""
+def clean_old_links(all_posted_links, expiration_days):
+    """指定された日数以上前のリンクを削除する"""
     now = datetime.now(JST)
-    cutoff_time = now - timedelta(days=EXPIRATION_DAYS)
+    cutoff_time = now - timedelta(days=expiration_days)
     for genre, links in all_posted_links.items():
         # 各リンクのタイムスタンプを確認し、古いものを除外
         all_posted_links[genre] = [
@@ -56,6 +54,10 @@ def clean_old_links(all_posted_links):
 with open("config.json", "r") as f:
     config = json.load(f)
 
+# グローバル設定を読み込み
+expiration_days = config.get("expiration_days", 3)  # デフォルトは3日
+max_entries = config.get("max_entries", 10)  # デフォルトは10件
+
 # 全カテゴリの投稿済みリンクをロード
 all_posted_links = load_posted_links()
 
@@ -64,7 +66,7 @@ valid_categories = set(config["genres"].keys())
 all_posted_links = {genre: links for genre, links in all_posted_links.items() if genre in valid_categories}
 
 # 古いリンクを削除
-clean_old_links(all_posted_links)
+clean_old_links(all_posted_links, expiration_days)
 
 # 更新された posted_links.json を保存
 save_posted_links(all_posted_links)
@@ -92,7 +94,7 @@ for genre, data in config["genres"].items():
                     })
 
     # 日時順にソートして最新 N 件を取得
-    latest_entries = sorted(all_entries, key=lambda x: x["published"], reverse=True)[:MAX_ENTRIES]
+    latest_entries = sorted(all_entries, key=lambda x: x["published"], reverse=True)[:max_entries]
 
     # ヘッダーを付けるかどうかを制御するフラグ
     header_added = False
