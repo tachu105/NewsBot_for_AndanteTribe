@@ -26,8 +26,10 @@ jobs:
         run: pip install feedparser requests pyyaml
 
       - name: Run Python script
+        id: run_script  # IDを設定して後で出力を取得
         run: |
-          python post_news.py || exit 1
+          python post_news.py 2>&1 | tee error_log.txt
+          exit ${PIPESTATUS[0]}  # スクリプトの終了コードを維持
 
       - name: Commit and push updated posted_links.yaml
         run: |
@@ -46,6 +48,9 @@ jobs:
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
+          ERROR_LOG=$(tail -n 10 error_log.txt | sed 's/"/\\"/g')  # エラーログの最後の10行を取得し、エスケープ
           curl -X POST -H "Content-Type: application/json" \
-          -d '{"content": "**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。"}' \
+          -d "{
+                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\n\n**リポジトリ**: ${GITHUB_REPOSITORY}\n**ブランチ**: ${GITHUB_REF}\n**ジョブ**: ${GITHUB_JOB}\n**エラーログ**: \`\`\`${ERROR_LOG}\`\`\`\"
+              }" \
           $POST_ERROR_NOTIFICATION
