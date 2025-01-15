@@ -11,28 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Check if artifact exists
-        id: check_artifact
-        run: |
-          if curl -s --head --fail --location "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" | grep '"name":"posted-links"'; then
-            echo "artifact_exists=true" >> $GITHUB_ENV
-          else
-            echo "artifact_exists=false" >> $GITHUB_ENV
-          fi
-
-      - name: Restore posted links if artifact exists
-        if: env.artifact_exists == 'true'
-        uses: actions/download-artifact@v3
         with:
-          name: posted-links
-          path: .
-
-      - name: Ensure posted_links.json exists
-        run: |
-          if [ ! -f posted_links.json ]; then
-            echo "[]" > posted_links.json
-          fi
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -47,9 +27,11 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python post_news.py
 
-      - name: Save posted links
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: posted-links
-          path: posted_links.json
+      - name: Commit and push updated posted_links.json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_links.json
+          git commit -m "Update posted_links.json"
+          git push origin ${{ github.ref }}
+        if: always()  # エラーがあっても必ず実行
