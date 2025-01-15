@@ -41,7 +41,7 @@ jobs:
           fi
 
       - name: Notify Discord on failure
-        if: always()  # 常に実行するよう変更
+        if: failure()  # ジョブが失敗した場合にのみ実行
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
