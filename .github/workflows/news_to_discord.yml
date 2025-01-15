@@ -39,3 +39,12 @@ jobs:
             git commit -m "Update posted_links.yaml"
             git push origin ${{ github.ref }}
           fi
+
+      - name: Notify Discord on failure
+        if: failure()  # このステップはジョブが失敗した場合にのみ実行
+        env:
+          DISCORD_ERROR_WEBHOOK_URL: ${{ secrets.DISCORD_ERROR_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content": "**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。"}' \
+          $DISCORD_ERROR_WEBHOOK_URL
