@@ -24,6 +24,8 @@ jobs:
         run: pip install feedparser requests pyyaml
 
       - name: Run Python script
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
           python post_news.py || exit 1
 
@@ -46,6 +48,6 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d "{
-                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\n\n**ジョブ番号**: #${GITHUB_RUN_NUMBER}\"
+                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\n\n**ジョブ番号**: #${{ github.run_number }}\n**ジョブURL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n**エラーメッセージ**: ${{ steps.python_script.outputs.error_message }}\"
               }" \
           $POST_ERROR_NOTIFICATION
