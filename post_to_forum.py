@@ -1,13 +1,10 @@
 import requests
 import os
 
-# Discord Bot Token (環境変数から取得)
+# 環境変数からBotトークンとフォーラムチャンネルIDを取得
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-if not DISCORD_BOT_TOKEN:
-    raise ValueError("DISCORD_BOT_TOKEN が環境変数に設定されていません")
-
-# フォーラムチャンネルID（Discordアプリで取得）
-FORUM_CHANNEL_ID = "1329352606954426432"  # フォーラムチャンネルIDを入力してください
+GUILD_ID = "1329018285811040277"  # サーバーIDを入力
+FORUM_CHANNEL_ID = "1329352606954426432"  # フォーラムチャンネルIDを入力
 
 # カテゴリ名と投稿内容
 categories = {
@@ -15,49 +12,43 @@ categories = {
     "テクノロジー": "テクノロジーに関する最新ニュースはこちら！",
 }
 
-def get_forum_threads():
-    """フォーラム内のアクティブおよびアーカイブ済みスレッドを取得"""
+def get_guild_active_threads():
+    """サーバー全体のアクティブスレッドを取得"""
+    url = f"https://discord.com/api/v10/guilds/{GUILD_ID}/threads/active"
     headers = {
         "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
         "Content-Type": "application/json"
     }
 
-    # アクティブスレッドを取得
-    active_url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/active"
-    print("--- アクティブスレッド一覧を取得中 ---")
-    active_response = requests.get(active_url, headers=headers)
-    print(f"アクティブレスポンスコード: {active_response.status_code}")
-    print(f"アクティブレスポンス内容: {active_response.text}")
+    print("--- サーバー全体のアクティブスレッドを取得中 ---")
+    response = requests.get(url, headers=headers)
+    print(f"レスポンスコード: {response.status_code}")
+    print(f"レスポンス内容: {response.text}")
 
-    active_threads = []
-    if active_response.status_code == 200:
-        active_threads = active_response.json().get("threads", [])
+    if response.status_code == 200:
+        threads = response.json().get("threads", [])
+        print(f"取得したスレッド数: {len(threads)}")
+        for thread in threads:
+            print(f"スレッド名: {thread.get('name')}, 親チャンネルID: {thread.get('parent_id')}, スレッドID: {thread.get('id')}")
+        return threads
+    else:
+        print(f"サーバー全体のアクティブスレッド取得に失敗しました: {response.status_code}, {response.text}")
+        return []
 
-    # アーカイブ済みスレッドを取得
-    archived_url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/archived/public"
-    print("--- アーカイブ済みスレッド一覧を取得中 ---")
-    archived_response = requests.get(archived_url, headers=headers)
-    print(f"アーカイブレスポンスコード: {archived_response.status_code}")
-    print(f"アーカイブレスポンス内容: {archived_response.text}")
-
-    archived_threads = []
-    if archived_response.status_code == 200:
-        archived_threads = archived_response.json().get("threads", [])
-
-    # アクティブ + アーカイブ済みスレッドを結合
-    all_threads = active_threads + archived_threads
-    print(f"取得したスレッド数: {len(all_threads)}")
-    for thread in all_threads:
-        print(f"スレッド名: {thread.get('name')}, ID: {thread.get('id')}, 作成日: {thread.get('timestamp', '不明')}")
-
-    return all_threads
+def filter_threads_by_parent_id(threads, parent_id):
+    """親チャンネルIDでスレッドをフィルタリング"""
+    return [thread for thread in threads if thread.get("parent_id") == parent_id]
 
 def create_or_reply_thread(category_name, content):
     """同名のスレッドがあれば返信し、なければ新しいスレッドを作成する"""
-    threads = get_forum_threads()
+    # サーバー全体のアクティブスレッドを取得
+    all_threads = get_guild_active_threads()
+
+    # フォーラムチャンネルのスレッドに絞り込む
+    forum_threads = filter_threads_by_parent_id(all_threads, FORUM_CHANNEL_ID)
 
     # 同名スレッドを検索
-    for thread in threads:
+    for thread in forum_threads:
         if thread["name"] == category_name:
             print(f"既存のスレッド '{category_name}' が見つかりました (ID: {thread['id']})")
             post_message(thread["id"], content)
@@ -114,6 +105,7 @@ def post_message(thread_id, content):
 # 環境変数とチャンネルIDのデバッグ
 print("--- デバッグ情報 ---")
 print(f"トークンの最初の10文字: {DISCORD_BOT_TOKEN[:10]}...")
+print(f"サーバーID: {GUILD_ID}")
 print(f"フォーラムチャンネルID: {FORUM_CHANNEL_ID}")
 print("--- デバッグ情報終了 ---")
 
