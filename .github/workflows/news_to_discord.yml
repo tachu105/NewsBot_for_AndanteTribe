@@ -30,7 +30,7 @@ jobs:
           GUILD_ID: ${{ secrets.GUILD_ID }}
           FORUM_CHANNEL_ID: ${{ secrets.FORUM_CHANNEL_ID }}
         run: |
-          python scripts/post_news.py
+          python -m scripts.post_news
 
       - name: Commit and push updated posted_links.yaml
         if: success()
