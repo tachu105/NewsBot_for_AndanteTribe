@@ -1,10 +1,10 @@
 name: Post RSS to Discord
 
 on:
-  workflow_dispatch:  # 手動実行を有効にする
+  workflow_dispatch:
 
 permissions:
-  contents: write  # リポジトリへの書き込み権限を付与
+  contents: write
 
 jobs:
   post_news:
@@ -24,14 +24,16 @@ jobs:
         run: pip install feedparser requests pyyaml
 
       - name: Run Python script
+        id: python_script  # <-- 後続ステップで outputs を参照するためにIDを付ける
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          GUILD_ID: ${{ secrets.GUILD_ID }}          # <-- 追加
-          FORUM_CHANNEL_ID: ${{ secrets.FORUM_CHANNEL_ID }}  # <-- 追加
+          GUILD_ID: ${{ secrets.GUILD_ID }}
+          FORUM_CHANNEL_ID: ${{ secrets.FORUM_CHANNEL_ID }}
         run: |
-          python post_news.py || exit 1
+          python post_news.py
 
       - name: Commit and push updated posted_links.yaml
+        if: success()  # <-- 成功時のみposted_links.yamlをコミット
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,12 +46,15 @@ jobs:
           fi
 
       - name: Notify Discord on failure
-        if: failure()  # ジョブが失敗した場合にのみ実行
+        if: failure()  # <-- python_scriptステップが失敗したら実行
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d "{
-                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\n\n**ジョブ番号**: #${{ github.run_number }}\n**ジョブURL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n**エラーメッセージ**: ${{ steps.python_script.outputs.error_message }}\"
+                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\n\n\
+                **ジョブ番号**: #${{ github.run_number }}\n\
+                **ジョブURL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\
+                **エラーメッセージ**: ${{ steps.python_script.outputs.error_message }}\"
               }" \
           $POST_ERROR_NOTIFICATION
