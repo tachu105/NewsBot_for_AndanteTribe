@@ -1,4 +1,5 @@
 import requests
+import os
 
 # Discord Bot Token（Discord Developer Portal で取得）
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
