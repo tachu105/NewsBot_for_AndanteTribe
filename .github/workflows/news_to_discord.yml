@@ -26,6 +26,8 @@ jobs:
       - name: Run Python script
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          GUILD_ID: ${{ secrets.GUILD_ID }}          # <-- 追加
+          FORUM_CHANNEL_ID: ${{ secrets.FORUM_CHANNEL_ID }}  # <-- 追加
         run: |
           python post_news.py || exit 1
 
