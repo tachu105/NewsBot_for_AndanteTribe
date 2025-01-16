@@ -4,6 +4,12 @@ max_entries: 10  # 投稿する記事の上限
 
 # 各ジャンルの設定
 genres:
+  英字記事:
+    rss_feeds:
+      # CNN.com - RSS Channel - World
+      - "http://rss.cnn.com/rss/cnn_world.rss"
+      # BBC News - World
+      - "https://feeds.bbci.co.uk/news/world/rss.xml"     
   ゲーム・ガジェット:
     rss_feeds:
       # 4Gamer.net − 注目の記事のみ
@@ -16,7 +22,6 @@ genres:
       - "https://automaton-media.com/feed/"
       # cgworld.jp
       - "https://cgworld.jp/atom.xml"      
-      
   暮らし:
     rss_feeds:
       # NHKニュース|主要トピック
@@ -31,9 +36,3 @@ genres:
       - "https://www.nhk.or.jp/rss/news/cat5.xml"
       # NHKニュース|国際
       - "https://www.nhk.or.jp/rss/news/cat6.xml"
-  英字記事:
-    rss_feeds:
-      # CNN.com - RSS Channel - World
-      - "http://rss.cnn.com/rss/cnn_world.rss"
-      # BBC News - World
-      - "https://feeds.bbci.co.uk/news/world/rss.xml"     
