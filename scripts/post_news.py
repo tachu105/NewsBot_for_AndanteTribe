@@ -23,6 +23,9 @@ class PostNews:
         self.rss_service = RssService()
         self.discord_service = DiscordService(bot_token, guild_id, forum_channel_id)
 
+        # カテゴリ -> (thread_id, thread_name) をキャッシュする辞書
+        self.category_threads = {}
+
     # ---------------------
     # 既存スレッドを探す
     # ---------------------
@@ -35,28 +38,32 @@ class PostNews:
         public_archived = self.discord_service.filter_threads_by_parent_id(
             public_archived, self.discord_service.forum_channel_id
         )
-
         all_threads = active_threads + public_archived
+
         for t in all_threads:
             if t["name"] == category_name:
                 print(f"[INFO] 既存スレッド発見: {t['name']} (ID: {t['id']})")
-                return t
+                return (t["id"], t["name"])
         print(f"[INFO] カテゴリ '{category_name}' の既存スレッドは見つかりません")
-        return None
+        return (None, None)
 
     # ---------------------
-    # 既存 or 新規スレッドに投稿
+    # カテゴリに対応するスレッドを見つける or 作成
     # ---------------------
-    def create_or_reply_thread(self, category_name, content):
-        thread = self.find_existing_thread(category_name)
-        if thread:
-            thread_id = thread["id"]
-            if thread.get("archived", False):
-                self.discord_service.unarchive_thread(thread_id)
-            return self.discord_service.post_message(thread_id, content)
+    def find_or_create_thread(self, category_name):
+        thread_id, thread_name = self.find_existing_thread(category_name)
+        if thread_id:
+            # もしアーカイブされていれば解除
+            # (thread_name は既存スレッド名とカテゴリ名が一致する想定)
+            # スレッド情報には archived フラグがあるが、ここではDiscordService内で確認。
+            self.discord_service.unarchive_thread(thread_id)
+            return thread_id, thread_name
         else:
-            new_id = self.discord_service.create_thread(category_name, content)
-            return bool(new_id)
+            # 新規作成
+            created_id = self.discord_service.create_thread(category_name, "")
+            # create_threadにメッセージを渡すと最初の投稿になるが、ここでは空メッセージにしておき
+            # 後で改めて投稿する形にしている
+            return created_id, category_name
 
     # ---------------------
     # メイン処理
@@ -76,10 +83,9 @@ class PostNews:
         self.posted_links_manager.clean_old_links(all_posted_links, expiration_days)
         self.posted_links_manager.save(all_posted_links)
 
-        # 日本語の曜日リスト
         days_of_week = ["日", "月", "火", "水", "木", "金", "土"]
 
-        # ジャンルごとに RSS取得 → 投稿
+        # ジャンルごとに RSS → 投稿
         for genre, data in config["genres"].items():
             if genre not in all_posted_links:
                 all_posted_links[genre] = []
@@ -87,14 +93,23 @@ class PostNews:
             posted_links_set = {item["link"] for item in all_posted_links[genre]}
             rss_urls = data["rss_feeds"]
 
-            # RSS エントリ取得
+            # RSS エントリを取得
             all_entries = self.rss_service.fetch_rss_entries(rss_urls)
-            # 未投稿のものだけ絞る
+            # 未投稿のものだけに絞る
             new_entries = [e for e in all_entries if e["link"] not in posted_links_set]
-
-            # 日付順ソート & max_entries 件に絞る
+            # 日付降順にソート & max_entries 件に絞る
             latest_entries = sorted(new_entries, key=lambda x: x["published"], reverse=True)[:max_entries]
 
+            # ----------------------
+            # ここでカテゴリ用のスレッドを一度だけ用意
+            # ----------------------
+            if genre not in self.category_threads:
+                thread_id, thread_name = self.find_or_create_thread(genre)
+                self.category_threads[genre] = (thread_id, thread_name)
+            else:
+                thread_id, thread_name = self.category_threads[genre]
+
+            # 投稿処理
             header_added = False
             for i in range(0, len(latest_entries), CHUNK_SIZE):
                 chunk = latest_entries[i:i+CHUNK_SIZE]
@@ -116,8 +131,12 @@ class PostNews:
                         "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
                     })
 
-                success = self.create_or_reply_thread(genre, content)
+                # メッセージ投稿
+                success = self.discord_service.post_message(thread_id, content)
                 if success:
+                    # メッセージ投稿成功ログにスレッド名も含める
+                    print(f"[INFO] メッセージ投稿成功: スレッド名={thread_name}, ID={thread_id}")
+                    # posted_links に追加
                     all_posted_links[genre].extend(new_links)
                     self.posted_links_manager.save(all_posted_links)
                 else:
@@ -129,17 +148,14 @@ class PostNews:
 # スクリプトのエントリポイント
 # ---------------------
 def main():
-    # 環境変数から読み取る例 (もしくは引数で受け取る等)
     bot_token = os.getenv("DISCORD_BOT_TOKEN")
     guild_id = os.getenv("GUILD_ID")
     forum_channel_id = os.getenv("FORUM_CHANNEL_ID")
 
-    # datasフォルダのパスを組み立て
     base_dir = os.path.dirname(__file__)
     config_file_path = os.path.join(base_dir, '..', 'datas', 'config.yaml')
     posted_links_path = os.path.join(base_dir, '..', 'datas', 'posted_links.yaml')
 
-    # OOPクラスを初期化して実行
     app = PostNews(
         config_file_path=config_file_path,
         posted_links_path=posted_links_path,
