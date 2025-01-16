@@ -64,10 +64,15 @@ def find_existing_thread(category_name):
     # すべてのスレッドを統合
     all_threads = active_threads + public_archived_threads + private_archived_threads
 
+    # デバッグ: スレッド一覧を出力
+    print("--- デバッグ: 取得したすべてのスレッド ---")
+    for thread in all_threads:
+        print(f"スレッド名: {thread['name']}, ID: {thread['id']}, アーカイブ済み: {thread.get('archived', False)}")
+
     # カテゴリ名に一致するスレッドを検索
     for thread in all_threads:
         if thread["name"] == category_name:
-            print(f"既存のスレッドが見つかりました: {thread['name']} (ID: {thread['id']})")
+            print(f"既存のスレッドが見つかりました: {thread['name']} (ID: {thread['id']}, アーカイブ済み: {thread.get('archived', False)})")
             return thread
 
     print(f"カテゴリ '{category_name}' に一致するスレッドは見つかりませんでした")
