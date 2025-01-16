@@ -1,10 +1,10 @@
 name: Post RSS to Discord
 
 on:
-  workflow_dispatch:  # 手動実行を有効にする
+  workflow_dispatch:
 
 permissions:
-  contents: write  # リポジトリへの書き込み権限
+  contents: write
 
 jobs:
   post_news:
@@ -30,14 +30,14 @@ jobs:
           GUILD_ID: ${{ secrets.GUILD_ID }}
           FORUM_CHANNEL_ID: ${{ secrets.FORUM_CHANNEL_ID }}
         run: |
-          python post_news.py
+          python scripts/post_news.py
 
       - name: Commit and push updated posted_links.yaml
         if: success()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add posted_links.yaml
+          git add datas/posted_links.yaml
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
@@ -50,7 +50,6 @@ jobs:
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
-          # エラーメッセージの詳細は送らず、ジョブURLだけ通知
           curl -X POST -H "Content-Type: application/json" \
           -d "{
                 \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\\n\\n\
