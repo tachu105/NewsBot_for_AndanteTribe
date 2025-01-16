@@ -54,15 +54,11 @@ class PostNews:
         thread_id, thread_name = self.find_existing_thread(category_name)
         if thread_id:
             # もしアーカイブされていれば解除
-            # (thread_name は既存スレッド名とカテゴリ名が一致する想定)
-            # スレッド情報には archived フラグがあるが、ここではDiscordService内で確認。
             self.discord_service.unarchive_thread(thread_id)
             return thread_id, thread_name
         else:
             # 新規作成
             created_id = self.discord_service.create_thread(category_name, "")
-            # create_threadにメッセージを渡すと最初の投稿になるが、ここでは空メッセージにしておき
-            # 後で改めて投稿する形にしている
             return created_id, category_name
 
     # ---------------------
@@ -100,9 +96,7 @@ class PostNews:
             # 日付降順にソート & max_entries 件に絞る
             latest_entries = sorted(new_entries, key=lambda x: x["published"], reverse=True)[:max_entries]
 
-            # ----------------------
-            # ここでカテゴリ用のスレッドを一度だけ用意
-            # ----------------------
+            # カテゴリ用のスレッドを取得
             if genre not in self.category_threads:
                 thread_id, thread_name = self.find_or_create_thread(genre)
                 self.category_threads[genre] = (thread_id, thread_name)
