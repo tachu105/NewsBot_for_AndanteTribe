@@ -52,7 +52,7 @@ class DiscordService:
         return [t for t in threads if t.get("parent_id") == parent_id]
 
     # ---------------------
-    # スレッドがアーカイブされていたらアクティブに戻す
+    # スレッドのアーカイブ化を解除
     # ---------------------
     def unarchive_thread(self, thread_id):
         url = f"https://discord.com/api/v10/channels/{thread_id}"
