@@ -5,7 +5,7 @@ import os
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # フォーラムチャンネルID（フォーラムの親チャンネル）
-FORUM_CHANNEL_ID = "123456789012345678"  # フォーラムチャンネルIDをここに記入
+FORUM_CHANNEL_ID = "1329352606954426432"  # フォーラムチャンネルIDをここに記入
 
 # カテゴリ名と投稿内容
 categories = {
