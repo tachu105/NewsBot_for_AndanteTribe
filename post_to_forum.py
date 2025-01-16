@@ -1,11 +1,10 @@
 import requests
-import os
 
-# Discord Bot Token
-DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+# Discord Bot Token（Discord Developer Portal で取得）
+DISCORD_BOT_TOKEN = "MTMyOTM1NTczMjUzNzE4NDI1Ng.GxjlnQ.olDEtuG_VwVQ1OSnH-I5K1LsdU34mOx78R1Csg"  # ここにDiscord Botトークンを入力
 
-# フォーラムチャンネルID（フォーラムの親チャンネル）
-FORUM_CHANNEL_ID = "1329352606954426432"  # フォーラムチャンネルIDをここに記入
+# フォーラムチャンネルID（Discordアプリで取得）
+FORUM_CHANNEL_ID = "1329352606954426432"  # フォーラムチャンネルIDを入力
 
 # カテゴリ名と投稿内容
 categories = {
@@ -30,13 +29,11 @@ def create_thread(category_name, content):
         "Content-Type": "application/json"
     }
 
-    # スレッドを作成
+    print(f"スレッド '{category_name}' を作成中...")
     response = requests.post(url, json=payload, headers=headers)
     if response.status_code == 201:  # スレッド作成成功
         thread_id = response.json()["id"]
         print(f"スレッド '{category_name}' が作成されました (ID: {thread_id})")
-
-        # スレッド内にメッセージを投稿
         post_message(thread_id, content)
     else:
         print(f"スレッド作成に失敗しました: {response.status_code}, {response.json()}")
@@ -46,7 +43,7 @@ def post_message(thread_id, content):
     url = f"https://discord.com/api/v10/channels/{thread_id}/messages"
 
     payload = {
-        "content": content
+        "content": content  # 投稿内容
     }
 
     headers = {
@@ -54,6 +51,7 @@ def post_message(thread_id, content):
         "Content-Type": "application/json"
     }
 
+    print(f"スレッド (ID: {thread_id}) にメッセージを投稿中...")
     response = requests.post(url, json=payload, headers=headers)
     if response.status_code == 200 or response.status_code == 201:
         print(f"メッセージがスレッド (ID: {thread_id}) に投稿されました")
