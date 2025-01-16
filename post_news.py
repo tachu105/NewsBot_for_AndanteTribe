@@ -8,6 +8,8 @@ POSTED_LINKS_FILE = "posted_links.yaml"
 JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
 CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
 
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Discord Botのトークン
+
 def load_posted_links():
     """過去に投稿済みのリンクをファイルから読み込む"""
     if os.path.exists(POSTED_LINKS_FILE):
@@ -50,6 +52,53 @@ def clean_old_links(all_posted_links, expiration_days):
             link for link in links if datetime.strptime(link["timestamp"], "%Y-%m-%d %H:%M:%S").replace(tzinfo=JST) > cutoff_time
         ]
 
+def create_or_reply_thread(channel_id, category_name, content):
+    """スレッドを作成または返信"""
+    headers = {
+        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
+        "Content-Type": "application/json",
+    }
+
+    # サーバー全体のアクティブスレッドを取得してフィルタリング
+    response = requests.get(f"https://discord.com/api/v10/guilds/{channel_id}/threads/active", headers=headers)
+    if response.status_code == 200:
+        active_threads = response.json().get("threads", [])
+        for thread in active_threads:
+            if thread["name"] == category_name:
+                # 既存のスレッドに投稿
+                post_message(thread["id"], content)
+                return
+
+    # スレッドが見つからない場合、新しいスレッドを作成
+    url = f"https://discord.com/api/v10/channels/{channel_id}/threads"
+    payload = {
+        "name": category_name,
+        "auto_archive_duration": 1440,
+        "type": 11,
+        "message": {
+            "content": content,
+        },
+    }
+    response = requests.post(url, json=payload, headers=headers)
+    if response.status_code == 201:
+        print(f"新しいスレッド '{category_name}' が作成されました")
+    else:
+        print(f"スレッド作成に失敗しました: {response.status_code}, {response.text}")
+
+def post_message(thread_id, content):
+    """既存スレッドにメッセージを投稿"""
+    url = f"https://discord.com/api/v10/channels/{thread_id}/messages"
+    payload = {"content": content}
+    headers = {
+        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
+        "Content-Type": "application/json",
+    }
+    response = requests.post(url, json=payload, headers=headers)
+    if response.status_code in [200, 201]:
+        print(f"メッセージがスレッド {thread_id} に投稿されました")
+    else:
+        print(f"メッセージ投稿に失敗しました: {response.status_code}, {response.text}")
+
 # 設定ファイルを読み込む
 with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
@@ -72,9 +121,9 @@ clean_old_links(all_posted_links, expiration_days)
 save_posted_links(all_posted_links)
 
 for genre, data in config["genres"].items():
-    webhook_url = data["webhook_url"]
+    channel_id = data["channel_id"]
     rss_feeds = data["rss_feeds"]
-    
+
     # 特定のカテゴリの投稿済みリンクを取得（存在しない場合は空のリストを作成）
     if genre not in all_posted_links:
         all_posted_links[genre] = []  # 新しいカテゴリの場合は空リストを初期化
@@ -90,7 +139,7 @@ for genre, data in config["genres"].items():
                     all_entries.append({
                         "title": entry.title,
                         "link": entry.link,
-                        "published": entry_date
+                        "published": entry_date,
                     })
 
     # 日時順にソートして最新 N 件を取得
@@ -105,7 +154,7 @@ for genre, data in config["genres"].items():
     # 5件ずつに分割して投稿
     for i in range(0, len(latest_entries), CHUNK_SIZE):
         chunk = latest_entries[i:i + CHUNK_SIZE]
-        
+
         # ヘッダーは最初の投稿にのみ付ける
         content = ""
         if not header_added:
@@ -120,20 +169,10 @@ for genre, data in config["genres"].items():
             content += f"<{entry['link']}>\n"
             new_links.append({
                 "link": entry["link"],
-                "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
+                "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S"),
             })  # 新しいリンクとタイムスタンプを追加
 
-        if webhook_url and new_links:
-            response = requests.post(webhook_url, json={"content": content})
-            if response.status_code == 204:
-                print(f"ニュースをDiscordに投稿しました: {genre}（{i + 1}件目以降）")
-                # 投稿が成功した場合のみ、投稿済みリンクを保存
-                all_posted_links[genre].extend(new_links)  # 辞書に更新内容を反映
-                save_posted_links(all_posted_links)
-            else:
-                print(f"投稿に失敗しました: {response.status_code}")
-                # 最初の投稿が失敗した場合はヘッダーを次に付ける
-                if i == 0:
-                    header_added = False
-        else:
-            print(f"Webhook URLが設定されていないか、新しい記事がありません: {genre}")
+        if channel_id and new_links:
+            create_or_reply_thread(channel_id, genre, content)
+            all_posted_links[genre].extend(new_links)  # 辞書に更新内容を反映
+            save_posted_links(all_posted_links)
