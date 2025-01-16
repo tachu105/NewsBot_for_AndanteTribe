@@ -68,19 +68,40 @@ def find_existing_thread(category_name):
     for thread in all_threads:
         if thread["name"] == category_name:
             print(f"既存のスレッドが見つかりました: {thread['name']} (ID: {thread['id']})")
-            return thread["id"]
+            return thread
 
     print(f"カテゴリ '{category_name}' に一致するスレッドは見つかりませんでした")
     return None
 
+def unarchive_thread(thread_id):
+    """アーカイブされたスレッドをアクティブに戻す"""
+    url = f"https://discord.com/api/v10/channels/{thread_id}/unarchive"
+    headers = {
+        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
+        "Content-Type": "application/json"
+    }
+
+    print(f"--- スレッドをアクティブ化中: ID {thread_id} ---")
+    response = requests.patch(url, headers=headers)
+    if response.status_code == 200:
+        print(f"スレッド {thread_id} がアクティブに戻されました")
+    else:
+        print(f"スレッドのアクティブ化に失敗しました: {response.status_code}, {response.text}")
+
 def create_or_reply_thread(category_name, content):
     """同名のスレッドがあれば返信し、なければ新しいスレッドを作成する"""
     # 既存のスレッドを検索
-    existing_thread_id = find_existing_thread(category_name)
+    existing_thread = find_existing_thread(category_name)
 
-    if existing_thread_id:
-        # 既存のスレッドに投稿
-        post_message(existing_thread_id, content)
+    if existing_thread:
+        thread_id = existing_thread["id"]
+
+        # スレッドがアーカイブされていたらアクティブに戻す
+        if existing_thread.get("archived", False):
+            unarchive_thread(thread_id)
+
+        # スレッドにメッセージを投稿
+        post_message(thread_id, content)
     else:
         # 新しいスレッドを作成
         create_thread(category_name, content)
