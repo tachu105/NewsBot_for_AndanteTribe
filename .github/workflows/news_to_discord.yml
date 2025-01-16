@@ -1,10 +1,10 @@
 name: Post RSS to Discord
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 手動実行を有効にする
 
 permissions:
-  contents: write
+  contents: write  # リポジトリへの書き込み権限
 
 jobs:
   post_news:
@@ -23,8 +23,9 @@ jobs:
       - name: Install dependencies
         run: pip install feedparser requests pyyaml
 
+      # ---- Python スクリプト実行 ----
       - name: Run Python script
-        id: python_script  # <-- 後続ステップで outputs を参照するためにIDを付ける
+        id: python_script  # このIDでoutputsを参照できる
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
@@ -32,8 +33,9 @@ jobs:
         run: |
           python post_news.py
 
+      # ---- 成功時のみ posted_links.yaml をコミット＆プッシュ ----
       - name: Commit and push updated posted_links.yaml
-        if: success()  # <-- 成功時のみposted_links.yamlをコミット
+        if: success()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -45,16 +47,34 @@ jobs:
             git push origin ${{ github.ref }}
           fi
 
+      # ---- 失敗時のみ、Discordに通知 ----
       - name: Notify Discord on failure
-        if: failure()  # <-- python_scriptステップが失敗したら実行
+        if: failure()
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
+          echo "=== GitHub Actions failure notification ==="
+
+          # 1) Pythonスクリプトがset_github_action_error_message()で書き込んだ出力を取得
+          RAW_MSG="${{ steps.python_script.outputs.error_message }}"
+
+          # 2) sedでJSON用にエスケープ
+          #    - ダブルクォート (") → \" に変換
+          #    - 改行 (\n) → \\n に変換
+          ESCAPED_MSG=$(echo "$RAW_MSG" \
+            | sed 's/"/\\"/g' \
+            | sed ':a;N;$!ba;s/\n/\\n/g')
+
+          # 必要に応じて { や } をエスケープしたい場合は、さらに
+          # sed 's/{/\\{/g' などを追加
+
+          # 3) curlでDiscordに送信
+          #    contentに直接$ESCAPED_MSGを組み込む
           curl -X POST -H "Content-Type: application/json" \
           -d "{
-                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\n\n\
-                **ジョブ番号**: #${{ github.run_number }}\n\
-                **ジョブURL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\
-                **エラーメッセージ**: ${{ steps.python_script.outputs.error_message }}\"
+                \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\\n\\n\
+                **ジョブ番号**: #${{ github.run_number }}\\n\
+                **ジョブURL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\\n\\n\
+                **エラーメッセージ**: $ESCAPED_MSG\"
               }" \
-          $POST_ERROR_NOTIFICATION
+          "$POST_ERROR_NOTIFICATION"
