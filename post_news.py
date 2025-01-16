@@ -11,11 +11,10 @@ POSTED_LINKS_FILE = "posted_links.yaml"
 JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
 CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
 
-# 環境変数から Bot トークンと必要な ID を取得
+# 環境変数から Bot トークンおよび ID を取得
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-# 以下は実際のサーバーID・フォーラムチャンネルIDに差し替えてください
-GUILD_ID = "1329018285811040277"
-FORUM_CHANNEL_ID = "1329352606954426432"
+GUILD_ID = os.getenv("GUILD_ID")  # <-- ここをSecrets化
+FORUM_CHANNEL_ID = os.getenv("FORUM_CHANNEL_ID")  # <-- ここをSecrets化
 
 # -----------------------
 # posted_links.yaml 管理
@@ -113,8 +112,7 @@ def find_existing_thread(category_name):
     all_threads = active_threads + public_archived_threads + private_archived_threads
 
     for thread in all_threads:
-        # Discord のスレッド名と完全一致するかどうかを判定
-        if thread["name"] == category_name:
+        if thread["name"] == category_name:  # スレッド名と完全一致
             return thread
     return None
 
@@ -140,7 +138,7 @@ def create_thread(category_name, content):
     payload = {
         "name": category_name,
         "auto_archive_duration": 1440,  # 1日
-        "type": 11,  # Public Thread
+        "type": 11,  # Public Thread (フォーラムスレッドもtype=11)
         "message": {
             "content": content
         }
@@ -153,7 +151,7 @@ def create_thread(category_name, content):
     if response.status_code == 201:
         thread_info = response.json()
         print(f"[INFO] スレッド '{category_name}' が作成されました (ID: {thread_info['id']})")
-        return thread_info["id"]  # 作成されたスレッドIDを返す
+        return thread_info["id"]
     else:
         print(f"[ERROR] スレッド作成に失敗: {response.status_code}, {response.text}")
         return None
@@ -280,7 +278,6 @@ def main():
                     save_posted_links(all_posted_links)
                 else:
                     print(f"[ERROR] スレッドへの投稿に失敗しました: ジャンル={genre}")
-                    # 最初の投稿が失敗した場合は、次の投稿でヘッダーを再度付けたい場合など
                     if i == 0:
                         header_added = False
 
