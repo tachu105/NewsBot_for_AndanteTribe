@@ -59,7 +59,7 @@ class PostNews:
             return thread_id, thread_name
         else:
             # 新規作成
-            created_id = self.discord_service.create_thread(category_name, "")
+            created_id = self.discord_service.create_thread(category_name, "({category_name})に関するニュースをお届けします。")
             return created_id, category_name
 
     # ---------------------
