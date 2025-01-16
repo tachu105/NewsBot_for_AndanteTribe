@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # 手動実行を有効にする
 
 permissions:
-  contents: write
+  contents: write  # リポジトリへの書き込み権限
 
 jobs:
   post_news:
@@ -32,7 +32,6 @@ jobs:
         run: |
           python post_news.py
 
-      # Pythonスクリプトが成功 (exit 0) の場合のみ posted_links.yaml をコミットする
       - name: Commit and push updated posted_links.yaml
         if: success()
         run: |
@@ -46,13 +45,12 @@ jobs:
             git push origin ${{ github.ref }}
           fi
 
-      # 失敗 (exit != 0) のときのみ Discord に通知
       - name: Notify Discord on failure
         if: failure()
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
-          # ここではエラーメッセージを送らず、ジョブのリンクだけ通知
+          # エラーメッセージの詳細は送らず、ジョブURLだけ通知
           curl -X POST -H "Content-Type: application/json" \
           -d "{
                 \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\\n\\n\
