@@ -51,7 +51,7 @@ class PostNews:
     # カテゴリに対応するスレッドを見つける or 作成
     # ---------------------
     def find_or_create_thread(self, category_name):
-        thread_id, thread_name = self.find_existing_thread(category_name)
+        thread_id, thread_name, is_archived = self.find_existing_thread(category_name)
         if thread_id:
             # もしアーカイブされていれば解除
             if is_archived:
