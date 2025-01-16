@@ -120,7 +120,7 @@ class PostNews:
 
                 new_links = []
                 for entry in chunk:
-                    content += f"<{entry['link']}>\n"
+                    content += f"[_]({entry['link']}) "
                     new_links.append({
                         "link": entry["link"],
                         "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
