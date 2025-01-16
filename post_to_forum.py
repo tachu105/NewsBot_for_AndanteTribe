@@ -15,26 +15,26 @@ categories = {
     "テクノロジー": "テクノロジーに関する最新ニュースはこちら！",
 }
 
-def get_active_threads():
-    """フォーラム内のアクティブなスレッドを取得"""
-    url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/active"
+def get_forum_threads():
+    """フォーラム内のスレッド一覧を取得（アーカイブ済みを含む）"""
+    url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/archived/public"
     headers = {
         "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
         "Content-Type": "application/json"
     }
 
-    print("--- アクティブスレッド取得中 ---")
+    print("--- フォーラムスレッド一覧を取得中 ---")
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        print("アクティブスレッドの取得に成功しました")
+        print("フォーラムスレッド一覧の取得に成功しました")
         return response.json()["threads"]  # スレッドのリストを返す
     else:
-        print(f"アクティブスレッドの取得に失敗しました: {response.status_code}, {response.text}")
+        print(f"フォーラムスレッド一覧の取得に失敗しました: {response.status_code}, {response.text}")
         return []
 
 def create_or_reply_thread(category_name, content):
     """同名のスレッドがあれば返信し、なければ新しいスレッドを作成する"""
-    threads = get_active_threads()
+    threads = get_forum_threads()
 
     # 同名スレッドを検索
     for thread in threads:
