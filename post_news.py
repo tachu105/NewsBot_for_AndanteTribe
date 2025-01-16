@@ -9,7 +9,6 @@ JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
 CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
 
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Discord Botのトークン
-
 # ギルドIDとフォーラムチャンネルIDを統一
 GUILD_ID = "1329018285811040277"  # サーバーのギルドID
 FORUM_CHANNEL_ID = "1329352606954426432"  # フォーラムチャンネルのID
@@ -18,8 +17,10 @@ def load_posted_links():
     """過去に投稿済みのリンクをファイルから読み込む"""
     if os.path.exists(POSTED_LINKS_FILE):
         with open(POSTED_LINKS_FILE, "r") as f:
-            return yaml.safe_load(f) or {}  # 空ファイルの場合は空辞書を返す
-    return {}
+            return yaml.safe_load(f) or {}
+    else:
+        print(f"{POSTED_LINKS_FILE} が存在しないため、新規作成します。")
+        return {}
 
 def save_posted_links(all_posted_links):
     """投稿済みのリンクをファイルに保存する（YAML形式）"""
@@ -51,7 +52,6 @@ def clean_old_links(all_posted_links, expiration_days):
     now = datetime.now(JST)
     cutoff_time = now - timedelta(days=expiration_days)
     for genre, links in all_posted_links.items():
-        # 各リンクのタイムスタンプを確認し、古いものを除外
         all_posted_links[genre] = [
             link for link in links if datetime.strptime(link["timestamp"], "%Y-%m-%d %H:%M:%S").replace(tzinfo=JST) > cutoff_time
         ]
@@ -59,10 +59,7 @@ def clean_old_links(all_posted_links, expiration_days):
 def get_guild_active_threads():
     """サーバー全体のアクティブスレッドを取得"""
     url = f"https://discord.com/api/v10/guilds/{GUILD_ID}/threads/active"
-    headers = {
-        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json().get("threads", [])
@@ -73,10 +70,7 @@ def get_guild_active_threads():
 def get_channel_archived_threads(archived_type):
     """特定のチャンネル内のアーカイブスレッドを取得"""
     url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/archived/{archived_type}"
-    headers = {
-        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json().get("threads", [])
@@ -89,7 +83,6 @@ def find_existing_thread(category_name):
     active_threads = get_guild_active_threads()
     public_archived_threads = get_channel_archived_threads("public")
     private_archived_threads = get_channel_archived_threads("private")
-
     all_threads = active_threads + public_archived_threads + private_archived_threads
     for thread in all_threads:
         if thread["parent_id"] == FORUM_CHANNEL_ID and thread["name"] == category_name:
@@ -99,10 +92,7 @@ def find_existing_thread(category_name):
 def unarchive_thread(thread_id):
     """アーカイブされたスレッドをアクティブに戻す"""
     url = f"https://discord.com/api/v10/channels/{thread_id}"
-    headers = {
-        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.patch(url, json={"archived": False}, headers=headers)
     if response.status_code == 200:
         print(f"スレッド {thread_id} をアクティブ化しました")
@@ -125,13 +115,9 @@ def create_thread(category_name, content):
     payload = {
         "name": category_name,
         "auto_archive_duration": 1440,
-        "type": 11,
         "message": {"content": content}
     }
-    headers = {
-        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.post(url, json=payload, headers=headers)
     if response.status_code == 201:
         print(f"スレッド '{category_name}' を作成しました")
@@ -142,23 +128,21 @@ def post_message(thread_id, content):
     """既存スレッドにメッセージを投稿"""
     url = f"https://discord.com/api/v10/channels/{thread_id}/messages"
     payload = {"content": content}
-    headers = {
-        "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.post(url, json=payload, headers=headers)
     if response.status_code in [200, 201]:
         print(f"スレッド {thread_id} にメッセージを投稿しました")
     else:
         print(f"メッセージ投稿に失敗: {response.status_code}, {response.text}")
 
-# YAML設定ファイルの読み込み
+# 設定ファイルの読み込み
 with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 expiration_days = config.get("expiration_days", 3)
 max_entries = config.get("max_entries", 10)
 all_posted_links = load_posted_links()
+clean_old_links(all_posted_links, expiration_days)
 
 for genre, data in config["genres"].items():
     rss_feeds = data["rss_feeds"]
@@ -179,3 +163,5 @@ for genre, data in config["genres"].items():
         chunk = entries[i:i + CHUNK_SIZE]
         content = "\n".join(f"<{entry['link']}>" for entry in chunk)
         create_or_reply_thread(genre, content)
+
+save_posted_links(all_posted_links)
