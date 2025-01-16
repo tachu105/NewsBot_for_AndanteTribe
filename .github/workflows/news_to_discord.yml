@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # 手動実行を有効にする
 
 permissions:
-  contents: write  # リポジトリへの書き込み権限
+  contents: write
 
 jobs:
   post_news:
@@ -23,14 +23,8 @@ jobs:
       - name: Install dependencies
         run: pip install feedparser requests pyyaml
 
-      # -----------------------------
-      # 1) Python スクリプト実行
-      #    失敗時は sys.exit(1) ＋
-      #    set_github_action_error_message("...") で
-      #    steps.<id>.outputs.error_message に格納
-      # -----------------------------
       - name: Run Python script
-        id: python_script  # 後続ステップがこの outputs を参照
+        id: python_script
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
@@ -38,9 +32,7 @@ jobs:
         run: |
           python post_news.py
 
-      # -----------------------------
-      # 2) 成功時のみ posted_links.yaml をコミット＆プッシュ
-      # -----------------------------
+      # Pythonスクリプトが成功 (exit 0) の場合のみ posted_links.yaml をコミットする
       - name: Commit and push updated posted_links.yaml
         if: success()
         run: |
@@ -54,45 +46,17 @@ jobs:
             git push origin ${{ github.ref }}
           fi
 
-      # -----------------------------
-      # 3) 失敗時のみ、Discord に通知
-      #    エラーメッセージを sed でエスケープして JSON 化
-      # -----------------------------
+      # 失敗 (exit != 0) のときのみ Discord に通知
       - name: Notify Discord on failure
         if: failure()
         env:
           POST_ERROR_NOTIFICATION: ${{ secrets.POST_ERROR_NOTIFICATION }}
         run: |
-          echo "=== GitHub Actions failure notification ==="
-
-          # 1) Pythonスクリプトが set_github_action_error_message()
-          #    で書き込んだ出力をシェル変数に格納
-          RAW_MSG="${{ steps.python_script.outputs.error_message }}"
-
-          # デバッグ用に生のエラーメッセージを表示したい場合はここで echo
-          echo "::group::[DEBUG] RAW_MSG"
-          echo "$RAW_MSG"
-          echo "::endgroup::"
-
-          # 2) sed で JSON 文字列用にエスケープ
-          #    - ダブルクォート (") → \" に変換
-          #    - 改行 (\n) → \\n に変換
-          #  printf '%s' "$RAW_MSG" によって余計なシェル展開を防ぐ
-          ESCAPED_MSG=$(printf '%s' "$RAW_MSG" \
-            | sed 's/"/\\"/g' \
-            | sed ':a;N;$!ba;s/\n/\\n/g'
-          )
-
-          # 必要ならさらに { や } などもエスケープする場合があります
-
-          # 3) curl で Discord に投稿
-          #    ここでは content に $ESCAPED_MSG を埋め込んでも
-          #    JSON が壊れないようになっている
+          # ここではエラーメッセージを送らず、ジョブのリンクだけ通知
           curl -X POST -H "Content-Type: application/json" \
           -d "{
                 \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\\n\\n\
                 **ジョブ番号**: #${{ github.run_number }}\\n\
-                **ジョブURL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\\n\\n\
-                **エラーメッセージ**: $ESCAPED_MSG\"
+                **ジョブURL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"
               }" \
           "$POST_ERROR_NOTIFICATION"
