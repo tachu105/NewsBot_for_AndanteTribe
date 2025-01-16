@@ -134,8 +134,6 @@ class PostNews:
                 # メッセージ投稿
                 success = self.discord_service.post_message(thread_id, content)
                 if success:
-                    # メッセージ投稿成功ログにスレッド名も含める
-                    print(f"[INFO] メッセージ投稿成功: スレッド名={thread_name}, ID={thread_id}")
                     # posted_links に追加
                     all_posted_links[genre].extend(new_links)
                     self.posted_links_manager.save(all_posted_links)
