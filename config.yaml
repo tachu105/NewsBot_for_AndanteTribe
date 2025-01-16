@@ -5,11 +5,9 @@ max_entries: 10  # 投稿する記事の上限
 # 各ジャンルの設定
 genres:
   ゲーム:
-    webhook_url: "https://discord.com/api/webhooks/1329018379700408331/r8AZnlEuTE0C6aiiJG44togvQOihE78EDLCN65PpiInrmdVEHEX00mNz4Wtd-AzrZ8-r"
     rss_feeds:
       - "https://www.4gamer.net/rss/news_topics.xml"
       - "https://www.nhk.or.jp/rss/news/cat0.xml"
   テクノロジー:
-    webhook_url: "https://discord.com/api/webhooks/1329095892967362622/b8O1hZHDeXjsdJdICHMiqgwzeCbSL6iC9_kAC_qqZoUAHlcRpXGjLpINE73BzfDq1qmB"
     rss_feeds:
       - "https://www.txhd.co.jp/rss.xml"
