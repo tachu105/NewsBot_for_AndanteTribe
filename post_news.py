@@ -1,7 +1,8 @@
+import sys
+import os
 import feedparser
 import requests
 import yaml
-import os
 from datetime import datetime, timedelta, timezone
 
 # -----------------------
@@ -13,8 +14,23 @@ CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
 
 # 環境変数から Bot トークンおよび ID を取得
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-GUILD_ID = os.getenv("GUILD_ID")  # <-- ここをSecrets化
-FORUM_CHANNEL_ID = os.getenv("FORUM_CHANNEL_ID")  # <-- ここをSecrets化
+GUILD_ID = os.getenv("GUILD_ID")
+FORUM_CHANNEL_ID = os.getenv("FORUM_CHANNEL_ID")
+
+# -----------------------
+# GitHub Actions にエラーメッセージを渡すためのユーティリティ
+# -----------------------
+def set_github_action_error_message(msg):
+    """
+    GitHub Actions の出力変数 (error_message) にメッセージを書き込む。
+    後続ステップで steps.<id>.outputs.error_message から参照可能。
+    """
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:  # GitHub Actions 上でのみ書き込む
+        with open(github_output, "a", encoding="utf-8") as f:
+            # 改行を入れたい場合は %0A を使う（GitHub Actions の出力仕様）
+            safe_msg = msg.replace("\n", "%0A")
+            f.write(f"error_message={safe_msg}\n")
 
 # -----------------------
 # posted_links.yaml 管理
@@ -78,8 +94,13 @@ def get_guild_active_threads():
     if response.status_code == 200:
         return response.json().get("threads", [])
     else:
-        print(f"[ERROR] アクティブスレッドの取得に失敗: {response.status_code}, {response.text}")
-        return []
+        error_msg = (
+            f"[ERROR] アクティブスレッドの取得に失敗: "
+            f"{response.status_code}, {response.text}"
+        )
+        print(error_msg)
+        set_github_action_error_message(error_msg)
+        sys.exit(1)
 
 def get_channel_archived_threads(archived_type):
     """特定のチャンネル内のアーカイブスレッドを取得 (public/private)"""
@@ -92,8 +113,13 @@ def get_channel_archived_threads(archived_type):
     if response.status_code == 200:
         return response.json().get("threads", [])
     else:
-        print(f"[ERROR] {archived_type} アーカイブスレッドの取得に失敗: {response.status_code}, {response.text}")
-        return []
+        error_msg = (
+            f"[ERROR] {archived_type} アーカイブスレッドの取得に失敗: "
+            f"{response.status_code}, {response.text}"
+        )
+        print(error_msg)
+        set_github_action_error_message(error_msg)
+        sys.exit(1)
 
 def filter_threads_by_parent_id(threads, parent_id):
     """親チャンネルIDでスレッドをフィルタリング"""
@@ -101,18 +127,14 @@ def filter_threads_by_parent_id(threads, parent_id):
 
 def find_existing_thread(category_name):
     """すべてのスレッド（アクティブおよびアーカイブ）を検索してカテゴリ名と一致するスレッドを探す"""
-    # サーバー全体のアクティブスレッドを取得
     active_threads = filter_threads_by_parent_id(get_guild_active_threads(), FORUM_CHANNEL_ID)
-
-    # 公開・非公開アーカイブスレッドを取得
     public_archived_threads = get_channel_archived_threads("public")
     private_archived_threads = get_channel_archived_threads("private")
 
-    # すべてのスレッドを統合
     all_threads = active_threads + public_archived_threads + private_archived_threads
 
     for thread in all_threads:
-        if thread["name"] == category_name:  # スレッド名と完全一致
+        if thread["name"] == category_name:
             return thread
     return None
 
@@ -130,7 +152,13 @@ def unarchive_thread(thread_id):
     if response.status_code == 200:
         print(f"スレッド {thread_id} をアクティブに戻しました。")
     else:
-        print(f"[ERROR] スレッドのアクティブ化に失敗: {response.status_code}, {response.text}")
+        error_msg = (
+            f"[ERROR] スレッドのアクティブ化に失敗: "
+            f"{response.status_code}, {response.text}"
+        )
+        print(error_msg)
+        set_github_action_error_message(error_msg)
+        sys.exit(1)
 
 def create_thread(category_name, content):
     """新しいスレッドを作成して、最初のメッセージを投稿"""
@@ -153,8 +181,13 @@ def create_thread(category_name, content):
         print(f"[INFO] スレッド '{category_name}' が作成されました (ID: {thread_info['id']})")
         return thread_info["id"]
     else:
-        print(f"[ERROR] スレッド作成に失敗: {response.status_code}, {response.text}")
-        return None
+        error_msg = (
+            f"[ERROR] スレッド作成に失敗: "
+            f"{response.status_code}, {response.text}"
+        )
+        print(error_msg)
+        set_github_action_error_message(error_msg)
+        sys.exit(1)
 
 def post_message(thread_id, content):
     """既存スレッドにメッセージを投稿"""
@@ -171,8 +204,13 @@ def post_message(thread_id, content):
         print(f"[INFO] メッセージ投稿成功: スレッドID={thread_id}")
         return True
     else:
-        print(f"[ERROR] メッセージ投稿に失敗: {response.status_code}, {response.text}")
-        return False
+        error_msg = (
+            f"[ERROR] メッセージ投稿に失敗: "
+            f"{response.status_code}, {response.text}"
+        )
+        print(error_msg)
+        set_github_action_error_message(error_msg)
+        sys.exit(1)
 
 def create_or_reply_thread(category_name, content):
     """
@@ -180,16 +218,12 @@ def create_or_reply_thread(category_name, content):
     成功すれば True を返す。
     """
     existing_thread = find_existing_thread(category_name)
-
     if existing_thread:
         thread_id = existing_thread["id"]
-        # アーカイブされていれば解除
         if existing_thread.get("archived", False):
             unarchive_thread(thread_id)
-        # スレッドにメッセージを投稿
         return post_message(thread_id, content)
     else:
-        # 新しいスレッドを作成
         created_thread_id = create_thread(category_name, content)
         return (created_thread_id is not None)
 
@@ -225,12 +259,10 @@ def main():
     for genre, data in config["genres"].items():
         rss_feeds = data["rss_feeds"]
 
-        # このジャンルの投稿済みリンクをセット化して重複判定
         if genre not in all_posted_links:
             all_posted_links[genre] = []
         posted_links = {link["link"] for link in all_posted_links[genre]}
 
-        # RSSエントリを取得
         all_entries = []
         for rss_url in rss_feeds:
             feed = feedparser.parse(rss_url)
@@ -248,7 +280,7 @@ def main():
         latest_entries = sorted(all_entries, key=lambda x: x["published"], reverse=True)[:max_entries]
 
         # 投稿
-        header_added = False  # 最初のチャンクにだけ見出しを付ける
+        header_added = False
         for i in range(0, len(latest_entries), CHUNK_SIZE):
             chunk = latest_entries[i:i + CHUNK_SIZE]
 
@@ -260,7 +292,6 @@ def main():
                 content += f"**{current_time} 最新ニュース（{genre}）**\n\n"
                 header_added = True
 
-            # チャンク内のリンクをまとめる
             new_links = []
             for entry in chunk:
                 content += f"<{entry['link']}>\n"
@@ -269,15 +300,14 @@ def main():
                     "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
                 })
 
-            # 実際にスレッドを作成 or 返信
             if chunk:
                 success = create_or_reply_thread(genre, content)
                 if success:
-                    # 成功したら posted_links に保存
                     all_posted_links[genre].extend(new_links)
                     save_posted_links(all_posted_links)
                 else:
-                    print(f"[ERROR] スレッドへの投稿に失敗しました: ジャンル={genre}")
+                    # ここは通常 sys.exit(1) になっているため到達しない想定。
+                    print(f"[ERROR] スレッドへの投稿に失敗: ジャンル={genre}")
                     if i == 0:
                         header_added = False
 
