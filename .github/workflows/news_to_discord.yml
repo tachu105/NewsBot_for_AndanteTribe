@@ -23,9 +23,14 @@ jobs:
       - name: Install dependencies
         run: pip install feedparser requests pyyaml
 
-      # ---- Python スクリプト実行 ----
+      # -----------------------------
+      # 1) Python スクリプト実行
+      #    失敗時は sys.exit(1) ＋
+      #    set_github_action_error_message("...") で
+      #    steps.<id>.outputs.error_message に格納
+      # -----------------------------
       - name: Run Python script
-        id: python_script  # このIDでoutputsを参照できる
+        id: python_script  # 後続ステップがこの outputs を参照
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
@@ -33,7 +38,9 @@ jobs:
         run: |
           python post_news.py
 
-      # ---- 成功時のみ posted_links.yaml をコミット＆プッシュ ----
+      # -----------------------------
+      # 2) 成功時のみ posted_links.yaml をコミット＆プッシュ
+      # -----------------------------
       - name: Commit and push updated posted_links.yaml
         if: success()
         run: |
@@ -47,7 +54,10 @@ jobs:
             git push origin ${{ github.ref }}
           fi
 
-      # ---- 失敗時のみ、Discordに通知 ----
+      # -----------------------------
+      # 3) 失敗時のみ、Discord に通知
+      #    エラーメッセージを sed でエスケープして JSON 化
+      # -----------------------------
       - name: Notify Discord on failure
         if: failure()
         env:
@@ -55,21 +65,29 @@ jobs:
         run: |
           echo "=== GitHub Actions failure notification ==="
 
-          # 1) Pythonスクリプトがset_github_action_error_message()で書き込んだ出力を取得
+          # 1) Pythonスクリプトが set_github_action_error_message()
+          #    で書き込んだ出力をシェル変数に格納
           RAW_MSG="${{ steps.python_script.outputs.error_message }}"
 
-          # 2) sedでJSON用にエスケープ
+          # デバッグ用に生のエラーメッセージを表示したい場合はここで echo
+          echo "::group::[DEBUG] RAW_MSG"
+          echo "$RAW_MSG"
+          echo "::endgroup::"
+
+          # 2) sed で JSON 文字列用にエスケープ
           #    - ダブルクォート (") → \" に変換
           #    - 改行 (\n) → \\n に変換
-          ESCAPED_MSG=$(echo "$RAW_MSG" \
+          #  printf '%s' "$RAW_MSG" によって余計なシェル展開を防ぐ
+          ESCAPED_MSG=$(printf '%s' "$RAW_MSG" \
             | sed 's/"/\\"/g' \
-            | sed ':a;N;$!ba;s/\n/\\n/g')
+            | sed ':a;N;$!ba;s/\n/\\n/g'
+          )
 
-          # 必要に応じて { や } をエスケープしたい場合は、さらに
-          # sed 's/{/\\{/g' などを追加
+          # 必要ならさらに { や } などもエスケープする場合があります
 
-          # 3) curlでDiscordに送信
-          #    contentに直接$ESCAPED_MSGを組み込む
+          # 3) curl で Discord に投稿
+          #    ここでは content に $ESCAPED_MSG を埋め込んでも
+          #    JSON が壊れないようになっている
           curl -X POST -H "Content-Type: application/json" \
           -d "{
                 \"content\": \"**GitHub Actions Error**: RSS to Discord 投稿中にエラーが発生しました。\\n\\n\
