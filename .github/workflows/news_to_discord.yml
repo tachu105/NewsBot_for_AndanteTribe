@@ -1,28 +1,56 @@
 name: Post RSS to Discord
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 手動実行などを有効にする例
 
 permissions:
-  contents: write
+  contents: write  # posted_links.yaml をコミットするため
 
 jobs:
   post_news:
     runs-on: ubuntu-latest
     steps:
+      # -------------------------
+      # 1) リポジトリをチェックアウト
+      # -------------------------
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # -------------------------
+      # 2) Python セットアップ
+      # -------------------------
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
-      - name: Install dependencies
-        run: pip install feedparser requests pyyaml
+      # -------------------------
+      # 3) キャッシュの設定
+      #    requirements.txt に変更がなければ、前回のキャッシュを復元
+      # -------------------------
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
+      # -------------------------
+      # 4) 依存パッケージのインストール
+      #    キャッシュがヒットすればダウンロードを大幅にスキップ可能
+      # -------------------------
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # -------------------------
+      # 5) Python スクリプトを実行
+      #    成功 (exit 0) なら success()
+      #    失敗 (exit != 0) なら failure()
+      # -------------------------
       - name: Run Python script
         id: python_script
         env:
@@ -30,8 +58,11 @@ jobs:
           GUILD_ID: ${{ secrets.GUILD_ID }}
           FORUM_CHANNEL_ID: ${{ secrets.FORUM_CHANNEL_ID }}
         run: |
-          python -m scripts.post_news
+          python scripts/post_news.py
 
+      # -------------------------
+      # 6) 成功時のみ posted_links.yaml をコミット＆プッシュ
+      # -------------------------
       - name: Commit and push updated posted_links.yaml
         if: success()
         run: |
@@ -45,6 +76,9 @@ jobs:
             git push origin ${{ github.ref }}
           fi
 
+      # -------------------------
+      # 7) 失敗時は Discord に通知
+      # -------------------------
       - name: Notify Discord on failure
         if: failure()
         env:
