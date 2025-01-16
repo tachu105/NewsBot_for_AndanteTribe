@@ -56,38 +56,34 @@ def clean_old_links(all_posted_links, expiration_days):
             link for link in links if datetime.strptime(link["timestamp"], "%Y-%m-%d %H:%M:%S").replace(tzinfo=JST) > cutoff_time
         ]
 
+def find_existing_thread(category_name):
+    """既存のスレッドを検索"""
+    active_threads = get_guild_active_threads()
+    archived_threads = get_channel_archived_threads()
+    for thread in active_threads + archived_threads:
+        if thread["parent_id"] == FORUM_CHANNEL_ID and thread["name"] == category_name:
+            return thread
+    return None
+
 def get_guild_active_threads():
-    """サーバー全体のアクティブスレッドを取得"""
+    """ギルド内のアクティブスレッドを取得"""
     url = f"https://discord.com/api/v10/guilds/{GUILD_ID}/threads/active"
     headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json().get("threads", [])
-    else:
-        print(f"アクティブスレッドの取得に失敗: {response.status_code}, {response.text}")
-        return []
+    print(f"アクティブスレッド取得失敗: {response.status_code}, {response.text}")
+    return []
 
-def get_channel_archived_threads(archived_type):
-    """特定のチャンネル内のアーカイブスレッドを取得"""
-    url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/archived/{archived_type}"
+def get_channel_archived_threads():
+    """チャンネル内のアーカイブスレッドを取得"""
+    url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/archived/public"
     headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json().get("threads", [])
-    else:
-        print(f"{archived_type} アーカイブスレッドの取得に失敗: {response.status_code}, {response.text}")
-        return []
-
-def find_existing_thread(category_name):
-    """サーバー内のスレッドを検索し、既存スレッドを探す"""
-    active_threads = get_guild_active_threads()
-    public_archived_threads = get_channel_archived_threads("public")
-    private_archived_threads = get_channel_archived_threads("private")
-    all_threads = active_threads + public_archived_threads + private_archived_threads
-    for thread in all_threads:
-        if thread["parent_id"] == FORUM_CHANNEL_ID and thread["name"] == category_name:
-            return thread
-    return None
+    print(f"アーカイブスレッド取得失敗: {response.status_code}, {response.text}")
+    return []
 
 def unarchive_thread(thread_id):
     """アーカイブされたスレッドをアクティブに戻す"""
@@ -99,8 +95,8 @@ def unarchive_thread(thread_id):
     else:
         print(f"スレッドのアクティブ化に失敗: {response.status_code}, {response.text}")
 
-def create_or_reply_thread(category_name, content):
-    """同名のスレッドがあれば返信し、なければ新しいスレッドを作成する"""
+def create_or_reply_thread(category_name, content, all_posted_links, genre, new_links):
+    """スレッドを作成または返信"""
     existing_thread = find_existing_thread(category_name)
     if existing_thread:
         if existing_thread.get("archived", False):
@@ -108,6 +104,9 @@ def create_or_reply_thread(category_name, content):
         post_message(existing_thread["id"], content)
     else:
         create_thread(category_name, content)
+    # 履歴に新しいリンクを追加
+    all_posted_links[genre].extend(new_links)
+    save_posted_links(all_posted_links)
 
 def create_thread(category_name, content):
     """新しいスレッドを作成"""
@@ -122,27 +121,26 @@ def create_thread(category_name, content):
     if response.status_code == 201:
         print(f"スレッド '{category_name}' を作成しました")
     else:
-        print(f"スレッド作成に失敗: {response.status_code}, {response.text}")
+        print(f"スレッド作成失敗: {response.status_code}, {response.text}")
 
 def post_message(thread_id, content):
-    """既存スレッドにメッセージを投稿"""
+    """スレッドにメッセージを投稿"""
     url = f"https://discord.com/api/v10/channels/{thread_id}/messages"
     payload = {"content": content}
     headers = {"Authorization": f"Bot {DISCORD_BOT_TOKEN}"}
     response = requests.post(url, json=payload, headers=headers)
     if response.status_code in [200, 201]:
-        print(f"スレッド {thread_id} にメッセージを投稿しました")
+        print(f"スレッド {thread_id} に投稿成功")
     else:
-        print(f"メッセージ投稿に失敗: {response.status_code}, {response.text}")
+        print(f"投稿失敗: {response.status_code}, {response.text}")
 
-# 設定ファイルの読み込み
+# 設定の読み込み
 with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 expiration_days = config.get("expiration_days", 3)
 max_entries = config.get("max_entries", 10)
 all_posted_links = load_posted_links()
-clean_old_links(all_posted_links, expiration_days)
 
 for genre, data in config["genres"].items():
     rss_feeds = data["rss_feeds"]
@@ -159,9 +157,13 @@ for genre, data in config["genres"].items():
 
     entries.sort(key=lambda x: x["published"], reverse=True)
     entries = entries[:max_entries]
+
+    new_links = [{"link": entry["link"], "timestamp": datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")} for entry in entries]
+
     for i in range(0, len(entries), CHUNK_SIZE):
         chunk = entries[i:i + CHUNK_SIZE]
         content = "\n".join(f"<{entry['link']}>" for entry in chunk)
-        create_or_reply_thread(genre, content)
+        create_or_reply_thread(genre, content, all_posted_links, genre, new_links)
 
+clean_old_links(all_posted_links, expiration_days)
 save_posted_links(all_posted_links)
