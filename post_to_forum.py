@@ -27,7 +27,15 @@ def get_forum_threads():
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         print("フォーラムスレッド一覧の取得に成功しました")
-        return response.json()["threads"]  # スレッドのリストを返す
+        threads = response.json()["threads"]
+
+        # スレッド情報を目視確認用に出力
+        print("--- 取得したスレッド情報 ---")
+        for thread in threads:
+            print(f"スレッド名: {thread['name']}, ID: {thread['id']}, 作成日: {thread.get('timestamp', '不明')}")
+        print("--- スレッド情報の表示終了 ---")
+
+        return threads  # スレッドのリストを返す
     else:
         print(f"フォーラムスレッド一覧の取得に失敗しました: {response.status_code}, {response.text}")
         return []
