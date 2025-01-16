@@ -6,7 +6,6 @@ class RssService:
     # コンストラクタ
     # ---------------------
     def __init__(self):
-        # 必要なら初期化処理を入れる
         pass
 
     # ---------------------
@@ -15,8 +14,10 @@ class RssService:
     def fetch_rss_entries(self, rss_urls):
         all_entries = []
         for rss_url in rss_urls:
-            print(f"[INFO] RSS取得中: {rss_url}")
             feed = feedparser.parse(rss_url)
+            # パースが完了したら、成功ログを出す
+            print(f"[INFO] RSS取得成功: {rss_url} (記事件数: {len(feed.entries)})")
+
             for entry in feed.entries:
                 dt = self.get_entry_date(entry)
                 if dt:
