@@ -8,6 +8,3 @@ genres:
     rss_feeds:
       - "https://www.4gamer.net/rss/news_topics.xml"
       - "https://www.nhk.or.jp/rss/news/cat0.xml"
-  テクノロジー:
-    rss_feeds:
-      - "https://www.txhd.co.jp/rss.xml"
