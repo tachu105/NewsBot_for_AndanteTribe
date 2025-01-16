@@ -42,10 +42,10 @@ class PostNews:
 
         for t in all_threads:
             if t["name"] == category_name:
-                print(f"[INFO] 既存スレッド発見: {t['name']} (ID: {t['id']})")
-                return (t["id"], t["name"])
+                print(f"[INFO] 既存スレッド発見: {t['name']} (ID: {t['id']}, アーカイブ: {t.get('archived', False)})")
+                return (t["id"], t["name"], t.get("archived", False))
         print(f"[INFO] カテゴリ '{category_name}' の既存スレッドは見つかりません")
-        return (None, None)
+        return (None, None, None)
 
     # ---------------------
     # カテゴリに対応するスレッドを見つける or 作成
@@ -54,7 +54,8 @@ class PostNews:
         thread_id, thread_name = self.find_existing_thread(category_name)
         if thread_id:
             # もしアーカイブされていれば解除
-            self.discord_service.unarchive_thread(thread_id)
+            if is_archived:
+                self.discord_service.unarchive_thread(thread_id)
             return thread_id, thread_name
         else:
             # 新規作成
