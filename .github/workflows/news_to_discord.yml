@@ -1,10 +1,10 @@
 name: Post RSS to Discord
 
 on:
-  workflow_dispatch:  # 手動実行などを有効にする例
+  workflow_dispatch:  # 手動実行
 
 permissions:
-  contents: write  # posted_links.yaml をコミットするため
+  contents: write
 
 jobs:
   post_news:
@@ -40,7 +40,6 @@ jobs:
 
       # -------------------------
       # 4) 依存パッケージのインストール
-      #    キャッシュがヒットすればダウンロードを大幅にスキップ可能
       # -------------------------
       - name: Install dependencies
         run: |
