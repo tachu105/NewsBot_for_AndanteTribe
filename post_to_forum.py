@@ -17,6 +17,7 @@ categories = {
 
 def create_thread(category_name, content):
     """フォーラム内で新しいスレッドを作成し、投稿する"""
+    # スレッド作成用エンドポイント
     url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads"
 
     # スレッド作成のペイロード
@@ -31,16 +32,24 @@ def create_thread(category_name, content):
         "Content-Type": "application/json"
     }
 
-    print(f"スレッド '{category_name}' を作成中...")
+    print(f"--- スレッド作成開始: {category_name} ---")
+    print(f"使用するエンドポイント: {url}")
+    print(f"送信ペイロード: {payload}")
+    print(f"送信ヘッダー: {headers}")
+
     response = requests.post(url, json=payload, headers=headers)
-    print(f"レスポンスコード: {response.status_code}, レスポンス: {response.json()}")
+    print(f"レスポンスコード: {response.status_code}")
+    try:
+        print(f"レスポンス内容: {response.json()}")
+    except Exception as e:
+        print(f"レスポンス内容をJSONとして解析できません: {response.text}, エラー: {e}")
 
     if response.status_code == 201:  # スレッド作成成功
         thread_id = response.json()["id"]
         print(f"スレッド '{category_name}' が作成されました (ID: {thread_id})")
         post_message(thread_id, content)
     else:
-        print(f"スレッド作成に失敗しました: {response.status_code}, {response.json()}")
+        print(f"スレッド作成に失敗しました: {response.status_code}, {response.text}")
 
 def post_message(thread_id, content):
     """スレッド内にメッセージを投稿する"""
@@ -57,14 +66,28 @@ def post_message(thread_id, content):
         "Content-Type": "application/json"
     }
 
-    print(f"スレッド (ID: {thread_id}) にメッセージを投稿中...")
+    print(f"--- メッセージ投稿開始: スレッドID {thread_id} ---")
+    print(f"使用するエンドポイント: {url}")
+    print(f"送信ペイロード: {payload}")
+    print(f"送信ヘッダー: {headers}")
+
     response = requests.post(url, json=payload, headers=headers)
-    print(f"レスポンスコード: {response.status_code}, レスポンス: {response.json()}")
+    print(f"レスポンスコード: {response.status_code}")
+    try:
+        print(f"レスポンス内容: {response.json()}")
+    except Exception as e:
+        print(f"レスポンス内容をJSONとして解析できません: {response.text}, エラー: {e}")
 
     if response.status_code in [200, 201]:
         print(f"メッセージがスレッド (ID: {thread_id}) に投稿されました")
     else:
-        print(f"メッセージ投稿に失敗しました: {response.status_code}, {response.json()}")
+        print(f"メッセージ投稿に失敗しました: {response.status_code}, {response.text}")
+
+# 環境変数とチャンネルIDのデバッグ
+print("--- デバッグ情報 ---")
+print(f"トークンの最初の10文字: {DISCORD_BOT_TOKEN[:10]}...")
+print(f"フォーラムチャンネルID: {FORUM_CHANNEL_ID}")
+print("--- デバッグ情報終了 ---")
 
 # カテゴリごとにスレッドを作成して投稿
 for category, content in categories.items():
