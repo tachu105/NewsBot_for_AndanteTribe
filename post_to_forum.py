@@ -16,29 +16,41 @@ categories = {
 }
 
 def get_forum_threads():
-    """フォーラム内のスレッド一覧を取得（アーカイブ済みを含む）"""
-    url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/archived/public"
+    """フォーラム内のアクティブおよびアーカイブ済みスレッドを取得"""
     headers = {
         "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
         "Content-Type": "application/json"
     }
 
-    print("--- フォーラムスレッド一覧を取得中 ---")
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        print("フォーラムスレッド一覧の取得に成功しました")
-        threads = response.json()["threads"]
+    # アクティブスレッドを取得
+    active_url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/active"
+    print("--- アクティブスレッド一覧を取得中 ---")
+    active_response = requests.get(active_url, headers=headers)
+    print(f"アクティブレスポンスコード: {active_response.status_code}")
+    print(f"アクティブレスポンス内容: {active_response.text}")
 
-        # スレッド情報を目視確認用に出力
-        print("--- 取得したスレッド情報 ---")
-        for thread in threads:
-            print(f"スレッド名: {thread['name']}, ID: {thread['id']}, 作成日: {thread.get('timestamp', '不明')}")
-        print("--- スレッド情報の表示終了 ---")
+    active_threads = []
+    if active_response.status_code == 200:
+        active_threads = active_response.json().get("threads", [])
 
-        return threads  # スレッドのリストを返す
-    else:
-        print(f"フォーラムスレッド一覧の取得に失敗しました: {response.status_code}, {response.text}")
-        return []
+    # アーカイブ済みスレッドを取得
+    archived_url = f"https://discord.com/api/v10/channels/{FORUM_CHANNEL_ID}/threads/archived/public"
+    print("--- アーカイブ済みスレッド一覧を取得中 ---")
+    archived_response = requests.get(archived_url, headers=headers)
+    print(f"アーカイブレスポンスコード: {archived_response.status_code}")
+    print(f"アーカイブレスポンス内容: {archived_response.text}")
+
+    archived_threads = []
+    if archived_response.status_code == 200:
+        archived_threads = archived_response.json().get("threads", [])
+
+    # アクティブ + アーカイブ済みスレッドを結合
+    all_threads = active_threads + archived_threads
+    print(f"取得したスレッド数: {len(all_threads)}")
+    for thread in all_threads:
+        print(f"スレッド名: {thread.get('name')}, ID: {thread.get('id')}, 作成日: {thread.get('timestamp', '不明')}")
+
+    return all_threads
 
 def create_or_reply_thread(category_name, content):
     """同名のスレッドがあれば返信し、なければ新しいスレッドを作成する"""
