@@ -3,7 +3,7 @@ name: Post RSS to Discord
 on:
   workflow_dispatch:  # 手動実行
   schedule:
-    - cron: "20 14 * * *"  
+    - cron: "30 14 * * *"  
 
 permissions:
   contents: write
