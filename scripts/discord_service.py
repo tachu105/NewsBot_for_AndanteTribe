@@ -72,6 +72,9 @@ class DiscordService:
     # 新しいスレッドを作成して最初のメッセージを投稿
     # ---------------------
     def create_thread(self, category_name, content):
+        if not content.strip():
+            content = f"スレッド（{category_name}）を新規に自動生成しました。"
+        
         url = f"https://discord.com/api/v10/channels/{self.forum_channel_id}/threads"
         payload = {
             "name": category_name,
