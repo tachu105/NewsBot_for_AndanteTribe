@@ -1,7 +1,7 @@
 import requests
 
 # Discord Bot Token（Discord Developer Portal で取得）
-DISCORD_BOT_TOKEN = "MTMyOTM1NTczMjUzNzE4NDI1Ng.GxjlnQ.olDEtuG_VwVQ1OSnH-I5K1LsdU34mOx78R1Csg"  # ここにDiscord Botトークンを入力
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # フォーラムチャンネルID（Discordアプリで取得）
 FORUM_CHANNEL_ID = "1329352606954426432"  # フォーラムチャンネルIDを入力
