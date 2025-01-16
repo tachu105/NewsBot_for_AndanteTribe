@@ -94,8 +94,10 @@ class PostNews:
             all_entries = self.rss_service.fetch_rss_entries(rss_urls)
             # 未投稿のものだけに絞る
             new_entries = [e for e in all_entries if e["link"] not in posted_links_set]
+            # リンクで重複を削除
+            unique_entries = {entry["link"]: entry for entry in new_entries}.values()
             # 日付降順にソート & max_entries 件に絞る
-            latest_entries = sorted(new_entries, key=lambda x: x["published"], reverse=True)[:max_entries]
+            latest_entries = sorted(unique_entries, key=lambda x: x["published"], reverse=True)[:max_entries]
 
             # カテゴリ用のスレッドを取得
             if genre not in self.category_threads:
