@@ -58,7 +58,7 @@ jobs:
           GUILD_ID: ${{ secrets.GUILD_ID }}
           FORUM_CHANNEL_ID: ${{ secrets.FORUM_CHANNEL_ID }}
         run: |
-          python scripts/post_news.py
+          python -m scripts.post_news
 
       # -------------------------
       # 6) 成功時のみ posted_links.yaml をコミット＆プッシュ
