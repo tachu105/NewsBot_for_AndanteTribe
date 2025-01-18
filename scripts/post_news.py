@@ -80,7 +80,7 @@ class PostNews:
         self.posted_links_manager.clean_old_links(all_posted_links, expiration_days)
         self.posted_links_manager.save(all_posted_links)
 
-        days_of_week = ["日", "月", "火", "水", "木", "金", "土"]
+        days_of_week = ["月", "火", "水", "木", "金", "土", "日"]
 
         # ジャンルごとに RSS → 投稿
         for genre, data in config["genres"].items():
