@@ -36,7 +36,7 @@ genres:
       - "https://www.nhk.or.jp/rss/news/cat5.xml"
       # NHKニュース|国際
       - "https://www.nhk.or.jp/rss/news/cat6.xml"
-テスト記事:
+  テスト記事:
     rss_feeds:
       # ファミ通テスト
       - "https://politepol.com/fd/ByXntyJpls0b.xml"
