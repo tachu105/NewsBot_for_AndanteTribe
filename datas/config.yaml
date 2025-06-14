@@ -4,39 +4,31 @@ max_entries: 10  # 投稿する記事の上限
 
 # 各ジャンルの設定
 genres:
-  英字記事:
-    rss_feeds:
-      # CNN.com - RSS Channel - World
-      - "http://rss.cnn.com/rss/cnn_world.rss"
-      # BBC News - World
-      - "https://feeds.bbci.co.uk/news/world/rss.xml"     
-  ゲーム・ガジェット:
+  4Gamer.net:
     rss_feeds:
       # 4Gamer.net − 注目の記事のみ
       - "https://www.4gamer.net/rss/news_topics.xml"
+  Game*Spark:
+    rss_feeds:
       # Game*Spark
       - "https://www.gamespark.jp/rss20/index.rdf"
+  GAZLOG:
+    rss_feeds:
       # GAZLOG
       - "https://gazlog.jp/feed/"
+  AUTOMATON:
+    rss_feeds:
       # automaton-media
       - "https://automaton-media.com/feed/"
+  CGWORLD.jP:
+    rss_feeds:
       # cgworld.jp
       - "https://cgworld.jp/atom.xml"      
-  暮らし:
+  新着アセット情報:
     rss_feeds:
-      # NHKニュース|主要トピック
-      - "https://www.nhk.or.jp/rss/news/cat0.xml"
-      # NHKニュース|社会
-      - "https://www.nhk.or.jp/rss/news/cat1.xml"
-      # NHKニュース|文化・エンタメ
-      - "https://www.nhk.or.jp/rss/news/cat2.xml"
-      # NHKニュース|政治
-      - "https://www.nhk.or.jp/rss/news/cat4.xml"
-      # NHKニュース|経済
-      - "https://www.nhk.or.jp/rss/news/cat5.xml"
-      # NHKニュース|国際
-      - "https://www.nhk.or.jp/rss/news/cat6.xml"
-  テスト記事:
+      # AssetStoreまとめ割引情報beta
+      - "https://assetsale.herokuapp.com/ja/publisher_sales_feed.rss"
+  ファミ通.com_新着:
     rss_feeds:
-      # ファミ通テスト
-      - "https://politepol.com/fd/ByXntyJpls0b.xml"
+      # ファミ通.com_新着
+      - "https://politepol.com/fd/TGhWLIBmzwbU.xml"
