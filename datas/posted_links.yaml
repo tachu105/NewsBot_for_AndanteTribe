@@ -19,6 +19,26 @@
   timestamp: '2025-06-14 15:54:42'
 - link: https://www.4gamer.net/games/999/G999905/20250609098/
   timestamp: '2025-06-14 15:54:42'
+- link: https://www.4gamer.net/games/038/G003821/20250614003/
+  timestamp: '2025-06-14 19:18:25'
+- link: https://www.4gamer.net/games/747/G074787/20250613029/
+  timestamp: '2025-06-14 19:18:25'
+- link: https://www.4gamer.net/games/749/G074963/20250613038/
+  timestamp: '2025-06-14 19:18:25'
+- link: https://www.4gamer.net/games/841/G084183/20250512044/
+  timestamp: '2025-06-14 19:18:25'
+- link: https://www.4gamer.net/games/628/G062811/20250613079/
+  timestamp: '2025-06-14 19:18:25'
+- link: https://www.4gamer.net/games/841/G084183/20250613069/
+  timestamp: '2025-06-14 19:18:26'
+- link: https://www.4gamer.net/games/991/G999107/20250613077/
+  timestamp: '2025-06-14 19:18:26'
+- link: https://www.4gamer.net/games/999/G999903/20250613075/
+  timestamp: '2025-06-14 19:18:26'
+- link: https://www.4gamer.net/games/790/G079033/20250613073/
+  timestamp: '2025-06-14 19:18:26'
+- link: https://www.4gamer.net/games/868/G086899/20250613067/
+  timestamp: '2025-06-14 19:18:26'
 AUTOMATON:
 - link: https://automaton-media.com/articles/newsjp/psn-purchase-20250614-344493/
   timestamp: '2025-06-14 15:54:49'
@@ -40,6 +60,26 @@ AUTOMATON:
   timestamp: '2025-06-14 15:54:49'
 - link: https://automaton-media.com/articles/newsjp/getting-over-it-20250613-344403/
   timestamp: '2025-06-14 15:54:49'
+- link: https://automaton-media.com/articles/newsjp/concord-marathon-20250614-344498/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/two-point-museum-20250613-344398/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/path-of-the-abyss-20250613-344391/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/mahoumura-novel-20250613-344376/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/across-the-obelisk-20250613-344377/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/elden-ring-nightreign-20250613-344346/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/humblets-20250613-344337/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/microsoft-xbox-20250613-344332/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/earthion-20250613-344316/
+  timestamp: '2025-06-14 19:18:30'
+- link: https://automaton-media.com/articles/newsjp/metroidvania-paradox-soul-20250613-344310/
+  timestamp: '2025-06-14 19:18:30'
 CGWORLD.jP:
 - link: https://cgworld.jp/flashnews/02-2506-icoma.html
   timestamp: '2025-06-14 15:54:50'
@@ -61,27 +101,16 @@ CGWORLD.jP:
   timestamp: '2025-06-14 15:54:51'
 - link: https://cgworld.jp/flashnews/02-2506-lastdream.html
   timestamp: '2025-06-14 15:54:51'
-GAZLOG:
-- link: https://gazlog.jp/entry/geforce-rtx5090-huge-price-down/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/google-pixel6a-battery-nerf/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/rx9070xt-samsung-gddr6-worst-perfromance/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/amd-zen7-for-desktop-early-leaks/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/google-pixel10pro-qi2-charger/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/radeon-rx9060xt-8gb-dont-buy-it/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/nextgen-psp-memory-specs-leak/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/nvidia-n1x-geekbench-leak/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/amd-motherboard-price-up/
-  timestamp: '2025-06-14 15:54:46'
-- link: https://gazlog.jp/entry/nintendo-switch2-microsdexpress-ssd-converter/
-  timestamp: '2025-06-14 15:54:46'
+- link: https://cgworld.jp/flashnews/01-202506-Kling-21.html
+  timestamp: '2025-06-14 19:18:31'
+- link: https://cgworld.jp/flashnews/202506-wow.html
+  timestamp: '2025-06-14 19:18:31'
+- link: https://cgworld.jp/flashnews/02-2506-junkworld.html
+  timestamp: '2025-06-14 19:18:31'
+- link: https://cgworld.jp/article/2506-w-conference-nandemo.html
+  timestamp: '2025-06-14 19:18:31'
+- link: https://cgworld.jp/flashnews/01-202506-Baga-River-Generator.html
+  timestamp: '2025-06-14 19:18:31'
 Game*Spark:
 - link: http://www.gamespark.jp/article/2025/06/14/153995.html
   timestamp: '2025-06-14 15:54:44'
@@ -103,6 +132,47 @@ Game*Spark:
   timestamp: '2025-06-14 15:54:44'
 - link: http://www.gamespark.jp/article/2025/06/13/153986.html
   timestamp: '2025-06-14 15:54:44'
+- link: http://www.gamespark.jp/article/2025/06/14/154000.html
+  timestamp: '2025-06-14 19:18:27'
+- link: http://www.gamespark.jp/article/2025/06/14/153999.html
+  timestamp: '2025-06-14 19:18:27'
+- link: http://www.gamespark.jp/article/2025/06/14/153998.html
+  timestamp: '2025-06-14 19:18:27'
+- link: http://www.gamespark.jp/article/2025/06/14/153997.html
+  timestamp: '2025-06-14 19:18:27'
+- link: http://www.gamespark.jp/article/2025/06/14/153996.html
+  timestamp: '2025-06-14 19:18:27'
+- link: http://www.gamespark.jp/article/2025/06/13/153985.html
+  timestamp: '2025-06-14 19:18:28'
+- link: http://www.gamespark.jp/article/2025/06/13/153984.html
+  timestamp: '2025-06-14 19:18:28'
+- link: http://www.gamespark.jp/article/2025/06/13/153983.html
+  timestamp: '2025-06-14 19:18:28'
+- link: http://www.gamespark.jp/article/2025/06/13/153982.html
+  timestamp: '2025-06-14 19:18:28'
+- link: http://www.gamespark.jp/article/2025/06/13/153981.html
+  timestamp: '2025-06-14 19:18:28'
+ゲームメーカーズ:
+- link: https://gamemakers.jp/article/2025_06_13_106813/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_13_106738/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_13_104171/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_13_53333/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_12_106476/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_12_106616/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_12_105992/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_12_105770/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_11_106384/
+  timestamp: '2025-06-14 19:18:37'
+- link: https://gamemakers.jp/article/2025_06_11_106422/
+  timestamp: '2025-06-14 19:18:37'
 ファミ通.com_新着:
 - link: https://www.famitsu.com/article/202506/43544
   timestamp: '2025-06-14 15:54:54'
@@ -124,6 +194,26 @@ Game*Spark:
   timestamp: '2025-06-14 15:54:54'
 - link: https://www.famitsu.com/article/202506/44696
   timestamp: '2025-06-14 15:54:54'
+- link: https://www.famitsu.com/article/202506/44003
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44804
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44832
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44840
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44756
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44830
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44801
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44781
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44800
+  timestamp: '2025-06-14 19:18:35'
+- link: https://www.famitsu.com/article/202506/44785
+  timestamp: '2025-06-14 19:18:35'
 新着アセット情報:
 - link: https://assetstore.unity.com/packages/3d/characters/humanoids/dismembered-zombie-4-311969?aid=1011lGbg&pubref=am
   timestamp: '2025-06-14 15:54:52'
@@ -145,3 +235,23 @@ Game*Spark:
   timestamp: '2025-06-14 15:54:52'
 - link: https://assetstore.unity.com/packages/3dvironments/football-essentials-3d-310051?aid=1011lGbg&pubref=am
   timestamp: '2025-06-14 15:54:52'
+- link: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/sci-fi-characters-03-316345?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:32'
+- link: https://assetstore.unity.com/packages/2dvironments/the-border-world-isometric-2-5d-pixel-art-277169?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:32'
+- link: https://assetstore.unity.com/packages/tools/utilities/wingman-your-inspector-s-best-friend-303181?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:32'
+- link: https://assetstore.unity.com/packages/3d/props/tools/ftg-binoculars-pack-317288?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:32'
+- link: https://assetstore.unity.com/packages/3d/vegetation/nature-package-swamp-forest-environment-159098?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:32'
+- link: https://assetstore.unity.com/packages/3d/vegetation/plants/pbr-grass-flowers-pack-155175?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:33'
+- link: https://assetstore.unity.com/packages/templates/systems/ride-mow-earn-hyper-casual-grass-cutting-game-template-322756?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:33'
+- link: https://assetstore.unity.com/packages/3d/vegetation/oak-forest-environment-153314?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:33'
+- link: https://assetstore.unity.com/packages/tools/utilities/hight-resolution-screenshot-all-app-stores-229151?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:33'
+- link: https://assetstore.unity.com/packages/3d/vegetation/european-vegetation-pack-two-151939?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-14 19:18:33'
