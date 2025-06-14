@@ -28,3 +28,7 @@ genres:
     rss_feeds:
       # ファミ通.com_新着
       - "https://politepol.com/fd/TGhWLIBmzwbU.xml"
+  ゲームメーカーズ:
+    rss_feeds:
+      # ゲームメーカーズ_新着
+      - "https://gamemakers.jp/category/news/feed/"
