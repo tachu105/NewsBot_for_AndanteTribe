@@ -12,10 +12,6 @@ genres:
     rss_feeds:
       # Game*Spark
       - "https://www.gamespark.jp/rss20/index.rdf"
-  GAZLOG:
-    rss_feeds:
-      # GAZLOG
-      - "https://gazlog.jp/feed/"
   AUTOMATON:
     rss_feeds:
       # automaton-media
