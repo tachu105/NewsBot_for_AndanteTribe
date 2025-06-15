@@ -99,6 +99,10 @@
   timestamp: '2025-06-15 19:20:25'
 - link: https://www.4gamer.net/games/126/G012627/20250613033/
   timestamp: '2025-06-15 19:20:25'
+- link: https://www.4gamer.net/games/889/G088967/20250612040/
+  timestamp: '2025-06-16 07:08:54'
+- link: https://www.4gamer.net/games/040/G004099/20250615001/
+  timestamp: '2025-06-16 07:08:54'
 AUTOMATON:
 - link: https://automaton-media.com/articles/newsjp/psn-purchase-20250614-344493/
   timestamp: '2025-06-14 15:54:49'
@@ -302,6 +306,12 @@ Game*Spark:
   timestamp: '2025-06-15 19:20:27'
 - link: http://www.gamespark.jp/article/2025/06/13/153969.html
   timestamp: '2025-06-15 19:20:27'
+- link: http://www.gamespark.jp/article/2025/06/16/154021.html
+  timestamp: '2025-06-16 07:08:55'
+- link: http://www.gamespark.jp/article/2025/06/15/154020.html
+  timestamp: '2025-06-16 07:08:55'
+- link: http://www.gamespark.jp/article/2025/06/15/154019.html
+  timestamp: '2025-06-16 07:08:55'
 ゲームメーカーズ:
 - link: https://gamemakers.jp/article/2025_06_13_106813/
   timestamp: '2025-06-14 19:18:37'
@@ -464,6 +474,18 @@ Game*Spark:
   timestamp: '2025-06-15 19:20:34'
 - link: https://www.famitsu.com/special/content/dinkum/index.html
   timestamp: '2025-06-15 19:20:34'
+- link: https://www.famitsu.com/article/202506/44872
+  timestamp: '2025-06-16 07:09:03'
+- link: https://www.famitsu.com/article/202506/44866
+  timestamp: '2025-06-16 07:09:03'
+- link: https://www.famitsu.com/article/202506/44815
+  timestamp: '2025-06-16 07:09:03'
+- link: https://www.famitsu.com/article/202506/44573
+  timestamp: '2025-06-16 07:09:03'
+- link: https://www.famitsu.com/article/202506/44863
+  timestamp: '2025-06-16 07:09:03'
+- link: https://www.famitsu.com/article/202506/43587
+  timestamp: '2025-06-16 07:09:04'
 新着アセット情報:
 - link: https://assetstore.unity.com/packages/3d/characters/humanoids/dismembered-zombie-4-311969?aid=1011lGbg&pubref=am
   timestamp: '2025-06-14 15:54:52'
@@ -565,3 +587,23 @@ Game*Spark:
   timestamp: '2025-06-15 19:20:32'
 - link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/angel-modular-192359?aid=1011lGbg&pubref=am
   timestamp: '2025-06-15 19:20:32'
+- link: https://assetstore.unity.com/packages/tools/utilities/shadow-lod-faster-realtime-shadows-272804?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/tools/behavior-ai/breeze-advanced-character-behaviour-256996?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/tools/game-toolkits/3d-vfx-starter-bundle-264133?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/3d/characters/creatures/mimic-chest-character-set-315858?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/2d/textures-materials/sky/50-hdris-cinematic-panorama-skyboxes-292541?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/2d/textures-materials/sky/hdri-variety-3-skyboxes-316120?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/2d/textures-materials/sky/64-hdris-anime-city-skybox-291038?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/2d/textures-materials/sky/hdri-night-city-panoramic-skyboxes-308235?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/2d/textures-materials/sky/8k-hdri-vr-night-city-skyboxes-316026?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
+- link: https://assetstore.unity.com/packages/2d/textures-materials/sky/hdri-night-city-skyboxes-v2-313546?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-16 07:09:00'
