@@ -11,7 +11,7 @@ from scripts.rss_service import RssService
 from scripts.discord_service import DiscordService
 
 JST = timezone(timedelta(hours=9))  # 日本時間 (UTC+9)
-CHUNK_SIZE = 5  # 1回の投稿あたりの最大記事数
+CHUNK_SIZE = 1  # 1回の投稿あたりの最大記事数
 
 class PostNews:
     # ---------------------
