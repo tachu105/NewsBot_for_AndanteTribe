@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 import requests
 
 class DiscordService:
@@ -20,13 +21,18 @@ class DiscordService:
             "Authorization": f"Bot {self.bot_token}",
             "Content-Type": "application/json"
         }
-        r = requests.get(url, headers=headers)
-        if r.status_code == 200:
-            print("[INFO] アクティブスレッドの取得に成功")
-            return r.json().get("threads", [])
-        else:
-            print(f"[ERROR] アクティブスレッドの取得に失敗: {r.status_code}, {r.text}")
-            sys.exit(1)
+        while True:
+            r = requests.get(url, headers=headers)
+            if r.status_code == 200:
+                print("[INFO] アクティブスレッドの取得に成功")
+                return r.json().get("threads", [])
+            elif r.status_code == 429:
+                retry_after = r.json().get("retry_after", 1.0)
+                print(f"[WARN] レート制限中。{retry_after} 秒待機します。")
+                time.sleep(retry_after)
+            else:
+                print(f"[ERROR] アクティブスレッドの取得に失敗: {r.status_code}, {r.text}")
+                sys.exit(1)
 
     # ---------------------
     # 公開アーカイブスレッドを取得
@@ -37,13 +43,18 @@ class DiscordService:
             "Authorization": f"Bot {self.bot_token}",
             "Content-Type": "application/json"
         }
-        r = requests.get(url, headers=headers)
-        if r.status_code == 200:
-            print("[INFO] 公開アーカイブスレッドの取得に成功")
-            return r.json().get("threads", [])
-        else:
-            print(f"[ERROR] 公開アーカイブスレッドの取得に失敗: {r.status_code}, {r.text}")
-            sys.exit(1)
+        while True:
+            r = requests.get(url, headers=headers)
+            if r.status_code == 200:
+                print("[INFO] 公開アーカイブスレッドの取得に成功")
+                return r.json().get("threads", [])
+            elif r.status_code == 429:
+                retry_after = r.json().get("retry_after", 1.0)
+                print(f"[WARN] レート制限中。{retry_after} 秒待機します。")
+                time.sleep(retry_after)
+            else:
+                print(f"[ERROR] 公開アーカイブスレッドの取得に失敗: {r.status_code}, {r.text}")
+                sys.exit(1)
 
     # ---------------------
     # 親チャンネルIDに合致するスレッドをフィルタ
@@ -61,12 +72,18 @@ class DiscordService:
             "Content-Type": "application/json"
         }
         payload = {"archived": False}
-        r = requests.patch(url, headers=headers, json=payload)
-        if r.status_code == 200:
-            print(f"[INFO] スレッド {thread_id} のアーカイブ解除に成功")
-        else:
-            print(f"[ERROR] スレッドのアクティブ化に失敗: {r.status_code}, {r.text}")
-            sys.exit(1)
+        while True:
+            r = requests.patch(url, headers=headers, json=payload)
+            if r.status_code == 200:
+                print(f"[INFO] スレッド {thread_id} のアーカイブ解除に成功")
+                return
+            elif r.status_code == 429:
+                retry_after = r.json().get("retry_after", 1.0)
+                print(f"[WARN] レート制限中。{retry_after} 秒待機します。")
+                time.sleep(retry_after)
+            else:
+                print(f"[ERROR] スレッドのアクティブ化に失敗: {r.status_code}, {r.text}")
+                sys.exit(1)
 
     # ---------------------
     # 新しいスレッドを作成して最初のメッセージを投稿
@@ -88,14 +105,19 @@ class DiscordService:
             "Authorization": f"Bot {self.bot_token}",
             "Content-Type": "application/json"
         }
-        r = requests.post(url, json=payload, headers=headers)
-        if r.status_code == 201:
-            thread_info = r.json()
-            print(f"[INFO] スレッド '{category_name}' を作成 (ID: {thread_info['id']})")
-            return thread_info["id"]
-        else:
-            print(f"[ERROR] スレッド作成に失敗: {r.status_code}, {r.text}")
-            sys.exit(1)
+        while True:
+            r = requests.post(url, json=payload, headers=headers)
+            if r.status_code == 201:
+                thread_info = r.json()
+                print(f"[INFO] スレッド '{category_name}' を作成 (ID: {thread_info['id']})")
+                return thread_info["id"]
+            elif r.status_code == 429:
+                retry_after = r.json().get("retry_after", 1.0)
+                print(f"[WARN] レート制限中。{retry_after} 秒待機します。")
+                time.sleep(retry_after)
+            else:
+                print(f"[ERROR] スレッド作成に失敗: {r.status_code}, {r.text}")
+                sys.exit(1)
 
     # ---------------------
     # 既存スレッドにメッセージを投稿
@@ -107,10 +129,15 @@ class DiscordService:
             "Authorization": f"Bot {self.bot_token}",
             "Content-Type": "application/json"
         }
-        r = requests.post(url, json=payload, headers=headers)
-        if r.status_code in [200, 201]:
-            print(f"[INFO] メッセージ投稿成功: スレッドID={thread_id}")
-            return True
-        else:
-            print(f"[ERROR] メッセージ投稿に失敗: {r.status_code}, {r.text}")
-            sys.exit(1)
+        while True:
+            r = requests.post(url, json=payload, headers=headers)
+            if r.status_code in [200, 201]:
+                print(f"[INFO] メッセージ投稿成功: スレッドID={thread_id}")
+                return True
+            elif r.status_code == 429:
+                retry_after = r.json().get("retry_after", 1.0)
+                print(f"[WARN] レート制限中。{retry_after} 秒待機します。")
+                time.sleep(retry_after)
+            else:
+                print(f"[ERROR] メッセージ投稿に失敗: {r.status_code}, {r.text}")
+                sys.exit(1)
