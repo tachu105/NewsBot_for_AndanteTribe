@@ -79,6 +79,26 @@
   timestamp: '2025-06-22 19:18:53'
 - link: https://www.4gamer.net/games/541/G054159/20250620058/
   timestamp: '2025-06-22 19:18:54'
+- link: https://www.4gamer.net/games/040/G004099/20250622004/
+  timestamp: '2025-06-23 07:09:08'
+- link: https://www.4gamer.net/games/922/G092263/20250620049/
+  timestamp: '2025-06-23 07:09:09'
+- link: https://www.4gamer.net/games/922/G092280/20250620054/
+  timestamp: '2025-06-23 07:09:09'
+- link: https://www.4gamer.net/games/899/G089956/20250620055/
+  timestamp: '2025-06-23 07:09:09'
+- link: https://www.4gamer.net/games/650/G065067/20250618008/
+  timestamp: '2025-06-23 07:09:09'
+- link: https://www.4gamer.net/games/816/G081614/20250620048/
+  timestamp: '2025-06-23 07:09:10'
+- link: https://www.4gamer.net/games/922/G092277/20250620052/
+  timestamp: '2025-06-23 07:09:10'
+- link: https://www.4gamer.net/games/897/G089789/20250620050/
+  timestamp: '2025-06-23 07:09:11'
+- link: https://www.4gamer.net/games/881/G088188/20250618006/
+  timestamp: '2025-06-23 07:09:12'
+- link: https://www.4gamer.net/games/869/G086960/20250620047/
+  timestamp: '2025-06-23 07:09:13'
 AUTOMATON:
 - link: https://automaton-media.com/articles/newsjp/elden-ring-nightreign-20250621-345744/
   timestamp: '2025-06-21 20:02:57'
@@ -175,6 +195,8 @@ CGWORLD.jP:
   timestamp: '2025-06-22 07:08:57'
 - link: https://cgworld.jp/flashnews/cgw324-pr.html
   timestamp: '2025-06-22 07:08:57'
+- link: https://cgworld.jp/flashnews/01-202506-Blender-Malware.html
+  timestamp: '2025-06-23 07:09:23'
 Game*Spark:
 - link: http://www.gamespark.jp/article/2025/06/21/154262.html
   timestamp: '2025-06-21 20:02:50'
@@ -256,6 +278,26 @@ Game*Spark:
   timestamp: '2025-06-22 19:18:59'
 - link: http://www.gamespark.jp/article/2025/06/20/154240.html
   timestamp: '2025-06-22 19:19:00'
+- link: http://www.gamespark.jp/article/2025/06/22/154280.html
+  timestamp: '2025-06-23 07:09:15'
+- link: http://www.gamespark.jp/article/2025/06/20/154239.html
+  timestamp: '2025-06-23 07:09:15'
+- link: http://www.gamespark.jp/article/2025/06/20/154238.html
+  timestamp: '2025-06-23 07:09:15'
+- link: http://www.gamespark.jp/article/2025/06/20/154237.html
+  timestamp: '2025-06-23 07:09:16'
+- link: http://www.gamespark.jp/article/2025/06/20/154236.html
+  timestamp: '2025-06-23 07:09:16'
+- link: http://www.gamespark.jp/article/2025/06/20/154235.html
+  timestamp: '2025-06-23 07:09:16'
+- link: http://www.gamespark.jp/article/2025/06/20/154234.html
+  timestamp: '2025-06-23 07:09:16'
+- link: http://www.gamespark.jp/article/2025/06/20/154233.html
+  timestamp: '2025-06-23 07:09:17'
+- link: http://www.gamespark.jp/article/2025/06/20/154232.html
+  timestamp: '2025-06-23 07:09:18'
+- link: http://www.gamespark.jp/article/2025/06/20/154231.html
+  timestamp: '2025-06-23 07:09:19'
 ゲームメーカーズ:
 - link: https://gamemakers.jp/article/2025_06_20_106090/
   timestamp: '2025-06-21 20:03:30'
@@ -398,6 +440,26 @@ Game*Spark:
   timestamp: '2025-06-22 19:19:23'
 - link: https://www.famitsu.com/article/202506/45383
   timestamp: '2025-06-22 19:19:24'
+- link: https://www.famitsu.com/article/202506/45474
+  timestamp: '2025-06-23 07:09:34'
+- link: https://www.famitsu.com/article/202506/45471
+  timestamp: '2025-06-23 07:09:35'
+- link: https://www.famitsu.com/article/202506/45470
+  timestamp: '2025-06-23 07:09:35'
+- link: https://www.famitsu.com/article/202506/45464
+  timestamp: '2025-06-23 07:09:35'
+- link: https://www.famitsu.com/article/202506/45375
+  timestamp: '2025-06-23 07:09:36'
+- link: https://www.famitsu.com/article/202506/45338
+  timestamp: '2025-06-23 07:09:36'
+- link: https://www.famitsu.com/article/202506/44541
+  timestamp: '2025-06-23 07:09:36'
+- link: https://www.famitsu.com/article/202506/45278
+  timestamp: '2025-06-23 07:09:37'
+- link: https://www.famitsu.com/article/202506/44062
+  timestamp: '2025-06-23 07:09:38'
+- link: https://www.famitsu.com/special/content/nobunaga/index.html
+  timestamp: '2025-06-23 07:09:39'
 新着アセット情報:
 - link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/stylized-ork-warrior-213700?aid=1011lGbg&pubref=am
   timestamp: '2025-06-21 20:03:11'
@@ -479,3 +541,23 @@ Game*Spark:
   timestamp: '2025-06-22 19:19:09'
 - link: https://assetstore.unity.com/packages/3dvironments/dungeons/dwarven-ruins-153061?aid=1011lGbg&pubref=am
   timestamp: '2025-06-22 19:19:10'
+- link: https://assetstore.unity.com/packages/tools/audio/simple-audio-library-wav-mp3-ogg-206886?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:25'
+- link: https://assetstore.unity.com/packages/vfx/particlesvironment/black-hole-tornado-318051?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:26'
+- link: https://assetstore.unity.com/packages/vfx/particlesvironment/amazing-and-fast-sun-301813?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:26'
+- link: https://assetstore.unity.com/packages/tools/animation/smooth-shake-pro-271080?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:26'
+- link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/fantasy-golem-girl-v1-279662?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:27'
+- link: https://assetstore.unity.com/packages/3d/props/doors-collection-v-1-279655?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:27'
+- link: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/bloody-biomutant-279562?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:27'
+- link: https://assetstore.unity.com/packages/3d/props/interior/big-lockers-collection-283669?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:28'
+- link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/fantasy-golem-man-v1-279658?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:29'
+- link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/aliens-monsters-bundle-283377?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-23 07:09:30'
