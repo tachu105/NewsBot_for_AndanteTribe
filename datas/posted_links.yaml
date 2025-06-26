@@ -1,24 +1,4 @@
 4Gamer.net:
-- link: https://www.4gamer.net/games/800/G080038/20250623022/
-  timestamp: '2025-06-23 13:35:56'
-- link: https://www.4gamer.net/games/991/G999112/20250623021/
-  timestamp: '2025-06-23 13:35:56'
-- link: https://www.4gamer.net/games/596/G059641/20250623019/
-  timestamp: '2025-06-23 13:35:57'
-- link: https://www.4gamer.net/games/922/G092295/20250623018/
-  timestamp: '2025-06-23 13:35:57'
-- link: https://www.4gamer.net/games/899/G089905/20250623015/
-  timestamp: '2025-06-23 13:35:58'
-- link: https://www.4gamer.net/games/882/G088208/20250623014/
-  timestamp: '2025-06-23 13:35:58'
-- link: https://www.4gamer.net/games/767/G076728/20250623013/
-  timestamp: '2025-06-23 13:35:58'
-- link: https://www.4gamer.net/games/882/G088214/20250623008/
-  timestamp: '2025-06-23 13:35:59'
-- link: https://www.4gamer.net/games/445/G044524/20250623012/
-  timestamp: '2025-06-23 13:36:00'
-- link: https://www.4gamer.net/games/673/G067389/20250623011/
-  timestamp: '2025-06-23 13:36:00'
 - link: https://www.4gamer.net/games/673/G067389/20250623049/
   timestamp: '2025-06-23 19:22:03'
 - link: https://www.4gamer.net/games/991/G999111/20250623046/
@@ -199,21 +179,27 @@
   timestamp: '2025-06-26 13:31:49'
 - link: https://www.4gamer.net/games/924/G092428/20250626012/
   timestamp: '2025-06-26 13:31:50'
+- link: https://www.4gamer.net/games/458/G045823/20250626057/
+  timestamp: '2025-06-26 19:20:31'
+- link: https://www.4gamer.net/games/462/G046207/20250626054/
+  timestamp: '2025-06-26 19:20:31'
+- link: https://www.4gamer.net/games/840/G084066/20250626053/
+  timestamp: '2025-06-26 19:20:32'
+- link: https://www.4gamer.net/games/462/G046238/20250626050/
+  timestamp: '2025-06-26 19:20:32'
+- link: https://www.4gamer.net/games/885/G088506/20250626049/
+  timestamp: '2025-06-26 19:20:32'
+- link: https://www.4gamer.net/games/652/G065289/20250626048/
+  timestamp: '2025-06-26 19:20:32'
+- link: https://www.4gamer.net/games/913/G091372/20250626047/
+  timestamp: '2025-06-26 19:20:33'
+- link: https://www.4gamer.net/games/779/G077901/20250626046/
+  timestamp: '2025-06-26 19:20:33'
+- link: https://www.4gamer.net/games/921/G092196/20250626043/
+  timestamp: '2025-06-26 19:20:34'
+- link: https://www.4gamer.net/games/924/G092447/20250626041/
+  timestamp: '2025-06-26 19:20:35'
 AUTOMATON:
-- link: https://automaton-media.com/articles/newsjp/parcel-simulator-20250623-345840/
-  timestamp: '2025-06-23 13:36:12'
-- link: https://automaton-media.com/articles/newsjp/babbling-brook-20250623-345832/
-  timestamp: '2025-06-23 13:36:12'
-- link: https://automaton-media.com/articles/newsjp/roguelike-balatro-20250623-345818/
-  timestamp: '2025-06-23 13:36:12'
-- link: https://automaton-media.com/articles/newsjp/toureve-20250623-345816/
-  timestamp: '2025-06-23 13:36:13'
-- link: https://automaton-media.com/articles/newsjp/mario-kart-world-20250623-345807/
-  timestamp: '2025-06-23 13:36:13'
-- link: https://automaton-media.com/articles/newsjp/world-of-warships-blue-archive-20250623-345802/
-  timestamp: '2025-06-23 13:36:13'
-- link: https://automaton-media.com/articles/newsjp/coop-peak-20250623-345798/
-  timestamp: '2025-06-23 13:36:13'
 - link: https://automaton-media.com/articles/newsjp/maple-story-20250623-345895/
   timestamp: '2025-06-23 19:22:17'
 - link: https://automaton-media.com/articles/newsjp/20250623-345891/
@@ -314,9 +300,19 @@ AUTOMATON:
   timestamp: '2025-06-26 13:32:00'
 - link: https://automaton-media.com/articles/newsjp/ark-2-20250626-346181/
   timestamp: '2025-06-26 13:32:00'
+- link: https://automaton-media.com/articles/newsjp/craftopia-20250626-346248/
+  timestamp: '2025-06-26 19:20:45'
+- link: https://automaton-media.com/articles/newsjp/silver-and-blood-20250626-346234/
+  timestamp: '2025-06-26 19:20:45'
+- link: https://automaton-media.com/articles/newsjp/the-legend-of-zelda-the-wind-waker-20250626-346233/
+  timestamp: '2025-06-26 19:20:45'
+- link: https://automaton-media.com/articles/newsjp/3gokushi-20250626-346227/
+  timestamp: '2025-06-26 19:20:45'
+- link: https://automaton-media.com/articles/newsjp/nintendo-switch-sale-20250626-346219/
+  timestamp: '2025-06-26 19:20:46'
+- link: https://automaton-media.com/articles/newsjp/tokimeki-memorial-20250626-346214/
+  timestamp: '2025-06-26 19:20:47'
 CGWORLD.jP:
-- link: https://cgworld.jp/article/202506-tsukuyomi.html
-  timestamp: '2025-06-23 13:36:15'
 - link: https://cgworld.jp/flashnews/01-202506-Railway Generator.html
   timestamp: '2025-06-24 13:31:58'
 - link: https://cgworld.jp/flashnews/2506-news-makaizo.html
@@ -353,27 +349,11 @@ CGWORLD.jP:
   timestamp: '2025-06-26 13:32:02'
 - link: https://cgworld.jp/flashnews/01-202506-NVIDIA-PartPacker.html
   timestamp: '2025-06-26 13:32:02'
+- link: https://cgworld.jp/flashnews/01-202506-uvFactory.html
+  timestamp: '2025-06-26 19:20:49'
+- link: https://cgworld.jp/article/202506-tsukuyomi.html
+  timestamp: '2025-06-26 19:20:50'
 Game*Spark:
-- link: http://www.gamespark.jp/article/2025/06/23/154292.html
-  timestamp: '2025-06-23 13:36:03'
-- link: http://www.gamespark.jp/article/2025/06/23/154291.html
-  timestamp: '2025-06-23 13:36:03'
-- link: http://www.gamespark.jp/article/2025/06/23/154290.html
-  timestamp: '2025-06-23 13:36:03'
-- link: http://www.gamespark.jp/article/2025/06/23/154289.html
-  timestamp: '2025-06-23 13:36:04'
-- link: http://www.gamespark.jp/article/2025/06/23/154288.html
-  timestamp: '2025-06-23 13:36:04'
-- link: http://www.gamespark.jp/article/2025/06/23/154287.html
-  timestamp: '2025-06-23 13:36:04'
-- link: http://www.gamespark.jp/article/2025/06/23/154286.html
-  timestamp: '2025-06-23 13:36:04'
-- link: http://www.gamespark.jp/article/2025/06/23/154285.html
-  timestamp: '2025-06-23 13:36:06'
-- link: http://www.gamespark.jp/article/2025/06/23/154284.html
-  timestamp: '2025-06-23 13:36:06'
-- link: http://www.gamespark.jp/article/2025/06/23/154283.html
-  timestamp: '2025-06-23 13:36:07'
 - link: http://www.gamespark.jp/article/2025/06/23/154308.html
   timestamp: '2025-06-23 19:22:10'
 - link: http://www.gamespark.jp/article/2025/06/23/154307.html
@@ -554,6 +534,26 @@ Game*Spark:
   timestamp: '2025-06-26 13:31:55'
 - link: http://www.gamespark.jp/article/2025/06/26/154423.html
   timestamp: '2025-06-26 13:31:56'
+- link: http://www.gamespark.jp/article/2025/06/26/154440.html
+  timestamp: '2025-06-26 19:20:37'
+- link: http://www.gamespark.jp/article/2025/06/26/154439.html
+  timestamp: '2025-06-26 19:20:38'
+- link: http://www.gamespark.jp/article/2025/06/26/154438.html
+  timestamp: '2025-06-26 19:20:38'
+- link: http://www.gamespark.jp/article/2025/06/26/154437.html
+  timestamp: '2025-06-26 19:20:38'
+- link: http://www.gamespark.jp/article/2025/06/26/154436.html
+  timestamp: '2025-06-26 19:20:38'
+- link: http://www.gamespark.jp/article/2025/06/26/154435.html
+  timestamp: '2025-06-26 19:20:39'
+- link: http://www.gamespark.jp/article/2025/06/26/154434.html
+  timestamp: '2025-06-26 19:20:39'
+- link: http://www.gamespark.jp/article/2025/06/26/154433.html
+  timestamp: '2025-06-26 19:20:40'
+- link: http://www.gamespark.jp/article/2025/06/26/154422.html
+  timestamp: '2025-06-26 19:20:41'
+- link: http://www.gamespark.jp/article/2025/06/26/154421.html
+  timestamp: '2025-06-26 19:20:42'
 ゲームメーカーズ:
 - link: https://gamemakers.jp/article/2025_06_23_106544/
   timestamp: '2025-06-23 19:22:38'
@@ -617,27 +617,9 @@ Game*Spark:
   timestamp: '2025-06-25 19:21:31'
 - link: https://gamemakers.jp/article/2025_06_25_108543/
   timestamp: '2025-06-26 07:09:57'
+- link: https://gamemakers.jp/article/2025_06_12_106657/
+  timestamp: '2025-06-26 19:21:06'
 ファミ通.com_新着:
-- link: https://www.famitsu.com/article/202506/45279
-  timestamp: '2025-06-23 13:36:27'
-- link: https://www.famitsu.com/article/202506/45420
-  timestamp: '2025-06-23 13:36:27'
-- link: https://www.famitsu.com/article/202506/45209
-  timestamp: '2025-06-23 13:36:28'
-- link: https://www.famitsu.com/article/202506/45208
-  timestamp: '2025-06-23 13:36:28'
-- link: https://www.famitsu.com/article/202506/45210
-  timestamp: '2025-06-23 13:36:28'
-- link: https://www.famitsu.com/article/202506/45154
-  timestamp: '2025-06-23 13:36:29'
-- link: https://www.famitsu.com/article/202506/45207
-  timestamp: '2025-06-23 13:36:29'
-- link: https://www.famitsu.com/article/202506/45206
-  timestamp: '2025-06-23 13:36:29'
-- link: https://www.famitsu.com/article/202505/43407
-  timestamp: '2025-06-23 13:36:30'
-- link: https://www.famitsu.com/special/content/dinkum/index.html
-  timestamp: '2025-06-23 13:36:31'
 - link: https://www.famitsu.com/article/202506/45503
   timestamp: '2025-06-23 19:22:35'
 - link: https://www.famitsu.com/article/202506/45504
@@ -780,27 +762,27 @@ Game*Spark:
   timestamp: '2025-06-26 13:32:17'
 - link: https://www.famitsu.com/article/202506/45581
   timestamp: '2025-06-26 13:32:18'
+- link: https://www.famitsu.com/article/202506/45769
+  timestamp: '2025-06-26 19:20:59'
+- link: https://www.famitsu.com/article/202506/45605
+  timestamp: '2025-06-26 19:21:00'
+- link: https://www.famitsu.com/article/202506/45778
+  timestamp: '2025-06-26 19:21:00'
+- link: https://www.famitsu.com/article/202506/45763
+  timestamp: '2025-06-26 19:21:00'
+- link: https://www.famitsu.com/article/202506/45758
+  timestamp: '2025-06-26 19:21:01'
+- link: https://www.famitsu.com/article/202506/45775
+  timestamp: '2025-06-26 19:21:01'
+- link: https://www.famitsu.com/article/202506/45759
+  timestamp: '2025-06-26 19:21:01'
+- link: https://www.famitsu.com/article/202506/45764
+  timestamp: '2025-06-26 19:21:02'
+- link: https://www.famitsu.com/article/202506/45755
+  timestamp: '2025-06-26 19:21:03'
+- link: https://www.famitsu.com/article/202506/45761
+  timestamp: '2025-06-26 19:21:04'
 新着アセット情報:
-- link: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/alien-monster-queen-v1-279566?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:16'
-- link: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/alien-monster-man-v-1-279565?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:17'
-- link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/fantasy-golem-man-v2-279659?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:17'
-- link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/fantasy-golem-man-v3-279660?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:17'
-- link: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/alien-biomutant-man-279568?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:18'
-- link: https://assetstore.unity.com/packages/3d/props/gates-and-fences-296274?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:18'
-- link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/fantasy-golems-bundle-283373?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:18'
-- link: https://assetstore.unity.com/packages/3d/props/lockers-collection-v-1-279656?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:19'
-- link: https://assetstore.unity.com/packages/3d/props/planets-and-asteroids-collection-300309?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:20'
-- link: https://assetstore.unity.com/packages/3d/props/electronics/street-lamps-collection-vol-1-271673?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-23 13:36:21'
 - link: https://assetstore.unity.com/packages/tools/audio/voicebro-voice-client-server-system-288608?aid=1011lGbg&pubref=am
   timestamp: '2025-06-23 19:22:23'
 - link: https://assetstore.unity.com/packages/templates/packs/gta-style-tps-game-kit-and-vehicle-controller-for-mobile-pc-311519?aid=1011lGbg&pubref=am
@@ -981,3 +963,23 @@ Game*Spark:
   timestamp: '2025-06-26 13:32:07'
 - link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/aliens-monsters-bundle-283377?aid=1011lGbg&pubref=am
   timestamp: '2025-06-26 13:32:08'
+- link: https://assetstore.unity.com/packages/2d/textures-materials/abstract/hdri-8k-fractal-panoramic-skyboxes-317344?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:51'
+- link: https://assetstore.unity.com/packages/3d/vehicles/sea/retro-steamboat-v-1-scifan-artwork-llc-279134?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:51'
+- link: https://assetstore.unity.com/packages/3d/props/tools/interactive-buttons-292066?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:51'
+- link: https://assetstore.unity.com/packages/vfx/particles/ground-auras-part-1-310417?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:52'
+- link: https://assetstore.unity.com/packages/vfx/shaders/20-mixed-burst-vfx-part-1-308845?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:52'
+- link: https://assetstore.unity.com/packages/tools/integration/savemate-319000?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:52'
+- link: https://assetstore.unity.com/packages/tools/utilities/batch-renamer-organize-322712?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:52'
+- link: https://assetstore.unity.com/packages/3d/characters/robots/spider-robot-pack-315191?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:53'
+- link: https://assetstore.unity.com/packages/tools/animation/simple-animator-315997?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:54'
+- link: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/alien-monster-queen-v1-279566?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-26 19:20:55'
