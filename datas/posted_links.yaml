@@ -1,24 +1,4 @@
 4Gamer.net:
-- link: https://www.4gamer.net/games/799/G079964/20250623038/
-  timestamp: '2025-06-24 07:09:35'
-- link: https://www.4gamer.net/games/922/G092283/20250620066/
-  timestamp: '2025-06-24 07:09:36'
-- link: https://www.4gamer.net/games/898/G089837/20250610044/
-  timestamp: '2025-06-24 07:09:36'
-- link: https://www.4gamer.net/games/923/G092301/20250623025/
-  timestamp: '2025-06-24 07:09:36'
-- link: https://www.4gamer.net/games/673/G067389/20250623028/
-  timestamp: '2025-06-24 07:09:37'
-- link: https://www.4gamer.net/games/486/G048621/20250623057/
-  timestamp: '2025-06-24 07:09:37'
-- link: https://www.4gamer.net/games/991/G999106/20250620059/
-  timestamp: '2025-06-24 07:09:37'
-- link: https://www.4gamer.net/games/514/G051465/20250623058/
-  timestamp: '2025-06-24 07:09:38'
-- link: https://www.4gamer.net/games/832/G083246/20250623055/
-  timestamp: '2025-06-24 07:09:39'
-- link: https://www.4gamer.net/games/991/G999110/20250619064/
-  timestamp: '2025-06-24 07:09:40'
 - link: https://www.4gamer.net/games/923/G092337/20250624017/
   timestamp: '2025-06-24 13:31:40'
 - link: https://www.4gamer.net/games/771/G077119/20250624019/
@@ -199,13 +179,27 @@
   timestamp: '2025-06-27 07:09:27'
 - link: https://www.4gamer.net/games/274/G027460/20250626062/
   timestamp: '2025-06-27 07:09:28'
+- link: https://www.4gamer.net/games/826/G082655/20250627038/
+  timestamp: '2025-06-27 13:31:05'
+- link: https://www.4gamer.net/games/866/G086632/20250627032/
+  timestamp: '2025-06-27 13:31:06'
+- link: https://www.4gamer.net/games/798/G079868/20250627034/
+  timestamp: '2025-06-27 13:31:06'
+- link: https://www.4gamer.net/games/991/G999103/20250627037/
+  timestamp: '2025-06-27 13:31:07'
+- link: https://www.4gamer.net/games/023/G002318/20250627035/
+  timestamp: '2025-06-27 13:31:07'
+- link: https://www.4gamer.net/games/590/G059012/20250627030/
+  timestamp: '2025-06-27 13:31:07'
+- link: https://www.4gamer.net/games/487/G048777/20250627033/
+  timestamp: '2025-06-27 13:31:08'
+- link: https://www.4gamer.net/games/011/G001163/20250627029/
+  timestamp: '2025-06-27 13:31:08'
+- link: https://www.4gamer.net/games/599/G059954/20250627031/
+  timestamp: '2025-06-27 13:31:09'
+- link: https://www.4gamer.net/games/864/G086414/20250627026/
+  timestamp: '2025-06-27 13:31:10'
 AUTOMATON:
-- link: https://automaton-media.com/articles/newsjp/starsand-20250623-345913/
-  timestamp: '2025-06-24 07:09:49'
-- link: https://automaton-media.com/articles/newsjp/escape-from-tarkov-20250623-345921/
-  timestamp: '2025-06-24 07:09:50'
-- link: https://automaton-media.com/articles/newsjp/atelier-yumia-20250623-345903/
-  timestamp: '2025-06-24 07:09:50'
 - link: https://automaton-media.com/articles/newsjp/mindseye-20250624-345969/
   timestamp: '2025-06-24 13:31:55'
 - link: https://automaton-media.com/articles/newsjp/xbox-20250624-345964/
@@ -302,6 +296,26 @@ AUTOMATON:
   timestamp: '2025-06-27 07:09:38'
 - link: https://automaton-media.com/articles/newsjp/sengoku-dynasty-20250626-346256/
   timestamp: '2025-06-27 07:09:38'
+- link: https://automaton-media.com/articles/newsjp/coop-peak-20250627-346376/
+  timestamp: '2025-06-27 13:31:20'
+- link: https://automaton-media.com/articles/newsjp/eldenring-night-reign-20250627-346371/
+  timestamp: '2025-06-27 13:31:20'
+- link: https://automaton-media.com/articles/newsjp/20250627-346363/
+  timestamp: '2025-06-27 13:31:20'
+- link: https://automaton-media.com/articles/newsjp/abiotic-factor-20250627-346358/
+  timestamp: '2025-06-27 13:31:21'
+- link: https://automaton-media.com/articles/newsjp/20250627-346351/
+  timestamp: '2025-06-27 13:31:21'
+- link: https://automaton-media.com/articles/newsjp/bubble-bobble-sugar-dungeons-20250627-346338/
+  timestamp: '2025-06-27 13:31:21'
+- link: https://automaton-media.com/articles/newsjp/20250627-346339/
+  timestamp: '2025-06-27 13:31:22'
+- link: https://automaton-media.com/articles/newsjp/20250627-346333/
+  timestamp: '2025-06-27 13:31:22'
+- link: https://automaton-media.com/articles/newsjp/20250627-346328/
+  timestamp: '2025-06-27 13:31:23'
+- link: https://automaton-media.com/articles/newsjp/dearme-20250627-346322/
+  timestamp: '2025-06-27 13:31:24'
 CGWORLD.jP:
 - link: https://cgworld.jp/flashnews/01-202506-Railway Generator.html
   timestamp: '2025-06-24 13:31:58'
@@ -343,27 +357,15 @@ CGWORLD.jP:
   timestamp: '2025-06-26 19:20:49'
 - link: https://cgworld.jp/article/202506-tsukuyomi.html
   timestamp: '2025-06-26 19:20:50'
+- link: https://cgworld.jp/flashnews/01-202506-Sparc3D-Hitem3D.html
+  timestamp: '2025-06-27 13:31:27'
+- link: https://cgworld.jp/special-feature/AMD-okada-202506.html
+  timestamp: '2025-06-27 13:31:27'
+- link: https://cgworld.jp/regular/guncys-ue5-009.html
+  timestamp: '2025-06-27 13:31:27'
+- link: https://cgworld.jp/flashnews/01-202506-PartCrafter.html
+  timestamp: '2025-06-27 13:31:27'
 Game*Spark:
-- link: http://www.gamespark.jp/article/2025/06/24/154325.html
-  timestamp: '2025-06-24 07:09:42'
-- link: http://www.gamespark.jp/article/2025/06/24/154324.html
-  timestamp: '2025-06-24 07:09:42'
-- link: http://www.gamespark.jp/article/2025/06/24/154323.html
-  timestamp: '2025-06-24 07:09:43'
-- link: http://www.gamespark.jp/article/2025/06/24/154322.html
-  timestamp: '2025-06-24 07:09:43'
-- link: http://www.gamespark.jp/article/2025/06/24/154321.html
-  timestamp: '2025-06-24 07:09:43'
-- link: http://www.gamespark.jp/article/2025/06/23/154320.html
-  timestamp: '2025-06-24 07:09:44'
-- link: http://www.gamespark.jp/article/2025/06/23/154319.html
-  timestamp: '2025-06-24 07:09:44'
-- link: http://www.gamespark.jp/article/2025/06/23/154318.html
-  timestamp: '2025-06-24 07:09:44'
-- link: http://www.gamespark.jp/article/2025/06/23/154317.html
-  timestamp: '2025-06-24 07:09:45'
-- link: http://www.gamespark.jp/article/2025/06/23/154316.html
-  timestamp: '2025-06-24 07:09:46'
 - link: http://www.gamespark.jp/article/2025/06/24/154336.html
   timestamp: '2025-06-24 13:31:47'
 - link: http://www.gamespark.jp/article/2025/06/24/154335.html
@@ -544,11 +546,27 @@ Game*Spark:
   timestamp: '2025-06-27 07:09:34'
 - link: http://www.gamespark.jp/article/2025/06/26/154446.html
   timestamp: '2025-06-27 07:09:35'
+- link: http://www.gamespark.jp/article/2025/06/27/154475.html
+  timestamp: '2025-06-27 13:31:12'
+- link: http://www.gamespark.jp/article/2025/06/27/154474.html
+  timestamp: '2025-06-27 13:31:13'
+- link: http://www.gamespark.jp/article/2025/06/27/154473.html
+  timestamp: '2025-06-27 13:31:13'
+- link: http://www.gamespark.jp/article/2025/06/27/154472.html
+  timestamp: '2025-06-27 13:31:13'
+- link: http://www.gamespark.jp/article/2025/06/27/154471.html
+  timestamp: '2025-06-27 13:31:14'
+- link: http://www.gamespark.jp/article/2025/06/27/154470.html
+  timestamp: '2025-06-27 13:31:14'
+- link: http://www.gamespark.jp/article/2025/06/27/154469.html
+  timestamp: '2025-06-27 13:31:14'
+- link: http://www.gamespark.jp/article/2025/06/27/154468.html
+  timestamp: '2025-06-27 13:31:15'
+- link: http://www.gamespark.jp/article/2025/06/27/154467.html
+  timestamp: '2025-06-27 13:31:16'
+- link: http://www.gamespark.jp/article/2025/06/27/154466.html
+  timestamp: '2025-06-27 13:31:17'
 ゲームメーカーズ:
-- link: https://gamemakers.jp/article/2025_06_23_106216/
-  timestamp: '2025-06-24 07:10:07'
-- link: https://gamemakers.jp/article/2025_06_23_107878/
-  timestamp: '2025-06-24 07:10:08'
 - link: https://gamemakers.jp/article/2025_06_24_107275/
   timestamp: '2025-06-24 13:32:11'
 - link: https://gamemakers.jp/article/2025_06_24_108111/
@@ -611,23 +629,11 @@ Game*Spark:
   timestamp: '2025-06-27 07:09:57'
 - link: https://gamemakers.jp/article/2025_06_23_107695/
   timestamp: '2025-06-27 07:09:57'
+- link: https://gamemakers.jp/article/2025_06_23_106216/
+  timestamp: '2025-06-27 13:31:54'
+- link: https://gamemakers.jp/article/2025_06_23_107878/
+  timestamp: '2025-06-27 13:31:54'
 ファミ通.com_新着:
-- link: https://www.famitsu.com/article/202506/45429
-  timestamp: '2025-06-24 07:10:03'
-- link: https://www.famitsu.com/article/202506/45140
-  timestamp: '2025-06-24 07:10:03'
-- link: https://www.famitsu.com/article/202506/45512
-  timestamp: '2025-06-24 07:10:03'
-- link: https://www.famitsu.com/article/202506/45544
-  timestamp: '2025-06-24 07:10:04'
-- link: https://www.famitsu.com/article/202506/45532
-  timestamp: '2025-06-24 07:10:04'
-- link: https://www.famitsu.com/article/202506/45522
-  timestamp: '2025-06-24 07:10:04'
-- link: https://www.famitsu.com/article/202506/45524
-  timestamp: '2025-06-24 07:10:05'
-- link: https://www.famitsu.com/article/202506/45523
-  timestamp: '2025-06-24 07:10:05'
 - link: https://www.famitsu.com/article/202506/45562
   timestamp: '2025-06-24 13:32:07'
 - link: https://www.famitsu.com/article/202506/45563
@@ -782,27 +788,27 @@ Game*Spark:
   timestamp: '2025-06-27 07:09:53'
 - link: https://www.famitsu.com/article/202506/45817
   timestamp: '2025-06-27 07:09:54'
+- link: https://www.famitsu.com/article/202506/45696
+  timestamp: '2025-06-27 13:31:46'
+- link: https://www.famitsu.com/article/202506/43597
+  timestamp: '2025-06-27 13:31:46'
+- link: https://www.famitsu.com/article/202506/45890
+  timestamp: '2025-06-27 13:31:47'
+- link: https://www.famitsu.com/article/202506/45815
+  timestamp: '2025-06-27 13:31:47'
+- link: https://www.famitsu.com/article/202506/45845
+  timestamp: '2025-06-27 13:31:47'
+- link: https://www.famitsu.com/article/202506/45852
+  timestamp: '2025-06-27 13:31:48'
+- link: https://www.famitsu.com/article/202506/45857
+  timestamp: '2025-06-27 13:31:48'
+- link: https://www.famitsu.com/article/202506/45885
+  timestamp: '2025-06-27 13:31:48'
+- link: https://www.famitsu.com/article/202506/45855
+  timestamp: '2025-06-27 13:31:49'
+- link: https://www.famitsu.com/article/202506/45813
+  timestamp: '2025-06-27 13:31:52'
 新着アセット情報:
-- link: https://assetstore.unity.com/packages/3dvironments/abandoned-swimming-pool-environment-231814?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:53'
-- link: https://assetstore.unity.com/packages/3dvironments/historic/roman-street-environment-290716?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:53'
-- link: https://assetstore.unity.com/packages/3dvironments/fantasy/cyberpunk-city-recife-environment-240150?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:53'
-- link: https://assetstore.unity.com/packages/3dvironments/sci-fi/nova-space-burgers-cyberpunk-abandoned-restaurant-bar-211013?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:54'
-- link: https://assetstore.unity.com/packages/tools/integration/arrow-launcher-34978?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:54'
-- link: https://assetstore.unity.com/packages/3dvironments/historic/roman-swimming-pool-environment-267016?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:54'
-- link: https://assetstore.unity.com/packages/3dvironments/historic/rpg-poly-pack-slavic-town-143574?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:55'
-- link: https://assetstore.unity.com/packages/3dvironments/fantasy/king-arthur-castle-interior-environment-217312?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:55'
-- link: https://assetstore.unity.com/packages/3dvironments/abandoned-horror-mansion-interior-272231?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:56'
-- link: https://assetstore.unity.com/packages/3dvironments/urban/french-quarter-street-environment-303625?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 07:09:57'
 - link: https://assetstore.unity.com/packages/3d/props/guns/ww1-gun-equipment-pack-308033?aid=1011lGbg&pubref=am
   timestamp: '2025-06-24 13:31:59'
 - link: https://assetstore.unity.com/packages/3d/vehicles/air/10-airplane-models-pack-197286?aid=1011lGbg&pubref=am
@@ -983,3 +989,23 @@ Game*Spark:
   timestamp: '2025-06-27 07:09:44'
 - link: https://assetstore.unity.com/packages/audio/ambient/echoes-of-despair-game-music-280589?aid=1011lGbg&pubref=am
   timestamp: '2025-06-27 07:09:45'
+- link: https://assetstore.unity.com/packages/tools/utilities/game-tags-280149?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:28'
+- link: https://assetstore.unity.com/packages/3dvironments/abandoned-swimming-pool-environment-231814?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:29'
+- link: https://assetstore.unity.com/packages/3dvironments/historic/roman-street-environment-290716?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:29'
+- link: https://assetstore.unity.com/packages/3dvironments/fantasy/cyberpunk-city-recife-environment-240150?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:29'
+- link: https://assetstore.unity.com/packages/3dvironments/sci-fi/nova-space-burgers-cyberpunk-abandoned-restaurant-bar-211013?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:30'
+- link: https://assetstore.unity.com/packages/tools/integration/arrow-launcher-34978?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:30'
+- link: https://assetstore.unity.com/packages/3dvironments/historic/roman-swimming-pool-environment-267016?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:30'
+- link: https://assetstore.unity.com/packages/3dvironments/historic/rpg-poly-pack-slavic-town-143574?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:31'
+- link: https://assetstore.unity.com/packages/3dvironments/fantasy/king-arthur-castle-interior-environment-217312?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:32'
+- link: https://assetstore.unity.com/packages/3dvironments/abandoned-horror-mansion-interior-272231?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-27 13:31:33'
