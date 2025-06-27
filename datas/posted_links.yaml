@@ -1,24 +1,4 @@
 4Gamer.net:
-- link: https://www.4gamer.net/games/760/G076037/20250624058/
-  timestamp: '2025-06-24 19:21:01'
-- link: https://www.4gamer.net/games/824/G082403/20250624056/
-  timestamp: '2025-06-24 19:21:01'
-- link: https://www.4gamer.net/games/574/G057444/20250624053/
-  timestamp: '2025-06-24 19:21:01'
-- link: https://www.4gamer.net/games/422/G042238/20250624049/
-  timestamp: '2025-06-24 19:21:02'
-- link: https://www.4gamer.net/games/011/G001163/20250624040/
-  timestamp: '2025-06-24 19:21:02'
-- link: https://www.4gamer.net/games/923/G092364/20250624050/
-  timestamp: '2025-06-24 19:21:03'
-- link: https://www.4gamer.net/games/991/G999104/20250624048/
-  timestamp: '2025-06-24 19:21:03'
-- link: https://www.4gamer.net/games/635/G063504/20250624047/
-  timestamp: '2025-06-24 19:21:03'
-- link: https://www.4gamer.net/games/923/G092359/20250624042/
-  timestamp: '2025-06-24 19:21:04'
-- link: https://www.4gamer.net/games/991/G999111/20250624046/
-  timestamp: '2025-06-24 19:21:05'
 - link: https://www.4gamer.net/games/804/G080469/20250603022/
   timestamp: '2025-06-25 07:09:34'
 - link: https://www.4gamer.net/games/521/G052100/20250624043/
@@ -199,21 +179,27 @@
   timestamp: '2025-06-27 19:20:51'
 - link: https://www.4gamer.net/games/924/G092495/20250627063/
   timestamp: '2025-06-27 19:20:52'
+- link: https://www.4gamer.net/games/999/G999904/20250628002/
+  timestamp: '2025-06-28 07:09:27'
+- link: https://www.4gamer.net/games/419/G041925/20250628001/
+  timestamp: '2025-06-28 07:09:27'
+- link: https://www.4gamer.net/games/651/G065171/20250627095/
+  timestamp: '2025-06-28 07:09:27'
+- link: https://www.4gamer.net/games/885/G088570/20250627094/
+  timestamp: '2025-06-28 07:09:28'
+- link: https://www.4gamer.net/games/999/G999901/20250627091/
+  timestamp: '2025-06-28 07:09:28'
+- link: https://www.4gamer.net/games/999/G999901/20250627089/
+  timestamp: '2025-06-28 07:09:28'
+- link: https://www.4gamer.net/games/991/G999109/20250627082/
+  timestamp: '2025-06-28 07:09:29'
+- link: https://www.4gamer.net/games/924/G092499/20250627086/
+  timestamp: '2025-06-28 07:09:29'
+- link: https://www.4gamer.net/games/991/G999103/20250627084/
+  timestamp: '2025-06-28 07:09:30'
+- link: https://www.4gamer.net/games/864/G086446/20250627079/
+  timestamp: '2025-06-28 07:09:31'
 AUTOMATON:
-- link: https://automaton-media.com/articles/newsjp/horror-iwakutsugi-20250624-346018/
-  timestamp: '2025-06-24 19:21:15'
-- link: https://automaton-media.com/articles/newsjp/star-wars-battlefront-ii-20250624-346000/
-  timestamp: '2025-06-24 19:21:15'
-- link: https://automaton-media.com/articles/newsjp/20250624-346007/
-  timestamp: '2025-06-24 19:21:16'
-- link: https://automaton-media.com/articles/newsjp/hytale-20250624-346001/
-  timestamp: '2025-06-24 19:21:16'
-- link: https://automaton-media.com/articles/newsjp/civilization-vii-20250624-345993/
-  timestamp: '2025-06-24 19:21:16'
-- link: https://automaton-media.com/articles/newsjp/muvluv-girls-garden-20250624-345983/
-  timestamp: '2025-06-24 19:21:17'
-- link: https://automaton-media.com/articles/newsjp/die-deep-20250624-345974/
-  timestamp: '2025-06-24 19:21:17'
 - link: https://automaton-media.com/articles/newsjp/elden-ring-nightreign-20250624-346062/
   timestamp: '2025-06-25 07:09:47'
 - link: https://automaton-media.com/articles/newsjp/nintendo-switch-2-20250624-346056/
@@ -324,9 +310,23 @@ AUTOMATON:
   timestamp: '2025-06-27 19:21:07'
 - link: https://automaton-media.com/articles/newsjp/way-of-the-samurai-20250627-346408/
   timestamp: '2025-06-27 19:21:07'
+- link: https://automaton-media.com/articles/newsjp/umamusume-20250627-346517/
+  timestamp: '2025-06-28 07:09:41'
+- link: https://automaton-media.com/articles/newsjp/next-jump-shmup-tactics-20250627-346394/
+  timestamp: '2025-06-28 07:09:41'
+- link: https://automaton-media.com/articles/newsjp/hundra-20250627-346316/
+  timestamp: '2025-06-28 07:09:42'
+- link: https://automaton-media.com/articles/newsjp/repo-20250627-346311/
+  timestamp: '2025-06-28 07:09:42'
+- link: https://automaton-media.com/articles/newsjp/monster-hunter-wilds-20250627-346307/
+  timestamp: '2025-06-28 07:09:42'
+- link: https://automaton-media.com/articles/newsjp/hellmart-20250627-346296/
+  timestamp: '2025-06-28 07:09:44'
+- link: https://automaton-media.com/articles/newsjp/monster-hunter-wilds-20250627-346285/
+  timestamp: '2025-06-28 07:09:44'
+- link: https://automaton-media.com/articles/newsjp/street-fighter-6-20250627-346282/
+  timestamp: '2025-06-28 07:09:44'
 CGWORLD.jP:
-- link: https://cgworld.jp/flashnews/2506-news-makaizo.html
-  timestamp: '2025-06-24 19:21:18'
 - link: https://cgworld.jp/article/pixaranimation-master-class710-13.html
   timestamp: '2025-06-25 07:09:51'
 - link: https://cgworld.jp/flashnews/inei-aa-book.html
@@ -375,27 +375,9 @@ CGWORLD.jP:
   timestamp: '2025-06-27 19:21:14'
 - link: https://cgworld.jp/flashnews/01-202506-Railway Generator.html
   timestamp: '2025-06-27 19:21:14'
+- link: https://cgworld.jp/flashnews/2506-news-makaizo.html
+  timestamp: '2025-06-28 07:09:46'
 Game*Spark:
-- link: http://www.gamespark.jp/article/2025/06/24/154352.html
-  timestamp: '2025-06-24 19:21:08'
-- link: http://www.gamespark.jp/article/2025/06/24/154351.html
-  timestamp: '2025-06-24 19:21:08'
-- link: http://www.gamespark.jp/article/2025/06/24/154350.html
-  timestamp: '2025-06-24 19:21:08'
-- link: http://www.gamespark.jp/article/2025/06/24/154349.html
-  timestamp: '2025-06-24 19:21:09'
-- link: http://www.gamespark.jp/article/2025/06/24/154348.html
-  timestamp: '2025-06-24 19:21:09'
-- link: http://www.gamespark.jp/article/2025/06/24/154347.html
-  timestamp: '2025-06-24 19:21:09'
-- link: http://www.gamespark.jp/article/2025/06/24/154346.html
-  timestamp: '2025-06-24 19:21:10'
-- link: http://www.gamespark.jp/article/2025/06/24/154345.html
-  timestamp: '2025-06-24 19:21:10'
-- link: http://www.gamespark.jp/article/2025/06/24/154344.html
-  timestamp: '2025-06-24 19:21:11'
-- link: http://www.gamespark.jp/article/2025/06/24/154343.html
-  timestamp: '2025-06-24 19:21:12'
 - link: http://www.gamespark.jp/article/2025/06/25/154369.html
   timestamp: '2025-06-25 07:09:40'
 - link: http://www.gamespark.jp/article/2025/06/25/154368.html
@@ -576,9 +558,27 @@ Game*Spark:
   timestamp: '2025-06-27 19:20:58'
 - link: http://www.gamespark.jp/article/2025/06/27/154483.html
   timestamp: '2025-06-27 19:20:59'
+- link: http://www.gamespark.jp/article/2025/06/28/154505.html
+  timestamp: '2025-06-28 07:09:34'
+- link: http://www.gamespark.jp/article/2025/06/28/154504.html
+  timestamp: '2025-06-28 07:09:34'
+- link: http://www.gamespark.jp/article/2025/06/28/154503.html
+  timestamp: '2025-06-28 07:09:34'
+- link: http://www.gamespark.jp/article/2025/06/28/154502.html
+  timestamp: '2025-06-28 07:09:34'
+- link: http://www.gamespark.jp/article/2025/06/27/154501.html
+  timestamp: '2025-06-28 07:09:35'
+- link: http://www.gamespark.jp/article/2025/06/27/154500.html
+  timestamp: '2025-06-28 07:09:35'
+- link: http://www.gamespark.jp/article/2025/06/27/154499.html
+  timestamp: '2025-06-28 07:09:35'
+- link: http://www.gamespark.jp/article/2025/06/27/154498.html
+  timestamp: '2025-06-28 07:09:36'
+- link: http://www.gamespark.jp/article/2025/06/27/154497.html
+  timestamp: '2025-06-28 07:09:37'
+- link: http://www.gamespark.jp/article/2025/06/27/154496.html
+  timestamp: '2025-06-28 07:09:38'
 ゲームメーカーズ:
-- link: https://gamemakers.jp/article/2025_06_24_108111/
-  timestamp: '2025-06-24 19:21:33'
 - link: https://gamemakers.jp/article/2025_06_24_106397/
   timestamp: '2025-06-25 07:10:06'
 - link: https://gamemakers.jp/article/2025_06_20_106090/
@@ -643,27 +643,15 @@ Game*Spark:
   timestamp: '2025-06-27 13:31:54'
 - link: https://gamemakers.jp/article/2025_06_24_107275/
   timestamp: '2025-06-27 19:21:32'
+- link: https://gamemakers.jp/article/2025_06_27_106742/
+  timestamp: '2025-06-28 07:10:02'
+- link: https://gamemakers.jp/article/2025_06_27_108870/
+  timestamp: '2025-06-28 07:10:02'
+- link: https://gamemakers.jp/article/2025_06_27_108919/
+  timestamp: '2025-06-28 07:10:03'
+- link: https://gamemakers.jp/article/2025_06_24_108111/
+  timestamp: '2025-06-28 07:10:03'
 ファミ通.com_新着:
-- link: https://www.famitsu.com/article/202506/45619
-  timestamp: '2025-06-24 19:21:26'
-- link: https://www.famitsu.com/article/202506/44996
-  timestamp: '2025-06-24 19:21:27'
-- link: https://www.famitsu.com/article/202506/45568
-  timestamp: '2025-06-24 19:21:27'
-- link: https://www.famitsu.com/article/202506/45594
-  timestamp: '2025-06-24 19:21:28'
-- link: https://www.famitsu.com/article/202506/45582
-  timestamp: '2025-06-24 19:21:28'
-- link: https://www.famitsu.com/article/202506/45603
-  timestamp: '2025-06-24 19:21:28'
-- link: https://www.famitsu.com/article/202506/45569
-  timestamp: '2025-06-24 19:21:29'
-- link: https://www.famitsu.com/article/202506/45510
-  timestamp: '2025-06-24 19:21:29'
-- link: https://www.famitsu.com/article/202506/45567
-  timestamp: '2025-06-24 19:21:30'
-- link: https://www.famitsu.com/article/202506/45571
-  timestamp: '2025-06-24 19:21:31'
 - link: https://www.famitsu.com/article/202506/44414
   timestamp: '2025-06-25 13:32:38'
 - link: https://www.famitsu.com/article/202506/45604
@@ -824,27 +812,27 @@ Game*Spark:
   timestamp: '2025-06-27 19:21:28'
 - link: https://www.famitsu.com/article/202506/45906
   timestamp: '2025-06-27 19:21:29'
+- link: https://www.famitsu.com/article/202506/45957
+  timestamp: '2025-06-28 07:09:55'
+- link: https://www.famitsu.com/article/202506/45969
+  timestamp: '2025-06-28 07:09:55'
+- link: https://www.famitsu.com/article/202506/45191
+  timestamp: '2025-06-28 07:09:56'
+- link: https://www.famitsu.com/article/202506/45962
+  timestamp: '2025-06-28 07:09:56'
+- link: https://www.famitsu.com/article/202506/45947
+  timestamp: '2025-06-28 07:09:56'
+- link: https://www.famitsu.com/article/202506/45935
+  timestamp: '2025-06-28 07:09:56'
+- link: https://www.famitsu.com/article/202506/45952
+  timestamp: '2025-06-28 07:09:57'
+- link: https://www.famitsu.com/article/202506/45826
+  timestamp: '2025-06-28 07:09:57'
+- link: https://www.famitsu.com/article/202506/45945
+  timestamp: '2025-06-28 07:09:58'
+- link: https://www.famitsu.com/article/202506/45953
+  timestamp: '2025-06-28 07:09:59'
 新着アセット情報:
-- link: https://assetstore.unity.com/packages/tools/integration/logger-for-crashlytics-271346?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:19'
-- link: https://assetstore.unity.com/packages/tools/utilities/find-references-to-asset-271348?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:20'
-- link: https://assetstore.unity.com/packages/tools/gui/simple-fake-leaderboard-pi-276668?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:20'
-- link: https://assetstore.unity.com/packages/3d/props/lighthouse-snowglobe-lowpoly-322248?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:20'
-- link: https://assetstore.unity.com/packages/tools/utilities/asset-validator-271338?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:21'
-- link: https://assetstore.unity.com/packages/vfx/shaders/omnishade-mobile-optimized-shader-215111?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:21'
-- link: https://assetstore.unity.com/packages/vfx/shaders/omnishade-pbr-physically-based-uber-shader-216249?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:21'
-- link: https://assetstore.unity.com/packages/tools/sprite-management/static-sprites-271347?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:22'
-- link: https://assetstore.unity.com/packages/vfx/shaders/omnishade-pro-mobile-optimized-shader-213594?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:23'
-- link: https://assetstore.unity.com/packages/3d/vehicles/land/electric-scooter-pack-212220?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-24 19:21:24'
 - link: https://assetstore.unity.com/packages/3d/characters/voxbox-voxel-game-assets-182002?aid=1011lGbg&pubref=am
   timestamp: '2025-06-25 07:09:58'
 - link: https://assetstore.unity.com/packages/tools/gui/uifx-drop-shadow-filter-272733?aid=1011lGbg&pubref=am
@@ -1025,3 +1013,23 @@ Game*Spark:
   timestamp: '2025-06-27 19:21:20'
 - link: https://assetstore.unity.com/packages/3d/vehicles/air/simple-voxel-helicopters-pack-109976?aid=1011lGbg&pubref=am
   timestamp: '2025-06-27 19:21:21'
+- link: https://assetstore.unity.com/packages/tools/utilities/autoref-resources-in-code-282950?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:47'
+- link: https://assetstore.unity.com/packages/2d/gui/icons/prefab-icon-studio-clean-dev-friendly-317678?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:47'
+- link: https://assetstore.unity.com/packages/3d/characters/creatures/flying-ghost-spirit-317868?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:48'
+- link: https://assetstore.unity.com/packages/templates/systems/3d-roguelike-rpg-complete-kit-for-mobile-and-pc-tps-enemy-ai-puz-249430?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:48'
+- link: https://assetstore.unity.com/packages/templates/systems/complete-third-person-controller-rpg-system-for-mobile-and-pc-pl-246094?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:48'
+- link: https://assetstore.unity.com/packages/templates/systems/car-controller-with-shooting-capabilities-for-both-mobile-and-pc-246095?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:49'
+- link: https://assetstore.unity.com/packages/templates/systems/simulation-game-system-create-your-simulator-for-mobile-and-pc-279510?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:49'
+- link: https://assetstore.unity.com/packages/templates/packs/helicopter-controller-with-shooting-for-both-mobile-and-pc-246087?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:50'
+- link: https://assetstore.unity.com/packages/templates/systems/boat-controller-with-shooting-capabilities-for-both-mobile-and-p-253534?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:50'
+- link: https://assetstore.unity.com/packages/templates/packs/gta-style-tps-game-kit-and-vehicle-controller-for-mobile-pc-311519?aid=1011lGbg&pubref=am
+  timestamp: '2025-06-28 07:09:51'
