@@ -32,3 +32,7 @@ genres:
     rss_feeds:
       # ゲームメーカーズ_新着
       - "https://gamemakers.jp/category/news/feed/"
+  GameWith:
+    rss_feeds:
+      # GameWith_総合ニュース新着
+      - "https://politepol.com/fd/I62MiIrbWa4T.xml"
