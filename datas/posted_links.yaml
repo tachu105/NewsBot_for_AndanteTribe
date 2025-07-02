@@ -1,8 +1,4 @@
 4Gamer.net:
-- link: https://www.4gamer.net/games/040/G004099/20250629001/
-  timestamp: '2025-06-30 07:09:09'
-- link: https://www.4gamer.net/games/913/G091380/20250629004/
-  timestamp: '2025-06-30 07:09:09'
 - link: https://www.4gamer.net/games/925/G092510/20250630028/
   timestamp: '2025-06-30 13:35:36'
 - link: https://www.4gamer.net/games/801/G080190/20250630024/
@@ -163,15 +159,27 @@
   timestamp: '2025-07-02 19:21:08'
 - link: https://www.4gamer.net/games/442/G044288/20250702032/
   timestamp: '2025-07-02 19:21:09'
+- link: https://www.4gamer.net/games/841/G084183/20250702051/
+  timestamp: '2025-07-03 07:09:36'
+- link: https://www.4gamer.net/games/760/G076035/20250702050/
+  timestamp: '2025-07-03 07:09:37'
+- link: https://www.4gamer.net/games/274/G027460/20250702046/
+  timestamp: '2025-07-03 07:09:37'
+- link: https://www.4gamer.net/games/609/G060981/20250702044/
+  timestamp: '2025-07-03 07:09:37'
+- link: https://www.4gamer.net/games/897/G089789/20250702048/
+  timestamp: '2025-07-03 07:09:38'
+- link: https://www.4gamer.net/games/866/G086614/20250702043/
+  timestamp: '2025-07-03 07:09:38'
+- link: https://www.4gamer.net/games/926/G092609/20250702030/
+  timestamp: '2025-07-03 07:09:38'
+- link: https://www.4gamer.net/games/926/G092602/20250702028/
+  timestamp: '2025-07-03 07:09:39'
+- link: https://www.4gamer.net/games/710/G071068/20250702025/
+  timestamp: '2025-07-03 07:09:40'
+- link: https://www.4gamer.net/games/630/G063081/20250702024/
+  timestamp: '2025-07-03 07:09:41'
 AUTOMATON:
-- link: https://automaton-media.com/articles/newsjp/uma-20250629-346614/
-  timestamp: '2025-06-29 19:21:25'
-- link: https://automaton-media.com/articles/now-gaming/20250629-346604/
-  timestamp: '2025-06-29 19:21:25'
-- link: https://automaton-media.com/articles/newsjp/steam-sale-20250628-346569/
-  timestamp: '2025-06-29 19:21:26'
-- link: https://automaton-media.com/articles/hiring/20250629-346600/
-  timestamp: '2025-06-29 19:21:26'
 - link: https://automaton-media.com/articles/newsjp/untitled-paper-rpg-20250630-346650/
   timestamp: '2025-06-30 13:35:50'
 - link: https://automaton-media.com/articles/newsjp/skin-deep-gpl-20250630-346641/
@@ -282,9 +290,15 @@ AUTOMATON:
   timestamp: '2025-07-02 19:21:22'
 - link: https://automaton-media.com/articles/newsjp/ampersat-20250702-347144/
   timestamp: '2025-07-02 19:21:23'
+- link: https://automaton-media.com/articles/newsjp/microsoft-20250702-347224/
+  timestamp: '2025-07-03 07:09:50'
+- link: https://automaton-media.com/articles/newsjp/sb-20250702-347218/
+  timestamp: '2025-07-03 07:09:51'
+- link: https://automaton-media.com/articles/newsjp/fate-grand-order-20250702-347201/
+  timestamp: '2025-07-03 07:09:51'
+- link: https://automaton-media.com/articles/newsjp/subnautica-2-20250702-347139/
+  timestamp: '2025-07-03 07:09:51'
 CGWORLD.jP:
-- link: https://cgworld.jp/flashnews/01-202506-uvFactory.html
-  timestamp: '2025-06-29 19:21:28'
 - link: https://cgworld.jp/flashnews/01-202506-RealityScan20.html
   timestamp: '2025-06-30 13:35:54'
 - link: https://cgworld.jp/flashnews/01-202506-Sparc3D-Hitem3D.html
@@ -326,22 +340,6 @@ CGWORLD.jP:
 - link: https://cgworld.jp/flashnews/01-202507-Maya-Adv-RealtimeHair.html
   timestamp: '2025-07-02 13:32:23'
 Game*Spark:
-- link: http://www.gamespark.jp/article/2025/06/29/154537.html
-  timestamp: '2025-06-29 19:21:19'
-- link: http://www.gamespark.jp/article/2025/06/29/154536.html
-  timestamp: '2025-06-29 19:21:20'
-- link: http://www.gamespark.jp/article/2025/06/29/154535.html
-  timestamp: '2025-06-29 19:21:20'
-- link: http://www.gamespark.jp/article/2025/06/29/154534.html
-  timestamp: '2025-06-29 19:21:20'
-- link: http://www.gamespark.jp/article/2025/06/29/154533.html
-  timestamp: '2025-06-29 19:21:21'
-- link: http://www.gamespark.jp/article/2025/06/29/154532.html
-  timestamp: '2025-06-29 19:21:21'
-- link: http://www.gamespark.jp/article/2025/06/29/154531.html
-  timestamp: '2025-06-29 19:21:21'
-- link: http://www.gamespark.jp/article/2025/06/29/154530.html
-  timestamp: '2025-06-29 19:21:22'
 - link: http://www.gamespark.jp/article/2025/06/30/154548.html
   timestamp: '2025-06-30 13:35:43'
 - link: http://www.gamespark.jp/article/2025/06/30/154547.html
@@ -502,6 +500,26 @@ Game*Spark:
   timestamp: '2025-07-02 19:21:15'
 - link: http://www.gamespark.jp/article/2025/07/02/154627.html
   timestamp: '2025-07-02 19:21:16'
+- link: http://www.gamespark.jp/article/2025/07/03/154647.html
+  timestamp: '2025-07-03 07:09:43'
+- link: http://www.gamespark.jp/article/2025/07/03/154646.html
+  timestamp: '2025-07-03 07:09:43'
+- link: http://www.gamespark.jp/article/2025/07/03/154645.html
+  timestamp: '2025-07-03 07:09:43'
+- link: http://www.gamespark.jp/article/2025/07/02/154644.html
+  timestamp: '2025-07-03 07:09:44'
+- link: http://www.gamespark.jp/article/2025/07/02/154643.html
+  timestamp: '2025-07-03 07:09:44'
+- link: http://www.gamespark.jp/article/2025/07/02/154642.html
+  timestamp: '2025-07-03 07:09:45'
+- link: http://www.gamespark.jp/article/2025/07/02/154641.html
+  timestamp: '2025-07-03 07:09:45'
+- link: http://www.gamespark.jp/article/2025/07/02/154640.html
+  timestamp: '2025-07-03 07:09:45'
+- link: http://www.gamespark.jp/article/2025/07/02/154639.html
+  timestamp: '2025-07-03 07:09:46'
+- link: http://www.gamespark.jp/article/2025/07/02/154638.html
+  timestamp: '2025-07-03 07:09:47'
 GameWith:
 - link: https://gamewith.jp/gamedb/13846
   timestamp: '2025-07-02 07:10:04'
@@ -563,9 +581,27 @@ GameWith:
   timestamp: '2025-07-02 19:21:49'
 - link: https://gamewith.jp/gamedb/11638/articles/35767
   timestamp: '2025-07-02 19:21:50'
+- link: https://gamewith.jp/gamedb/13858
+  timestamp: '2025-07-03 07:10:10'
+- link: https://gamewith.jp/gamedb/13857
+  timestamp: '2025-07-03 07:10:11'
+- link: https://gamewith.jp/gamedb/13856
+  timestamp: '2025-07-03 07:10:11'
+- link: https://gamewith.jp/gamedb/13855
+  timestamp: '2025-07-03 07:10:12'
+- link: https://gamewith.jp/gamedb/13854
+  timestamp: '2025-07-03 07:10:12'
+- link: https://gamewith.jp/gamedb/13851/articles/45197
+  timestamp: '2025-07-03 07:10:12'
+- link: https://gamewith.jp/gamedb/13686/articles/45199
+  timestamp: '2025-07-03 07:10:13'
+- link: https://gamewith.jp/gamedb/13217/articles/45193
+  timestamp: '2025-07-03 07:10:14'
+- link: https://gamewith.jp/gamedb/13332/articles/42263
+  timestamp: '2025-07-03 07:10:14'
+- link: https://gamewith.jp/gamedb/13850
+  timestamp: '2025-07-03 07:10:15'
 ゲームメーカーズ:
-- link: https://gamemakers.jp/article/2025_06_12_106657/
-  timestamp: '2025-06-29 19:21:41'
 - link: https://gamemakers.jp/scramble2025/
   timestamp: '2025-06-30 13:36:09'
 - link: https://gamemakers.jp/article/2025_06_26_108744/
@@ -638,25 +674,9 @@ GameWith:
   timestamp: '2025-07-02 19:21:42'
 - link: https://gamemakers.jp/article/2025_06_25_108543/
   timestamp: '2025-07-02 19:21:43'
+- link: https://gamemakers.jp/article/2025_06_12_106657/
+  timestamp: '2025-07-03 07:10:08'
 ファミ通.com_新着:
-- link: https://www.famitsu.com/article/202506/45995
-  timestamp: '2025-06-29 19:21:37'
-- link: https://www.famitsu.com/article/202506/46009
-  timestamp: '2025-06-29 19:21:37'
-- link: https://www.famitsu.com/article/202506/45909
-  timestamp: '2025-06-29 19:21:37'
-- link: https://www.famitsu.com/article/202506/45993
-  timestamp: '2025-06-29 19:21:39'
-- link: https://www.famitsu.com/article/202506/45991
-  timestamp: '2025-06-29 19:21:39'
-- link: https://www.famitsu.com/article/202506/45706
-  timestamp: '2025-06-29 19:21:39'
-- link: https://www.famitsu.com/article/202506/46020
-  timestamp: '2025-06-30 07:09:24'
-- link: https://www.famitsu.com/article/202506/46015
-  timestamp: '2025-06-30 07:09:24'
-- link: https://www.famitsu.com/article/202506/45582
-  timestamp: '2025-06-30 07:09:25'
 - link: https://www.famitsu.com/article/202506/46050
   timestamp: '2025-06-30 13:36:06'
 - link: https://www.famitsu.com/article/202506/46019
@@ -801,47 +821,27 @@ GameWith:
   timestamp: '2025-07-02 19:21:39'
 - link: https://www.famitsu.com/article/202507/46243
   timestamp: '2025-07-02 19:21:39'
+- link: https://www.famitsu.com/article/202507/46203
+  timestamp: '2025-07-03 07:10:02'
+- link: https://www.famitsu.com/article/202507/46256
+  timestamp: '2025-07-03 07:10:02'
+- link: https://www.famitsu.com/article/202507/46310
+  timestamp: '2025-07-03 07:10:02'
+- link: https://www.famitsu.com/article/202507/46300
+  timestamp: '2025-07-03 07:10:03'
+- link: https://www.famitsu.com/article/202507/46257
+  timestamp: '2025-07-03 07:10:03'
+- link: https://www.famitsu.com/article/202507/46291
+  timestamp: '2025-07-03 07:10:04'
+- link: https://www.famitsu.com/article/202507/46260
+  timestamp: '2025-07-03 07:10:04'
+- link: https://www.famitsu.com/article/202507/46255
+  timestamp: '2025-07-03 07:10:04'
+- link: https://www.famitsu.com/article/202507/46285
+  timestamp: '2025-07-03 07:10:05'
+- link: https://www.famitsu.com/article/202507/46282
+  timestamp: '2025-07-03 07:10:06'
 新着アセット情報:
-- link: https://assetstore.unity.com/packages/3d/characters/animals/birds/penguin-161858?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:29'
-- link: https://assetstore.unity.com/packages/3d/characters/animals/insects/furry-spider-161765?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:30'
-- link: https://assetstore.unity.com/packages/3d/characters/animals/pug-173418?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:30'
-- link: https://assetstore.unity.com/packages/3d/vehicles/city-bus-two-variants-308494?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:30'
-- link: https://assetstore.unity.com/packages/3d/characters/animals/realistic-forest-animals-310186?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:32'
-- link: https://assetstore.unity.com/packages/tools/physics/wheel-collider-for-entities-pacejka-physics-for-ecs-dots-305820?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:32'
-- link: https://assetstore.unity.com/packages/tools/animation/targetwarp-motion-warping-314335?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:32'
-- link: https://assetstore.unity.com/packages/tools/utilities/calendar-season-and-game-event-manager-301937?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:33'
-- link: https://assetstore.unity.com/packages/tools/game-toolkits/physics-based-dice-roller-mini-game-307275?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:33'
-- link: https://assetstore.unity.com/packages/templates/packs/unblock-wood-170915?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-29 19:21:34'
-- link: https://assetstore.unity.com/packages/tools/utilities/qst-quick-search-tool-guid-tools-297664?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:15'
-- link: https://assetstore.unity.com/packages/3d/props/ps-era-stylized-3d-props-modular-assets-294920?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:16'
-- link: https://assetstore.unity.com/packages/templates/systems/klondike-solitaire-solitaire-game-170916?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:16'
-- link: https://assetstore.unity.com/packages/vfx/particlesvironment/dyson-sphere-309378?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:16'
-- link: https://assetstore.unity.com/packages/2d/textures-materials/abstract/hdri-8k-fractal-panoramic-skyboxes-317344?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:17'
-- link: https://assetstore.unity.com/packages/3d/vehicles/sea/retro-steamboat-v-1-scifan-artwork-llc-279134?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:17'
-- link: https://assetstore.unity.com/packages/3d/props/tools/interactive-buttons-292066?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:17'
-- link: https://assetstore.unity.com/packages/vfx/particles/ground-auras-part-1-310417?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:18'
-- link: https://assetstore.unity.com/packages/vfx/shaders/20-mixed-burst-vfx-part-1-308845?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:19'
-- link: https://assetstore.unity.com/packages/tools/integration/savemate-319000?aid=1011lGbg&pubref=am
-  timestamp: '2025-06-30 07:09:20'
 - link: https://assetstore.unity.com/packages/2dvironments/2d-space-theme-parallax-backgrounds-309491?aid=1011lGbg&pubref=am
   timestamp: '2025-06-30 13:35:57'
 - link: https://assetstore.unity.com/packages/2dvironments/2d-ocean-theme-parallax-background-312264?aid=1011lGbg&pubref=am
@@ -1002,3 +1002,23 @@ GameWith:
   timestamp: '2025-07-02 19:21:30'
 - link: https://assetstore.unity.com/packages/3d/characters/animals/the-furry-bear-215891?aid=1011lGbg&pubref=am
   timestamp: '2025-07-02 19:21:31'
+- link: https://assetstore.unity.com/packages/3d/vegetation/forest-3d-low-poly-pack-environment-322876?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:54'
+- link: https://assetstore.unity.com/packages/tools/physics/prime-ball-controller-229154?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:54'
+- link: https://assetstore.unity.com/packages/3d/props/weapons/stylized-sword-pack-24-low-poly-fantasy-weapons-hand-painted-tex-322517?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:55'
+- link: https://assetstore.unity.com/packages/3dvironments/low-poly-asia-bundle-243947?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:55'
+- link: https://assetstore.unity.com/packages/templates/systems/gas-mask-system-v1-166312?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:56'
+- link: https://assetstore.unity.com/packages/3d/props/weapons/tec9-semiauto-pistol-fps-tps-297775?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:56'
+- link: https://assetstore.unity.com/packages/3d/props/weapons/shotgun-m4-fps-tps-317544?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:56'
+- link: https://assetstore.unity.com/packages/templates/systems/generator-fuel-system-168832?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:57'
+- link: https://assetstore.unity.com/packages/templates/systems/emblem-key-door-system-164083?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:58'
+- link: https://assetstore.unity.com/packages/templates/systems/door-interaction-kit-179684?aid=1011lGbg&pubref=am
+  timestamp: '2025-07-03 07:09:59'
