@@ -36,3 +36,7 @@ genres:
     rss_feeds:
       # GameWith_総合ニュース新着
       - "https://politepol.com/fd/I62MiIrbWa4T.xml"
+  電ファミニコゲーマー:
+    rss_feeds:
+      # 電ファミニコゲーマー_ニュース・新着記事
+      - "https://news.denfaminicogamer.jp/feed"
