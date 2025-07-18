@@ -40,3 +40,7 @@ genres:
     rss_feeds:
       # 電ファミニコゲーマー_ニュース・新着記事
       - "https://news.denfaminicogamer.jp/feed"
+  任天堂_開発者に聞きました:
+    rss_feeds:
+      # 任天堂公式_Interview_開発者に聞きました
+      - "https://politepol.com/fd/woZMJiOcyN2w.xml"
