@@ -159,6 +159,26 @@
   timestamp: '2026-04-25 07:30:36'
 - link: https://www.4gamer.net/games/456/G045622/20260424013/
   timestamp: '2026-04-25 07:30:37'
+- link: https://www.4gamer.net/games/999/G999903/20260425008/
+  timestamp: '2026-04-25 14:49:30'
+- link: https://www.4gamer.net/games/991/G999104/20260423027/
+  timestamp: '2026-04-25 14:49:33'
+- link: https://www.4gamer.net/games/999/G999905/20260425006/
+  timestamp: '2026-04-25 14:49:33'
+- link: https://www.4gamer.net/games/817/G081722/20260425005/
+  timestamp: '2026-04-25 14:49:33'
+- link: https://www.4gamer.net/games/178/G017853/20260419006/
+  timestamp: '2026-04-25 14:49:34'
+- link: https://www.4gamer.net/games/931/G093161/20260424032/
+  timestamp: '2026-04-25 14:49:34'
+- link: https://www.4gamer.net/games/982/G098251/20260424035/
+  timestamp: '2026-04-25 14:49:34'
+- link: https://www.4gamer.net/games/799/G079953/20260422015/
+  timestamp: '2026-04-25 14:49:35'
+- link: https://www.4gamer.net/games/002/G100223/20260424034/
+  timestamp: '2026-04-25 14:49:35'
+- link: https://www.4gamer.net/games/002/G100230/20260424033/
+  timestamp: '2026-04-25 14:49:36'
 AUTOMATON:
 - link: https://automaton-media.com/articles/newsjp/20260422-438988/
   timestamp: '2026-04-22 15:01:55'
@@ -288,6 +308,14 @@ AUTOMATON:
   timestamp: '2026-04-25 07:30:47'
 - link: https://automaton-media.com/articles/newsjp/nocturnal-20260424-439429/
   timestamp: '2026-04-25 07:30:47'
+- link: https://automaton-media.com/articles/newsjp/20260425-439692/
+  timestamp: '2026-04-25 14:49:46'
+- link: https://automaton-media.com/articles/newsjp/sos-recordings-20260425-439682/
+  timestamp: '2026-04-25 14:49:47'
+- link: https://automaton-media.com/articles/newsjp/20260425-439669/
+  timestamp: '2026-04-25 14:49:47'
+- link: https://automaton-media.com/articles/newsjp/repo-20260425-439663/
+  timestamp: '2026-04-25 14:49:47'
 CGWORLD.jP:
 - link: https://cgworld.jp/article/cgw330-chainsaw-reze02.html
   timestamp: '2026-04-22 15:02:01'
@@ -335,6 +363,8 @@ CGWORLD.jP:
   timestamp: '2026-04-25 07:30:48'
 - link: https://cgworld.jp/flashnews/02-2604-hidari.html
   timestamp: '2026-04-25 07:30:48'
+- link: https://cgworld.jp/flashnews/01-202604-UE5CherryBlossom.html
+  timestamp: '2026-04-25 14:49:48'
 Game*Spark:
 - link: http://www.gamespark.jp/article/2026/04/22/165510.html
   timestamp: '2026-04-22 15:01:47'
@@ -496,6 +526,26 @@ Game*Spark:
   timestamp: '2026-04-25 07:30:43'
 - link: http://www.gamespark.jp/article/2026/04/24/165655.html
   timestamp: '2026-04-25 07:30:44'
+- link: http://www.gamespark.jp/article/2026/04/25/165672.html
+  timestamp: '2026-04-25 14:49:39'
+- link: http://www.gamespark.jp/article/2026/04/25/165671.html
+  timestamp: '2026-04-25 14:49:39'
+- link: http://www.gamespark.jp/article/2026/04/25/165670.html
+  timestamp: '2026-04-25 14:49:39'
+- link: http://www.gamespark.jp/article/2026/04/25/165669.html
+  timestamp: '2026-04-25 14:49:40'
+- link: http://www.gamespark.jp/article/2026/04/25/165668.html
+  timestamp: '2026-04-25 14:49:40'
+- link: http://www.gamespark.jp/article/2026/04/25/165667.html
+  timestamp: '2026-04-25 14:49:40'
+- link: http://www.gamespark.jp/article/2026/04/25/165666.html
+  timestamp: '2026-04-25 14:49:41'
+- link: http://www.gamespark.jp/article/2026/04/25/165665.html
+  timestamp: '2026-04-25 14:49:42'
+- link: http://www.gamespark.jp/article/2026/04/24/165654.html
+  timestamp: '2026-04-25 14:49:42'
+- link: http://www.gamespark.jp/article/2026/04/24/165653.html
+  timestamp: '2026-04-25 14:49:43'
 GameWith:
 - link: https://gamewith.jp/gamedb/16619/articles/56612
   timestamp: '2026-04-22 15:02:20'
@@ -653,6 +703,10 @@ GameWith:
   timestamp: '2026-04-25 07:31:09'
 - link: https://gamewith.jp/gamedb/14799
   timestamp: '2026-04-25 07:31:10'
+- link: https://gamewith.jp/gamedb/13714/articles/56784
+  timestamp: '2026-04-25 14:50:06'
+- link: https://gamewith.jp/gamedb/15770/articles/56782
+  timestamp: '2026-04-25 14:50:07'
 ゲームメーカーズ:
 - link: https://gamemakers.jp/article/2026_04_22_135945/
   timestamp: '2026-04-22 15:02:17'
@@ -722,6 +776,8 @@ GameWith:
   timestamp: '2026-04-25 07:31:05'
 - link: https://gamemakers.jp/article/2026_04_12_135341/
   timestamp: '2026-04-25 07:31:06'
+- link: https://gamemakers.jp/article/2026_04_25_135897/
+  timestamp: '2026-04-25 14:50:04'
 ファミ通.com_新着:
 - link: https://www.famitsu.com/article/202604/72675
   timestamp: '2026-04-22 15:02:10'
@@ -883,6 +939,26 @@ GameWith:
   timestamp: '2026-04-25 07:31:01'
 - link: https://www.famitsu.com/article/202604/73060
   timestamp: '2026-04-25 07:31:02'
+- link: https://www.famitsu.com/article/202604/73058
+  timestamp: '2026-04-25 14:49:57'
+- link: https://www.famitsu.com/article/202604/73115
+  timestamp: '2026-04-25 14:49:58'
+- link: https://www.famitsu.com/article/202604/73097
+  timestamp: '2026-04-25 14:49:58'
+- link: https://www.famitsu.com/article/202604/73047
+  timestamp: '2026-04-25 14:49:58'
+- link: https://www.famitsu.com/article/202604/72552
+  timestamp: '2026-04-25 14:49:59'
+- link: https://www.famitsu.com/article/202604/73003
+  timestamp: '2026-04-25 14:49:59'
+- link: https://www.famitsu.com/gaming-pc/index.html
+  timestamp: '2026-04-25 14:49:59'
+- link: https://www.famitsu.com/article/202604/73085
+  timestamp: '2026-04-25 14:50:00'
+- link: https://www.famitsu.com/article/202604/73027
+  timestamp: '2026-04-25 14:50:01'
+- link: https://www.famitsu.com/article/202604/73077
+  timestamp: '2026-04-25 14:50:02'
 新着アセット情報:
 - link: https://assetstore.unity.com/packages/package/66006?aid=1011lGbg&pubref=am
   timestamp: '2026-04-22 15:02:03'
@@ -1044,6 +1120,26 @@ GameWith:
   timestamp: '2026-04-25 07:30:52'
 - link: https://assetstore.unity.com/packages/package/344526?aid=1011lGbg&pubref=am
   timestamp: '2026-04-25 07:30:53'
+- link: https://assetstore.unity.com/packages/package/169217?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:50'
+- link: https://assetstore.unity.com/packages/package/331059?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:50'
+- link: https://assetstore.unity.com/packages/package/136961?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:50'
+- link: https://assetstore.unity.com/packages/package/358968?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:51'
+- link: https://assetstore.unity.com/packages/package/163649?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:51'
+- link: https://assetstore.unity.com/packages/package/93616?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:51'
+- link: https://assetstore.unity.com/packages/package/285421?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:52'
+- link: https://assetstore.unity.com/packages/package/290693?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:52'
+- link: https://assetstore.unity.com/packages/package/116188?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:53'
+- link: https://assetstore.unity.com/packages/package/199444?aid=1011lGbg&pubref=am
+  timestamp: '2026-04-25 14:49:54'
 電ファミニコゲーマー:
 - link: https://news.denfaminicogamer.jp/news/2604222f
   timestamp: '2026-04-22 15:02:28'
@@ -1205,3 +1301,23 @@ GameWith:
   timestamp: '2026-04-25 07:31:21'
 - link: https://news.denfaminicogamer.jp/news/2604243r
   timestamp: '2026-04-25 07:31:21'
+- link: https://news.denfaminicogamer.jp/news/260425n
+  timestamp: '2026-04-25 14:50:10'
+- link: https://news.denfaminicogamer.jp/news/260425m
+  timestamp: '2026-04-25 14:50:10'
+- link: https://news.denfaminicogamer.jp/news/260425f
+  timestamp: '2026-04-25 14:50:10'
+- link: https://news.denfaminicogamer.jp/news/260425e
+  timestamp: '2026-04-25 14:50:11'
+- link: https://news.denfaminicogamer.jp/news/260425d
+  timestamp: '2026-04-25 14:50:11'
+- link: https://news.denfaminicogamer.jp/news/260425c
+  timestamp: '2026-04-25 14:50:11'
+- link: https://news.denfaminicogamer.jp/news/260425b
+  timestamp: '2026-04-25 14:50:12'
+- link: https://news.denfaminicogamer.jp/news/2604243t
+  timestamp: '2026-04-25 14:50:12'
+- link: https://news.denfaminicogamer.jp/news/2604243o
+  timestamp: '2026-04-25 14:50:13'
+- link: https://news.denfaminicogamer.jp/kikakuthetower/260424s
+  timestamp: '2026-04-25 14:50:14'
