@@ -1,24 +1,4 @@
 4Gamer.net:
-- link: https://www.4gamer.net/games/999/G999902/20260819038/
-  timestamp: '2026-08-19 19:27:19'
-- link: https://www.4gamer.net/games/004/G100451/20260819037/
-  timestamp: '2026-08-19 19:27:20'
-- link: https://www.4gamer.net/games/034/G103455/20260819027/
-  timestamp: '2026-08-19 19:27:20'
-- link: https://www.4gamer.net/games/931/G093161/20260819031/
-  timestamp: '2026-08-19 19:27:21'
-- link: https://www.4gamer.net/games/004/G100451/20260819035/
-  timestamp: '2026-08-19 19:27:21'
-- link: https://www.4gamer.net/games/666/G066664/20260819033/
-  timestamp: '2026-08-19 19:27:22'
-- link: https://www.4gamer.net/games/939/G093968/20260819034/
-  timestamp: '2026-08-19 19:27:22'
-- link: https://www.4gamer.net/games/456/G045622/20260819032/
-  timestamp: '2026-08-19 19:27:22'
-- link: https://www.4gamer.net/games/034/G103446/20260819024/
-  timestamp: '2026-08-19 19:27:23'
-- link: https://www.4gamer.net/games/974/G097413/20260819030/
-  timestamp: '2026-08-19 19:27:24'
 - link: https://www.4gamer.net/games/657/G065722/20260819025/
   timestamp: '2026-08-20 07:12:19'
 - link: https://www.4gamer.net/games/893/G089376/20260818002/
@@ -199,27 +179,19 @@
   timestamp: '2026-08-22 19:21:20'
 - link: https://www.4gamer.net/games/686/G068686/20260821021/
   timestamp: '2026-08-22 19:21:21'
+- link: https://www.4gamer.net/games/035/G103541/20260823003/
+  timestamp: '2026-08-23 07:09:29'
+- link: https://www.4gamer.net/games/414/G041434/20260823002/
+  timestamp: '2026-08-23 07:09:30'
+- link: https://www.4gamer.net/games/760/G076037/20260823001/
+  timestamp: '2026-08-23 07:09:30'
+- link: https://www.4gamer.net/games/035/G103511/20260821013/
+  timestamp: '2026-08-23 07:09:30'
+- link: https://www.4gamer.net/games/035/G103515/20260821017/
+  timestamp: '2026-08-23 07:09:31'
+- link: https://www.4gamer.net/games/035/G103514/20260821018/
+  timestamp: '2026-08-23 07:09:31'
 AUTOMATON:
-- link: https://automaton-media.com/articles/newsjp/20260819-461141/
-  timestamp: '2026-08-19 19:27:33'
-- link: https://automaton-media.com/articles/newsjp/20260819-461185/
-  timestamp: '2026-08-19 19:27:34'
-- link: https://automaton-media.com/articles/newsjp/20260819-461173/
-  timestamp: '2026-08-19 19:27:34'
-- link: https://automaton-media.com/articles/newsjp/20260819-461150/
-  timestamp: '2026-08-19 19:27:34'
-- link: https://automaton-media.com/articles/reportjp/20260819-461105/
-  timestamp: '2026-08-19 19:27:35'
-- link: https://automaton-media.com/articles/newsjp/20260819-461131/
-  timestamp: '2026-08-19 19:27:35'
-- link: https://automaton-media.com/articles/newsjp/20260819-461122/
-  timestamp: '2026-08-19 19:27:35'
-- link: https://automaton-media.com/articles/newsjp/20260819-461097/
-  timestamp: '2026-08-19 19:27:36'
-- link: https://automaton-media.com/articles/newsjp/20260819-461087/
-  timestamp: '2026-08-19 19:27:37'
-- link: https://automaton-media.com/articles/newsjp/20260819-460996/
-  timestamp: '2026-08-19 19:27:38'
 - link: https://automaton-media.com/articles/newsjp/20260819-461212/
   timestamp: '2026-08-20 07:12:32'
 - link: https://automaton-media.com/articles/newsjp/20260819-461203/
@@ -362,13 +334,9 @@ AUTOMATON:
   timestamp: '2026-08-22 19:21:29'
 - link: https://automaton-media.com/articles/newsjp/20260822-461951/
   timestamp: '2026-08-22 19:21:30'
+- link: https://automaton-media.com/articles/newsjp/umamusume-20260822-461977/
+  timestamp: '2026-08-23 07:09:39'
 CGWORLD.jP:
-- link: https://cgworld.jp/flashnews/tokiwasou-1.html
-  timestamp: '2026-08-19 19:27:40'
-- link: https://cgworld.jp/article/336-ezy-patlabor02.html
-  timestamp: '2026-08-19 19:27:40'
-- link: https://cgworld.jp/flashnews/01-202608-KamiJam.html
-  timestamp: '2026-08-19 19:27:40'
 - link: https://cgworld.jp/special-feature/2608-mouse-daiv-semba.html
   timestamp: '2026-08-20 13:39:46'
 - link: https://cgworld.jp/article/202608-sig-et.html
@@ -401,27 +369,9 @@ CGWORLD.jP:
   timestamp: '2026-08-21 19:29:15'
 - link: https://cgworld.jp/flashnews/01-202608-Disney-Motion.html
   timestamp: '2026-08-22 19:21:31'
+- link: https://cgworld.jp/flashnews/tokiwasou-1.html
+  timestamp: '2026-08-23 07:09:39'
 Game*Spark:
-- link: http://www.gamespark.jp/article/2026/08/19/170916.html
-  timestamp: '2026-08-19 19:27:26'
-- link: http://www.gamespark.jp/article/2026/08/19/170915.html
-  timestamp: '2026-08-19 19:27:27'
-- link: http://www.gamespark.jp/article/2026/08/19/170914.html
-  timestamp: '2026-08-19 19:27:27'
-- link: http://www.gamespark.jp/article/2026/08/19/170913.html
-  timestamp: '2026-08-19 19:27:27'
-- link: http://www.gamespark.jp/article/2026/08/19/170912.html
-  timestamp: '2026-08-19 19:27:28'
-- link: http://www.gamespark.jp/article/2026/08/19/170911.html
-  timestamp: '2026-08-19 19:27:28'
-- link: http://www.gamespark.jp/article/2026/08/19/170910.html
-  timestamp: '2026-08-19 19:27:28'
-- link: http://www.gamespark.jp/article/2026/08/19/170909.html
-  timestamp: '2026-08-19 19:27:29'
-- link: http://www.gamespark.jp/article/2026/08/19/170908.html
-  timestamp: '2026-08-19 19:27:30'
-- link: http://www.gamespark.jp/article/2026/08/19/170907.html
-  timestamp: '2026-08-19 19:27:31'
 - link: http://www.gamespark.jp/article/2026/08/20/170939.html
   timestamp: '2026-08-20 07:12:26'
 - link: http://www.gamespark.jp/article/2026/08/20/170938.html
@@ -602,27 +552,27 @@ Game*Spark:
   timestamp: '2026-08-22 19:21:26'
 - link: http://www.gamespark.jp/article/2026/08/22/171088.html
   timestamp: '2026-08-22 19:21:27'
+- link: http://www.gamespark.jp/article/2026/08/23/171104.html
+  timestamp: '2026-08-23 07:09:32'
+- link: http://www.gamespark.jp/article/2026/08/22/171103.html
+  timestamp: '2026-08-23 07:09:33'
+- link: http://www.gamespark.jp/article/2026/08/22/171102.html
+  timestamp: '2026-08-23 07:09:33'
+- link: http://www.gamespark.jp/article/2026/08/22/171101.html
+  timestamp: '2026-08-23 07:09:33'
+- link: http://www.gamespark.jp/article/2026/08/22/171100.html
+  timestamp: '2026-08-23 07:09:34'
+- link: http://www.gamespark.jp/article/2026/08/22/171099.html
+  timestamp: '2026-08-23 07:09:34'
+- link: http://www.gamespark.jp/article/2026/08/22/171098.html
+  timestamp: '2026-08-23 07:09:35'
+- link: http://www.gamespark.jp/article/2026/08/22/171087.html
+  timestamp: '2026-08-23 07:09:35'
+- link: http://www.gamespark.jp/article/2026/08/22/171086.html
+  timestamp: '2026-08-23 07:09:36'
+- link: http://www.gamespark.jp/article/2026/08/22/171085.html
+  timestamp: '2026-08-23 07:09:37'
 GameWith:
-- link: https://gamewith.jp/gamedb/18165
-  timestamp: '2026-08-19 19:28:01'
-- link: https://gamewith.jp/gamedb/328/articles/62076
-  timestamp: '2026-08-19 19:28:01'
-- link: https://gamewith.jp/gamedb/5541/articles/62061
-  timestamp: '2026-08-19 19:28:02'
-- link: https://gamewith.jp/gamedb/11380/articles/61836
-  timestamp: '2026-08-19 19:28:02'
-- link: https://gamewith.jp/gamedb/6513/articles/62077
-  timestamp: '2026-08-19 19:28:02'
-- link: https://gamewith.jp/gamedb/17789/articles/62074
-  timestamp: '2026-08-19 19:28:03'
-- link: https://gamewith.jp/gamedb/15939/articles/62071
-  timestamp: '2026-08-19 19:28:03'
-- link: https://gamewith.jp/gamedb/13348/articles/62072
-  timestamp: '2026-08-19 19:28:03'
-- link: https://gamewith.jp/pc/article/show/4245
-  timestamp: '2026-08-19 19:28:04'
-- link: https://gamewith.jp/gamedb/5556/articles/62062
-  timestamp: '2026-08-19 19:28:05'
 - link: https://gamewith.jp/gamedb/7729/articles/61950
   timestamp: '2026-08-20 07:12:51'
 - link: https://gamewith.jp/gamedb/15839
@@ -774,14 +724,6 @@ GameWith:
 - link: https://gamewith.jp/gamedb/18203
   timestamp: '2026-08-22 19:21:49'
 ゲームメーカーズ:
-- link: https://gamemakers.jp/article/2026_08_19_143322/
-  timestamp: '2026-08-19 19:27:58'
-- link: https://gamemakers.jp/article/2026_08_19_143289/
-  timestamp: '2026-08-19 19:27:58'
-- link: https://gamemakers.jp/article/2026_08_13_142827/
-  timestamp: '2026-08-19 19:27:59'
-- link: https://gamemakers.jp/article/2026_08_03_142517/
-  timestamp: '2026-08-19 19:27:59'
 - link: https://gamemakers.jp/article/2026_08_20_143336/
   timestamp: '2026-08-20 13:40:04'
 - link: https://gamemakers.jp/article/2026_08_20_143379/
@@ -838,27 +780,13 @@ GameWith:
   timestamp: '2026-08-22 19:21:46'
 - link: https://gamemakers.jp/article/2026_08_06_142707/
   timestamp: '2026-08-22 19:21:47'
+- link: https://gamemakers.jp/article/2026_08_19_143322/
+  timestamp: '2026-08-23 07:09:58'
+- link: https://gamemakers.jp/article/2026_08_19_143289/
+  timestamp: '2026-08-23 07:09:58'
+- link: https://gamemakers.jp/article/2026_08_13_142827/
+  timestamp: '2026-08-23 07:09:59'
 ファミ通.com_新着:
-- link: https://www.famitsu.com/article/202608/84881
-  timestamp: '2026-08-19 19:27:49'
-- link: https://www.famitsu.com/article/202608/84910
-  timestamp: '2026-08-19 19:27:49'
-- link: https://www.famitsu.com/article/202608/84064
-  timestamp: '2026-08-19 19:27:49'
-- link: https://www.famitsu.com/article/202608/84894
-  timestamp: '2026-08-19 19:27:50'
-- link: https://www.famitsu.com/article/202608/84861
-  timestamp: '2026-08-19 19:27:50'
-- link: https://www.famitsu.com/article/202608/84827
-  timestamp: '2026-08-19 19:27:50'
-- link: https://www.famitsu.com/article/202608/83691
-  timestamp: '2026-08-19 19:27:51'
-- link: https://www.famitsu.com/article/202608/84746
-  timestamp: '2026-08-19 19:27:52'
-- link: https://www.famitsu.com/article/202608/84774
-  timestamp: '2026-08-19 19:27:52'
-- link: https://www.famitsu.com/article/202608/84850
-  timestamp: '2026-08-19 19:27:53'
 - link: https://www.famitsu.com/article/202608/84820
   timestamp: '2026-08-20 07:12:43'
 - link: https://www.famitsu.com/article/202608/84925
@@ -1039,27 +967,23 @@ GameWith:
   timestamp: '2026-08-22 19:21:43'
 - link: https://www.famitsu.com/article/202608/85086
   timestamp: '2026-08-22 19:21:44'
+- link: https://www.famitsu.com/article/202608/85223
+  timestamp: '2026-08-23 07:09:49'
+- link: https://www.famitsu.com/article/202608/85226
+  timestamp: '2026-08-23 07:09:50'
+- link: https://www.famitsu.com/article/202608/85212
+  timestamp: '2026-08-23 07:09:50'
+- link: https://www.famitsu.com/article/202608/85202
+  timestamp: '2026-08-23 07:09:50'
+- link: https://www.famitsu.com/article/202608/85077
+  timestamp: '2026-08-23 07:09:50'
+- link: https://www.famitsu.com/article/202608/85076
+  timestamp: '2026-08-23 07:09:51'
+- link: https://www.famitsu.com/article/202608/85080
+  timestamp: '2026-08-23 07:09:51'
+- link: https://www.famitsu.com/article/202608/83828
+  timestamp: '2026-08-23 07:09:51'
 新着アセット情報:
-- link: https://assetstore.unity.com/packages/package/274415?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:42'
-- link: https://assetstore.unity.com/packages/package/305512?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:42'
-- link: https://assetstore.unity.com/packages/package/385378?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:43'
-- link: https://assetstore.unity.com/packages/package/321728?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:43'
-- link: https://assetstore.unity.com/packages/package/386548?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:43'
-- link: https://assetstore.unity.com/packages/package/137030?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:44'
-- link: https://assetstore.unity.com/packages/package/135383?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:45'
-- link: https://assetstore.unity.com/packages/package/364740?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:45'
-- link: https://assetstore.unity.com/packages/package/369674?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:46'
-- link: https://assetstore.unity.com/packages/package/328764?aid=1011lGbg&pubref=am
-  timestamp: '2026-08-19 19:27:46'
 - link: https://assetstore.unity.com/packages/package/356234?aid=1011lGbg&pubref=am
   timestamp: '2026-08-20 07:12:35'
 - link: https://assetstore.unity.com/packages/package/394020?aid=1011lGbg&pubref=am
@@ -1240,27 +1164,27 @@ GameWith:
   timestamp: '2026-08-22 19:21:35'
 - link: https://assetstore.unity.com/packages/package/315957?aid=1011lGbg&pubref=am
   timestamp: '2026-08-22 19:21:36'
+- link: https://assetstore.unity.com/packages/package/348244?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:40'
+- link: https://assetstore.unity.com/packages/package/327265?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:41'
+- link: https://assetstore.unity.com/packages/package/348072?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:41'
+- link: https://assetstore.unity.com/packages/package/312671?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:41'
+- link: https://assetstore.unity.com/packages/package/304114?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:42'
+- link: https://assetstore.unity.com/packages/package/274415?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:42'
+- link: https://assetstore.unity.com/packages/package/305512?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:42'
+- link: https://assetstore.unity.com/packages/package/282004?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:43'
+- link: https://assetstore.unity.com/packages/package/399928?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:44'
+- link: https://assetstore.unity.com/packages/package/379860?aid=1011lGbg&pubref=am
+  timestamp: '2026-08-23 07:09:45'
 電ファミニコゲーマー:
-- link: https://news.denfaminicogamer.jp/news/2608193a
-  timestamp: '2026-08-19 19:28:08'
-- link: https://news.denfaminicogamer.jp/news/2608193b
-  timestamp: '2026-08-19 19:28:09'
-- link: https://news.denfaminicogamer.jp/news/2608192j
-  timestamp: '2026-08-19 19:28:09'
-- link: https://news.denfaminicogamer.jp/news/2608192z
-  timestamp: '2026-08-19 19:28:10'
-- link: https://news.denfaminicogamer.jp/news/2608192x
-  timestamp: '2026-08-19 19:28:10'
-- link: https://news.denfaminicogamer.jp/news/2608192h
-  timestamp: '2026-08-19 19:28:10'
-- link: https://news.denfaminicogamer.jp/news/2608192t
-  timestamp: '2026-08-19 19:28:11'
-- link: https://news.denfaminicogamer.jp/news/260819r
-  timestamp: '2026-08-19 19:28:11'
-- link: https://news.denfaminicogamer.jp/news/2608192u
-  timestamp: '2026-08-19 19:28:12'
-- link: https://news.denfaminicogamer.jp/news/2608192f
-  timestamp: '2026-08-19 19:28:13'
 - link: https://news.denfaminicogamer.jp/news/2608193k
   timestamp: '2026-08-20 07:12:58'
 - link: https://news.denfaminicogamer.jp/news/260820h
@@ -1441,3 +1365,23 @@ GameWith:
   timestamp: '2026-08-22 19:21:56'
 - link: https://news.denfaminicogamer.jp/news/2608212s
   timestamp: '2026-08-22 19:21:57'
+- link: https://news.denfaminicogamer.jp/news/260822l
+  timestamp: '2026-08-23 07:10:03'
+- link: https://news.denfaminicogamer.jp/news/260822k
+  timestamp: '2026-08-23 07:10:03'
+- link: https://news.denfaminicogamer.jp/news/260822j
+  timestamp: '2026-08-23 07:10:04'
+- link: https://news.denfaminicogamer.jp/news/2608212w
+  timestamp: '2026-08-23 07:10:04'
+- link: https://news.denfaminicogamer.jp/news/2608212u
+  timestamp: '2026-08-23 07:10:04'
+- link: https://news.denfaminicogamer.jp/news/2608212g
+  timestamp: '2026-08-23 07:10:05'
+- link: https://news.denfaminicogamer.jp/news/2608212t
+  timestamp: '2026-08-23 07:10:05'
+- link: https://news.denfaminicogamer.jp/news/2608212r
+  timestamp: '2026-08-23 07:10:05'
+- link: https://news.denfaminicogamer.jp/news/2608212n
+  timestamp: '2026-08-23 07:10:06'
+- link: https://news.denfaminicogamer.jp/news/260821u
+  timestamp: '2026-08-23 07:10:07'
